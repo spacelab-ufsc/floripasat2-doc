@@ -1,2 +1,12 @@
-# golds-ufsc-doc
-GOLDS_UFSC Documentation
+# GOLDS-UFSC Documentation
+
+## Dependencies
+
+* ```latexmk```
+* ```texlive-epstopdf```
+
+## Generating the PDF file
+
+```
+make
+```
