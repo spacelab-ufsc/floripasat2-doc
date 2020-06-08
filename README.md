@@ -15,13 +15,10 @@
 		<img src="https://img.shields.io/badge/model-engineering-blue?style=for-the-badge">
 	</a>
     <a href="http://golds.ufsc.br/en/team/">
-		<img src="https://img.shields.io/badge/spacelab%20members-_-9cf?style=for-the-badge">
+		<img src="https://img.shields.io/badge/spacelab%20members-5-9cf?style=for-the-badge">
 	</a>
     <a href="">
-		<img src="https://img.shields.io/badge/other%20members-_-blueviolet?style=for-the-badge">
-	</a>
-	<a href="">
-		<img src="https://img.shields.io/badge/partner-ufma-B44188?style=for-the-badge">
+		<img src="https://img.shields.io/badge/other%20members-5-blueviolet?style=for-the-badge">
 	</a>
 	<a href="">
 		<img src="https://img.shields.io/badge/partner-inpe-yellow?style=for-the-badge">
