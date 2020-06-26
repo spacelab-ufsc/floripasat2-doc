@@ -96,14 +96,14 @@
         1-2                & -                & -                & -               & -                \\
         3-4                & -                & -                & -               & -                \\
         5-6                & -                & -                & BE\_UART\_RX    & -                \\
-        7-8                & -                & -                & BE\_UART\_TX    & -                \\
-        9-10               & -                & -                & -               & -                \\
-        11-12              & -                & -                & BE\_SPI\_MOSI   & BE\_SPI\_CLK     \\
+        7-8                & RA\_GPIO\_0      & RA\_GPIO\_1      & BE\_UART\_TX    & -                \\
+        9-10               & RA\_GPIO\_2      & -                & -               & -                \\
+        11-12              & RA\_RESET        & RA\_EN           & BE\_SPI\_MOSI   & BE\_SPI\_CLK     \\
         13-14              & -                & -                & BE\_SPI\_CS     & BE\_SPI\_MISO    \\
         15-16              & -                & -                & -               & -                \\
-        17-18              & -                & PLX\_EN          & -               & -                \\
-        19-20              & -                & -                & -               & -                \\
-        21-22              & -                & -                & -               & -                \\
+        17-18              & -                & PLX\_EN          & -               & RES\_GPIO      \\
+        19-20              & -                & -                & -               & RES\_GPIO      \\
+        21-22              & -                & -                & -               & RES\_GPIO      \\
         23-24              & -                & -                & -               & -                \\
         25-26              & EDC\_UART\_TX    & -                & -               & -                \\
         27-28              & EDC\_UART\_RX    & -                & -               & -                \\
@@ -113,8 +113,8 @@
         35-36              & RD\_SPI\_CLK     & -                & ANT\_VCC        & ANT\_VCC         \\
         37-38              & RD\_SPI\_MISO    & -                & -               & -                \\
         39-40              & RD\_SPI\_MOSI    & RD\_SPI\_CS      & -               & -                \\
-        41-42              & PLX\_I2C\_SDA    & -                & -               & -                \\
-        43-44              & PLX\_I2C\_SCL    & -                & -               & -                \\
+        41-42              & PL\_I2C\_SDA     & -                & -               & RES\_GPIO      \\
+        43-44              & PL\_I2C\_SCL     & -                & -               & -                \\
         45-46              & OBDH\_VCC        & OBDH\_VCC        & BAT\_VCC        & BAT\_VCC         \\
         47-48              & EDC\_VCC         & EDC\_VCC         & -               & -                \\
         49-50              & RD\_VCC          & RD\_VCC          & EPS\_I2C\_SDA   & -                \\
@@ -149,8 +149,12 @@
         EDC\_UART\_TX   & H1-25           & OBDH, EDC            & OBDH RX, EDC TX (UART bus) \\
         EDC\_UART\_RX   & H1-27           & OBDH, EDC            & OBDH TX, EDC RX (UART bus) \\
         PLX\_EN         & H1-18           & OBDH, Payload X      & Payload X enable (GPIO) \\
-        PLX\_I2C\_SDA   & H1-41           & OBDH, Payload X      & SDA signal of the Payload X I2C bus \\
-        PLX\_I2C\_SCL   & H1-43           & OBDH, Payload X      & SCL signal of the Payload X I2C bus \\
+        PL\_I2C\_SDA    & H1-41           & OBDH, Payload X      & SDA signal of the payload I2C bus \\
+        PL\_I2C\_SCL    & H1-43           & OBDH, Payload X      & SCL signal of the payload I2C bus \\
+        RES\_GPIO       & H2-18           & OBDH                 & Reserved GPIO pin \\
+        RES\_GPIO       & H2-20           & OBDH                 & Reserved GPIO pin \\
+        RES\_GPIO       & H2-22           & OBDH                 & Reserved GPIO pin \\
+        RES\_GPIO       & H2-42           & OBDH                 & Reserved GPIO pin \\
         \bottomrule[1.5pt]
     \end{tabular}
     \caption{PC-104 bus signal description.}
