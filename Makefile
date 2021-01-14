@@ -1,5 +1,6 @@
 SRC=main
-TARGET=golds_ufsc_doc
+DOC_VERSION=v0.1
+TARGET=slb-golds-doc-$(DOC_VERSION)
 
 ifndef BUILD_DIR
 	BUILD_DIR=build
