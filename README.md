@@ -17,13 +17,13 @@
 	<a href="#license">
 		<img src="https://img.shields.io/badge/open--source-project-lightgray?style=for-the-badge">
 	</a>
-	<a href="">
+	<a href="http://www.inpe.br/crn/">
 		<img src="https://img.shields.io/badge/partner-inpe--rn-yellow?style=for-the-badge">
 	</a>
 	<a href="http://ufsc.br">
 		<img src="https://img.shields.io/badge/sourced%20by-UFSC-orange?style=for-the-badge">
 	</a>
-	<a href="">
+	<a href="https://www.gov.br/aeb/pt-br">
 		<img src="https://img.shields.io/badge/sourced%20by-AEB-red?style=for-the-badge">
 	</a>
 	<a href="http://golds.ufsc.br">
@@ -97,7 +97,7 @@ environment.
 
 | Start [+months]  | Finish [+months] | Activity / Phase                                                                                          |
 |------------------|------------------|-----------------------------------------------------------------------------------------------------------|
-| T0               | T0 + 4           | Acquisition and manufacturing of critical elements and components for the platform                        |
+| T0               | T0 + 4           | Acquisition and manufacturing of critical elements and components for the solo platform                   |
 | T0               | T0 + 4           | Acquisition and manufacture of elements and components critical to the payload                            |
 | T0               | T0 + 9           | Acquisition and manufacturing of critical elements and components for the solo segment                    |
 | T0               | T0 + 6           | Compatibility tests between platform and payload in SpaceLab UFSC                                         |
@@ -175,10 +175,16 @@ The SpaceLab OBDH2 (On-Board Data Handling 2.0) is one of the service modules de
 	</a>
 </p>
 
-<img align="right" width="25%" src="https://github.com/spacelab-ufsc/ttc/blob/master/doc/figures/ttc_rf_ground_plane.png">
+<img align="right" width="25%" src="https://github.com/spacelab-ufsc/golds-ufsc-doc/blob/master/figures/ttc-pcb-top.png">
 
 The TTC (or TT&C) is the communication module of the CubeSats from SpaceLab. It is responsible to make the communication between the earth (a ground station) and a satellite, and is divided in two sub-modules: Beacon and telemetry. The beacon is a independent sub-module who transmits a periodic signal containing an identification data (ID) of the satellite and some basic telemetry data. The telemetry sub-module is the main communication device. It has a bidirectional data link to receive telecommands from the earth and transmit all the requested data. The telemetry sub-module is controlled by an external device (as example, an OBDH module).
 
+
+<br><br>
+
+## Antennas
+
+TBD
 
 <br><br>
 
@@ -238,6 +244,12 @@ The battery module is a separeted board from the EPS in order to accommodate 4 l
 
 <br><br>
 
+## Solar Panels
+
+TBD
+
+<br><br>
+
 ## Payload EDC - Environmental Data Collector Payload
 
 <p align="left">
@@ -267,7 +279,7 @@ The Environmental Data Collector (EDC) is a CubeSat-compatible payload that deco
 	</a>
 </p>
 
-<img align="right" width="25%" src="https://github.com/spacelab-ufsc/golds-ufsc-doc/blob/master/figures/x-pcb-top.png">
+<img align="right" width="25%" src="https://github.com/spacelab-ufsc/golds-ufsc-doc/blob/master/figures/payload-x-pcb-top.png">
 
 The Payload X was developed to perform an in-orbit validation (IOV) of two new technologies: a novel radiationhardened FPGA and an IP Core for telemetry and telecommand following the ECSS/CCSDS standard. The hardware was designed following the European Space Agency (ESA) space product standards. It has a layered structure that mitigates the effects of radiation and electromagnetic interference on the components signals. The implementation stored in the FPGA includes not only the TC/TM IP core, but also an abstract execution graph, in the form of a state machine, emulating the basic functionalities of an on-board computer (OBC). The communications module handles TC and TM data and it is an interface between the radio transceiver and the emulated OBC. The emulated OBC is based on the ECSS Telemetry & Telecommand Packet Utilization Standard (PUS), and it performs the validation of the routed telecommand received, and the packeting of the telemetry data acquired by the available sensors.
 
@@ -401,17 +413,43 @@ SpaceLab Packet Decoder is a software to decode audio records from the satellite
 
 <br><br>
 
+## Attitude Determination and Control System (ADCS)
 
+Our Attitude Determination and Control System (ADCS) is a Passive Attitude system, which uses Earth's magnetic field to rotate and stabilize the satellite. The system is composed of one magnet to create a force to align the magnet with the Earth's magnetic field and four hysteresis bars to damp the cube oscillations and stabilize. They are placed in positions to minimize the magnet effect on the bars. As a passive magnetic attitude control system is used, it is possible to stabilize only two axis, and so, the cubesat will still rotate around one of its axis, even after stabilized.
+
+<br><br>
+
+## Mechanical Structure
+
+TBD
+
+<br><br>
 
 ## Partners
 
-#### SpaceLab
+#### Space Technology Research Laboratory (SpaceLab)
 
-#### INPE-RN
+<p float="left">
+  	<a href="https://spacelab.ufsc.br/">
+  		<img src="https://github.com/spacelab-ufsc/golds-ufsc-doc/blob/master/figures/spacelab-logo-full-color-rgb-1000px%4072ppi.png" width="30%" />
+  	</a>
+</p>
 
-#### AEB
+#### National Institute for Space Research - Northeast Regional Center (INPE-RN)
 
+<p float="left">
+  	<a href="http://www.inpe.br/crn/">
+  		<img src="https://github.com/spacelab-ufsc/golds-ufsc-doc/blob/master/figures/inpe-logo.png" width="33%" />
+  	</a> 
+</p>
 
+#### Brazilian Space Agency (AEB)
+
+<p float="left">
+  	<a href="https://www.gov.br/aeb/pt-br">
+  		<img src="https://github.com/spacelab-ufsc/golds-ufsc-doc/blob/master/figures/aeb-logo.png" width="33%" />
+  	</a>
+</p>
 
 ## Licenses
 
@@ -432,11 +470,3 @@ This repository includes the sources of the main documentation. In order to edit
 ```
 make
 ```
-
-
-
-
-
-
-
-
