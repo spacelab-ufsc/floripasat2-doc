@@ -117,6 +117,13 @@ environment.
 
 ## Development 
 
+The following sections describe the mission subsystems, which placement, positioning and attachement can be seen in the next figure. Also, it is provided a quick review of the development status of each module throught the use of dynamic badges. The profile icons right above the module name is the GitHub contributors of this repository, which might not included all contributors to the project as a whole. Refer to the specific repositories or the website for a complete list.  
+
+<p align="center">
+  <img width="65%" src="https://github.com/spacelab-ufsc/golds-ufsc-doc/blob/master/figures/exploded-view.png" />
+</p>
+
+
 <br><br>
 
 <a href="https://github.com/spacelab-ufsc/obdh2/graphs/contributors">
@@ -207,7 +214,7 @@ The EPS2 has been designed to harvest, store and distribute energy for the GOLDS
   <img src="https://contrib.rocks/image?repo=spacelab-ufsc/battery-module-4c" />
 </a>
 
-## BM4 - Battery Module 4 cells
+## BATC4 - Battery Module 4 cells
 
 <p align="left">
 	<a href="https://github.com/spacelab-ufsc/spacelab#versioning">
