@@ -182,12 +182,6 @@ The TTC (or TT&C) is the communication module of the CubeSats from SpaceLab. It 
 
 <br><br>
 
-## Antennas
-
-TBD
-
-<br><br>
-
 <a href="https://github.com/spacelab-ufsc/eps2/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=spacelab-ufsc/eps2" />
 </a>
@@ -241,12 +235,6 @@ The EPS2 has been designed to harvest, store and distribute energy for the GOLDS
 
 The battery module is a separeted board from the EPS in order to accommodate 4 lithium-ion cells. Besides the cells, the board has connectors for interfacing signals and power lines with the EPS module, 2 power resistors to operate as heaters to maintain the cells temperature during eclipse periods, and 4 temperature sensors. The batteries used are the ICR18650-30B lithium-ion cells, which are connected in series and parallel to supply the required voltage and current. Each cell is fixed with 18650 metal holders and between the pairs there is the power resistor attached with a thermal element in the middle. Also, a mechanical mount is placed over the batteries and screwed to the board, providing better stress resistance.
 
-
-<br><br>
-
-## Solar Panels
-
-TBD
 
 <br><br>
 
@@ -360,6 +348,75 @@ The PC-104 Adapter is a set of two boards that allow the connection between two 
 
 <br><br>
 
+## ADCS - Attitude Determination and Control System
+
+<p align="left">
+	<a href="https://github.com/spacelab-ufsc/spacelab#versioning">
+		<img src="https://img.shields.io/badge/status-in--orbit%20validated-blue?style=for-the-badge">
+	</a>
+</p>
+
+<img align="right" width="25%" src="https://github.com/spacelab-ufsc/golds-ufsc-doc/blob/master/figures/adcs-1u.png">
+
+Our Attitude Determination and Control System (ADCS) is a Passive Attitude system, which uses Earth's magnetic field to rotate and stabilize the satellite. The system is composed of one magnet to create a force to align the magnet with the Earth's magnetic field and four hysteresis bars to damp the cube oscillations and stabilize. They are placed in positions to minimize the magnet effect on the bars. As a passive magnetic attitude control system is used, it is possible to stabilize only two axis, and so, the cubesat will still rotate around one of its axis, even after stabilized.
+
+
+<br><br>
+
+## ISIS - 2U Mechanical Structure
+
+<p align="left">
+	<a href="https://github.com/spacelab-ufsc/spacelab#versioning">
+		<img src="https://img.shields.io/badge/status-in--orbit%20validated-blue?style=for-the-badge">
+	</a>
+	<a href="https://github.com/spacelab-ufsc/spacelab#versioning">
+		<img src="https://img.shields.io/badge/purchased%20module-ISIS-lightgray?style=for-the-badge">
+	</a>
+</p>
+
+<img align="right" width="25%" src="https://github.com/spacelab-ufsc/golds-ufsc-doc/blob/master/figures/isis-2u-structure.png">
+
+The ISISPACE 2-Unit CubeSat structure is developed as a generic, modular satellite structure based upon the CubeSat standard. The design created by ISIS allows for multiple mounting configurations, giving CubeSat developers maximum flexibility in their design process. The stack of PCBs and other flight modules can be build up first in the secondary structure and integrated with the load-carrying frames at the end of the process, ensuring accessibility of the flight avionics. In addition, the use of a load-carrying frame and detachable shear panels allows for access to all parts of the spacecraft avionics, even after final integration by removing one or more of the shear panels. The modular chassis allows for up to two 1-Unit stack of PCBs, or other modules, to be mounted inside the chassis.
+
+
+<br><br>
+
+## ISIS - Antennas
+
+<p align="left">
+	<a href="https://github.com/spacelab-ufsc/spacelab#versioning">
+		<img src="https://img.shields.io/badge/status-in--orbit%20validated-blue?style=for-the-badge">
+	</a>
+	<a href="https://github.com/spacelab-ufsc/spacelab#versioning">
+		<img src="https://img.shields.io/badge/purchased%20module-ISIS-lightgray?style=for-the-badge">
+	</a>
+</p>
+
+<img align="right" width="25%" src="https://github.com/spacelab-ufsc/golds-ufsc-doc/blob/master/figures/isis-antenna.png">
+
+The ISISPACE CubeSat Antenna System 1U/3U contains up to four tape spring antennas of up to 55 cm length. The deployment system relies on a thermal knife composed of one wire and two redundant heating elements per tape. RF phasing / BalUn circuitry ties the antennas together in the user-defined configuration. Depending on the configuration, one or two radios in the CubeSat can connect to the antenna system by means of miniature RF connectors. The top face of the antenna system can accommodate a two solar cell solar panel and it can be customized for accommodating sensors or other systems to protrude to the exterior, e.g. camera apertures. The antenna is compatible with any UHF and/or VHF radio system. It can be mounted on all ISIS CubeSat structures and Pumpkin rev C and rev D CubeSat structures. For custom made structures, which adhere to the CubeSat standard mechanical envelope, mounting should also be possible.
+
+
+<br><br>
+
+## ORBITAL - Solar Panels
+
+<p align="left">
+	<a href="https://github.com/spacelab-ufsc/spacelab#versioning">
+		<img src="https://img.shields.io/badge/status-flight%20ready-green?style=for-the-badge">
+	</a>
+	<a href="https://github.com/spacelab-ufsc/spacelab#versioning">
+		<img src="https://img.shields.io/badge/purchased%20module-ORBITAL-lightgray?style=for-the-badge">
+	</a>
+</p>
+
+<img align="right" width="25%" src="https://github.com/spacelab-ufsc/golds-ufsc-doc/blob/master/figures/orbital-solar-panel.png">
+
+The solar panels are manufactures by ORBITAL, a Brazilian company. The panels features protection diodes and high-efficiency solar cells, which are the CESI's CTJ-30 with dimensions 6.9 cm x 3.9 cm (area 26.5 cm2). This cell is qualified for space use by ESA with an efficiency of 29.5% (AM0, BOL). The panels do not include magnetorquers, sensors and others devices.
+
+
+<br><br>
+
 <a href="https://github.com/spacelab-ufsc/flatsat-platform/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=spacelab-ufsc/flatsat-platform" />
 </a>
@@ -409,19 +466,11 @@ The SpaceLab FlatSat Platform is a testbed for cubesat pcb modules. FlatSats ena
 	</a>
 </p>
 
+<img align="right" width="25%" src="https://github.com/spacelab-ufsc/golds-ufsc-doc/blob/master/figures/spacelab-decoder.png">
+
 SpaceLab Packet Decoder is a software to decode audio records from the satellites of SpaceLab. For now, this software is still under development and are not functional yet.
 
-<br><br>
 
-## Attitude Determination and Control System (ADCS)
-
-Our Attitude Determination and Control System (ADCS) is a Passive Attitude system, which uses Earth's magnetic field to rotate and stabilize the satellite. The system is composed of one magnet to create a force to align the magnet with the Earth's magnetic field and four hysteresis bars to damp the cube oscillations and stabilize. They are placed in positions to minimize the magnet effect on the bars. As a passive magnetic attitude control system is used, it is possible to stabilize only two axis, and so, the cubesat will still rotate around one of its axis, even after stabilized.
-
-<br><br>
-
-## Mechanical Structure
-
-TBD
 
 <br><br>
 
