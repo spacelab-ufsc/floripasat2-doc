@@ -8,20 +8,14 @@
 <h4 align="center">A compilation of the mission documents, diagrams, spreadsheets and figures.</h4>
 
 <p align="center">
-	<a href="">
-		<img src="https://img.shields.io/badge/state-in%20development-lightgreen?style=for-the-badge">
-	</a>
-	<a href="">
-		<img src="https://img.shields.io/badge/model-engineering-blue?style=for-the-badge">
+	<a href="https://github.com/spacelab-ufsc/spacelab#versioning">
+		<img src="https://img.shields.io/badge/status-in%20development-red?style=for-the-badge">
 	</a>
     <a href="http://golds.ufsc.br/en/team/">
-		<img src="https://img.shields.io/badge/spacelab%20members-5-9cf?style=for-the-badge">
-	</a>
-    <a href="">
-		<img src="https://img.shields.io/badge/other%20members-5-blueviolet?style=for-the-badge">
+		<img src="https://img.shields.io/badge/spacelab%20members-8-blue?style=for-the-badge">
 	</a>
 	<a href="">
-		<img src="https://img.shields.io/badge/partner-inpe-yellow?style=for-the-badge">
+		<img src="https://img.shields.io/badge/partner-inpe--rn-yellow?style=for-the-badge">
 	</a>
 	<a href="http://ufsc.br">
 		<img src="https://img.shields.io/badge/sourced%20by-UFSC-orange?style=for-the-badge">
@@ -34,6 +28,7 @@
 	</a>
 </p>
 
+
 <p align="center">
   	<a href="#overview">Overview</a> •
   	<a href="#mission-statement">Statement</a> •
@@ -41,8 +36,8 @@
   	<a href="#mission-schedule">Schedule</a> •
   	<a href="#mission-requeriments">Requirements</a> •
   	<a href="#development-teams">Teams</a> •
+  	<a href="#repositories-organization">Repositories</a> •
   	<a href="#partners">Partners</a> •
-  	<a href="#repository-organization">Repository</a> •
   	<a href="#licenses">Licenses</a> •
   	<a href="#notes">Notes</a>
 </p>
@@ -80,8 +75,22 @@ environment.
 
 ## Mission Schedule
 
-<img width="70%" src="https://github.com/spacelab-ufsc/golds-ufsc-doc/blob/master/figures/preliminary-schedule.png">
-
+| Start [+months]  | Finish [+months] | Activity / Phase                                                                                          |
+|------------------|------------------|-----------------------------------------------------------------------------------------------------------|
+| T0               | T0 + 4           | Acquisition and manufacturing of critical elements and components for the platform                        |
+| T0               | T0 + 4           | Acquisition and manufacture of elements and components critical to the payload                            |
+| T0               | T0 + 9           | Acquisition and manufacturing of critical elements and components for the solo segment                    |
+| T0               | T0 + 6           | Compatibility tests between platform and payload in SpaceLab UFSC                                         |
+| T0 + 4           | T0 + 10          | Integration of the engineering model in SpaceLab UFSC                                                     |
+| T0 + 4           | T0 + 11          | Preparation and suitability of the ground segment                                                         |
+| T0 + 8           | T0 + 10          | Verification and validation of the engineering model at SpaceLab UFSC                                     |
+| T0 + 8           | T0 + 11          | Verification and validation of the flight model at SpaceLab UFSC                                          |
+| T0 + 9           | T0 + 12          | Data collection platforms installation                                                                    |
+| T0 + 10          | T0 + 11          | Verification and validation tests of Engineering Model compatibility with EMMN in the INPE / CRN in Natal |
+| T0 + 10          | T0 + 11          | Environmental tests at the Integration and Testing Laboratory (LIT / INPE)                                |
+| T0 + 11          | T0 + 11          | Flight model acceptance and ground segment review                                                         |
+| T0 + 9           | T0 + 12          | Ground segment delivery                                                                                   |
+| T0 + 11          | T0 + 12          | Flight model delivery                                                                                     |
 
 
 ## Mission Requeriments
@@ -108,34 +117,47 @@ Under definition!
 
 
 
+
+## Repositories Organization
+
+Under definition!
+
+
+
 ## Partners
 
-Under definition!
+#### SpaceLab
 
+#### INPE-RN
 
-
-
-## Repository Organization
-
-Under definition!
+#### AEB
 
 
 
 ## Licenses
 
-Under definition!
-
+The SpaceLab follows a strong open-source approach in order to encourage and promote knowledge. Then, refer to the LICENSE file in the GitHub page for each repository. This mission uses different open-source licenses accordingly to projects needs and restrictions. It is used GNU General Public License v3.0 for firmware sources, CERN Open Hardware License v2.0 for hardware files, and CC BY-SA 4.0 for the documentation. Some third-part files and libraries are subjected to their specific terms and licenses. Please, double check licenses and third-part components used with other licenses, since restrictions might apply.
 
 
 ## Notes
 
-### Dependencies
+This repository includes the sources of the main documentation. In order to edit/compile/generate, check the following:  
+
+#### Dependencies
 
 * ```latexmk```
 * ```texlive-epstopdf```
 
-### Generating the PDF file
+#### Generating the PDF file
 
 ```
 make
 ```
+
+
+
+
+
+
+
+
