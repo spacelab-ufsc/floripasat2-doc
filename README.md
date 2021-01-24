@@ -484,6 +484,14 @@ SpaceLab Packet Decoder is a software to decode audio records from the satellite
   	</a>
 </p>
 
+#### Federal University of Santa Catarina (UFSC)
+
+<p float="left">
+    <a href="https://ufsc.br/">
+        <img src="https://github.com/spacelab-ufsc/golds-ufsc-doc/blob/master/figures/ufsc-logo.png" width="30%" />
+    </a>
+</p>
+
 #### National Institute for Space Research - Northeast Regional Center (INPE-RN)
 
 <p float="left">
