@@ -1,7 +1,7 @@
 %
 % schedule.tex
 %
-% Copyright (C) 2020 by SpaceLab.
+% Copyright (C) 2021 by SpaceLab.
 %
 % GOLDS-UFSC Documentation
 %
@@ -26,35 +26,46 @@
 
 \begin{table}[!h]
     \centering
-    \begin{tabular}{lC{0.2cm}C{0.2cm}C{0.2cm}C{0.2cm}C{0.2cm}C{0.2cm}C{0.2cm}C{0.2cm}C{0.2cm}C{0.2cm}C{0.2cm}C{0.2cm}C{0.2cm}C{0.2cm}}
+    \begin{tabular}{cC{0.6cm}C{0.6cm}C{0.6cm}C{0.6cm}C{0.6cm}C{0.6cm}C{0.6cm}C{0.6cm}C{0.6cm}C{0.6cm}C{0.6cm}C{0.6cm}}
         \toprule[1.5pt]
-        \multirow{3}{*}{\textbf{Phase/Activity}} & \multicolumn{14}{c}{\textbf{Period}} \\
-                                                 \cline{2-15}
-                                                 & \multicolumn{12}{c}{\textbf{2020}} & \multicolumn{2}{c}{\textbf{2021}} \\
-                                                 \cline{2-15}
-                                                 & J   & F   & M   & A   & M   & J   & J   & A   & S   & O   & N   & D   & J   & F \\
+        \multirow{3}{*}{\textbf{Activity}} & \multicolumn{12}{c}{\textbf{Month (2021)}} \\
+                                           & Jan & Feb & Mar & Apr & May & Jun & Jul & Aug & Sep & Oct & Nov & Dez \\
         \midrule
-        Flatsat test OBDH + EDC                  & \fc & \fc &     &     &     &     &     &     &     &     &     &     &     &   \\
-        Protoflight - Design                     & \fc & \fc &     &     &     &     &     &     &     &     &     &     &     &   \\
-        GS \& RF regulation procedures           & \fc & \fc & \fc & \fc & \fc & \fc & \fc & \fc & \fc & \fc & \fc & \fc & \fc &   \\
-        \textbf{Critical Design Review (CDR)}    &     &     & \fc &     &     &     &     &     &     &     &     &     &     &   \\
-        Protoflight - Procurement                &     &     & \fc &     &     &     &     &     &     &     &     &     &     &   \\
-        Protoflight - Boards fabrication         &     &     & \fc &     &     &     &     &     &     &     &     &     &     &   \\
-        Flatsat test - Subsystems + EDC          &     &     &     & \fc & \fc &     &     &     &     &     &     &     &     &   \\
-        Protoflight - Stack integration          &     &     &     &     & \fc & \fc &     &     &     &     &     &     &     &   \\
-        Fit check                                &     &     &     &     &     &     & \fc &     &     &     &     &     &     &   \\
-        Verification \& validation               & \fc & \fc & \fc & \fc & \fc & \fc & \fc & \fc & \fc &     &     &     &     &   \\
-        Environmental tests (LIT                 &     &     &     &     &     &     & \fc & \fc & \fc &     &     &     &     &   \\
-        \textbf{Acceptance Review (AR)}          &     &     &     &     &     &     &     &     &     & \fc &     &     &     &   \\
-        Export to launch country                 &     &     &     &     &     &     &     &     &     & \fc & \fc &     &     &   \\
-        \textbf{Flight Readiness Review (FRR)}   &     &     &     &     &     &     &     &     &     &     & \fc &     &     &   \\
-        Integration to launch vehicle            &     &     &     &     &     &     &     &     &     &     & \fc & \fc &     &   \\
-        Launch                                   &     &     &     &     &     &     &     &     &     &     &     & \fc &     &   \\
-        Start commissioning                      &     &     &     &     &     &     &     &     &     &     &     & \fc &     &   \\
-        End commissioning                        &     &     &     &     &     &     &     &     &     &     &     &     & \fc &   \\
-        Start operation                          &     &     &     &     &     &     &     &     &     &     &     &     & \fc &   \\
+        1                                  & \fc & \fc & \fc & \fc &     &     &     &     &     &     &     &     \\
+        2                                  & \fc & \fc & \fc & \fc &     &     &     &     &     &     &     &     \\
+        3                                  & \fc & \fc & \fc & \fc & \fc & \fc & \fc & \fc & \fc &     &     &     \\
+        4                                  & \fc & \fc & \fc & \fc & \fc & \fc &     &     &     &     &     &     \\
+        5                                  &     &     &     & \fc & \fc & \fc & \fc & \fc & \fc & \fc &     &     \\
+        6                                  &     &     &     &     & \fc & \fc & \fc & \fc & \fc & \fc & \fc &     \\
+        7                                  &     &     &     &     &     &     &     & \fc & \fc & \fc &     &     \\
+        8                                  &     &     &     &     &     &     &     & \fc & \fc & \fc & \fc &     \\
+        9                                  &     &     &     &     &     &     &     &     & \fc & \fc & \fc & \fc \\
+        10                                 &     &     &     &     &     &     &     &     &     & \fc & \fc &     \\
+        11                                 &     &     &     &     &     &     &     &     &     & \fc & \fc &     \\
+        12                                 &     &     &     &     &     &     &     &     &     &     & \fc &     \\
+        13                                 &     &     &     &     &     &     &     &     & \fc & \fc & \fc & \fc \\
+        14                                 &     &     &     &     &     &     &     &     &     &     & \fc & \fc \\
         \bottomrule[1.5pt]
     \end{tabular}
     \caption{Mission schedule.}
     \label{tab:mission-schedule}
 \end{table}
+
+Each activity of \autoref{tab:mission-schedule} is decribed below:
+
+\begin{enumerate}
+    \item Acquisition and manufacturing of critical elements and components for the solo platform.
+    \item Acquisition and manufacture of elements and components critical to the payload.
+    \item Acquisition and manufacturing of critical elements and components for the solo segment.
+    \item Compatibility tests between platform and payload in SpaceLab UFSC.
+    \item Integration of the engineering model in SpaceLab UFSC.
+    \item Preparation and suitability of the ground segment.
+    \item Verification and validation of the engineering model at SpaceLab UFSC.
+    \item Verification and validation of the flight model at SpaceLab UFSC.
+    \item Data collection platforms installation.
+    \item Verification and validation tests of Engineering Model compatibility with EMMN in the INPE / CRN in Natal.
+    \item Environmental tests at the Integration and Testing Laboratory (LIT/INPE).
+    \item Flight model acceptance and ground segment review.
+    \item Ground segment delivery.
+    \item Flight model delivery.
+\end{enumerate}
