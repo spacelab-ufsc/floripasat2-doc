@@ -42,7 +42,48 @@ TTC\nomenclature{\textbf{TTC}}{\textit{Telemetry, Tracking and Command Module}.}
 
 \subsection{Antenna Module}
 
-.
+The used antenna module is the CubeSat deployable VHF and UHF antenna from ISISpace \cite{isis-antenna}. It is a four monopole antenna built with tape strings (up to 55 cm) and compliant with the CubeSat standard (dipole or turnstile options are also available). The deployment method is the burning wire and it can be controlled digitally through a I$^{2}$C interface. To allow redundancy, there are two independent deployment controllers that can be activated separately. Also, the construction of this module allows the installation of a solar panel at the top side. The RF gain is about 0 dBi.
+
+A picture of the antenna module (with all antennas released) can be seen in \autoref{fig:isis-antenna}.
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[width=0.8\textwidth]{figures/isis-antenna}
+        \caption{Antenna module from ISISpace.}
+        \label{fig:isis-antenna}
+    \end{center}
+\end{figure}
+
+The chosen configuration for this mission can be seen below (using \autoref{fig:isis-antenna-ref} as reference):
+
+\begin{itemize}
+    \item Configuration: 4 monopoles (1x VHF + 3x UHF)
+        \begin{itemize}
+            \item Antenna 1: VHF - 145,97 MHz (beacon)
+            \item Antenna 2: UHF - 401,635 MHz (EDC)
+            \item Antenna 3: UHF - 436,9 MHz (downlink/uplink)
+            \item Antenna 4: UHF - 401,635 MHz (redundant EDC)
+        \end{itemize}
+    \item Tuning structure size: 2U
+    \item Mounting position: Top
+    \item Supply voltage: 3,3 V
+    \item I$^{2}$C control type: Dual bus
+        \begin{itemize}
+            \item Primary I$^{2}$C address: 31h (7-bit address)
+            \item Redundant I$^{2}$C address: 32h (7-bit address)
+        \end{itemize}
+    \item I$^{2}$C watchdog: Enabled with a time out of 60 seconds.
+\end{itemize}
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[width=0.7\textwidth]{figures/isis-antenna-ref}
+        \caption{Configuration reference of the antenna module.}
+        \label{fig:isis-antenna-ref}
+    \end{center}
+\end{figure}
+
+In the digital interface, a temperature sensor and the state of four deployment switches (1 per monopole) are also available. These switches indicate if a monopole is released or not, and can be used as feedback of the deployment process.
 
 \section{Electrical Power System}
 
