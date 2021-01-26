@@ -348,7 +348,7 @@ The PC-104 Adapter is a set of two boards that allow the connection between two 
 
 <br><br>
 
-## ADCS - Attitude Determination and Control System
+## ACS - Attitude Control System
 
 <p align="left">
 	<a href="https://github.com/spacelab-ufsc/spacelab#versioning">
@@ -358,7 +358,7 @@ The PC-104 Adapter is a set of two boards that allow the connection between two 
 
 <img align="right" width="25%" src="https://github.com/spacelab-ufsc/golds-ufsc-doc/blob/master/figures/adcs-1u.png">
 
-Our Attitude Determination and Control System (ADCS) is a Passive Attitude system, which uses Earth's magnetic field to rotate and stabilize the satellite. The system is composed of one magnet to create a force to align the magnet with the Earth's magnetic field and four hysteresis bars to damp the cube oscillations and stabilize. They are placed in positions to minimize the magnet effect on the bars. As a passive magnetic attitude control system is used, it is possible to stabilize only two axis, and so, the cubesat will still rotate around one of its axis, even after stabilized.
+Our Attitude Control System (ACS) is a passive attitude system, which uses Earth's magnetic field to rotate and stabilize the satellite. The system is composed of one magnet to create a force to align the magnet with the Earth's magnetic field and four hysteresis bars to damp the cube oscillations and stabilize. They are placed in positions to minimize the magnet effect on the bars. As a passive magnetic attitude control system is used, it is possible to stabilize only two axis, and so, the cubesat will still rotate around one of its axis, even after stabilized.
 
 
 <br><br>
