@@ -93,9 +93,33 @@ EPS\nomenclature{\textbf{EPS}}{\textit{Electrical Power System}.} \cite{eps2}
 
 \cite{bat4c}
 
+\subsection{Solar Panels}
+
+.
+
+\subsection{Kill-Switches and RBF}
+
+.
+
 \section{Attitude Determination and Control System}
 
-ADCS\nomenclature{\textbf{ADCS}}{\textit{Attitude Determination and Control System}.}
+The Attitude Determination and Control System (ADCS\nomenclature{\textbf{ADCS}}{\textit{Attitude Determination and Control System}.}) is a passive attitude control system, which depends on the Earth's magnetic field to rotate and stabilize the satellite \cite{santoni2009,gerhardt2010}. The system is composed of one permanent magnet to create a force to align the magnet with the Earth's magnetic field and four hysteresis bars to damp the cube oscillations and achieve stabilization.
+
+When equilibrium is achieved, the permanent magnet aligns itself to the Earth's field lines. The hysteresis bars convert oscillation and rotation energy into heat, maintaining the alignment through magnetic moment. The components are placed in positions as to minimize the magnet's interaction with the hysteresis bars, which limits the magnetic moment of the magnet \cite{francois2010}. \autoref{fig:adcs} shows the mounting of the hysteresis bars (green) and the permanent magnet (red) on the mechanical structure. The whole passive ADCS was implemented according to \cite{francois2010}.
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[width=0.7\textwidth]{figures/adcs}
+        \caption{ADCS subsytem. Rare earth magnet (pink) and hysteresis bars (red) installed in the structure.}
+        \label{fig:adcs}
+    \end{center}
+\end{figure}
+
+As a passive magnetic attitude control system is used, it is possible to stabilize only one axis, and so, the CubeSat will still slowly (due to hysteresis bars) rotate around this axis, even after stabilized. A N45 neodymium magnet and 4 hysteresis bars of Permanorm 5000 H2 are used (courtesy of Vacuumschmelze GmbH \& Co. KG). The material of the hysteresis bar is shaped in order to maximize the stabilization, which is the most important part of the attitude control.
+
+Many conditions impact on the detumbling time, which is the time required for the satellite to stabilize. Magnetic passive attitude stabilization systems such as the one developed for this mission achieve the equilibrium state within a few weeks of operation \cite{santoni2009}.
+
+The GOLDS-UFSC satellite does not feature an orbit control subsystem.
 
 \section{Mechanical Structure}
 
