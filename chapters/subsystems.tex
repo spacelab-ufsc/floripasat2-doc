@@ -50,7 +50,17 @@ More information about this module can be found in \cite{obdh2}.
 
 \section{Telemetry, Tracking and Command Module}
 
-TTC\nomenclature{\textbf{TTC}}{\textit{Telemetry, Tracking and Command Module}.} \cite{ttc}
+The TTC\nomenclature{\textbf{TTC}}{\textit{Telemetry, Tracking and Command Module}.} (or TT\&C) is responsible to make the communication between the earth (a ground station) and the satellite, and is divided in two sub-modules: Beacon and downlink/uplink. The beacon is a independent sub-module who transmits a periodic signal containing an identification data (ID) of the satellite and some basic telemetry data. The downlink/uplink sub-module is the main communication device. It has a bidirectional data link to receive telecommands from the earth and transmit all available data back to Earth. The board of the module can be seen in \autoref{fig:ttc}.
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[width=0.7\textwidth]{figures/ttc_board}
+        \caption{TTC module.}
+        \label{fig:ttc}
+    \end{center}
+\end{figure}
+
+More information about this module can be found in \cite{ttc}.
 
 \subsection{Antenna Module}
 
