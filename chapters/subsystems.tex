@@ -109,7 +109,19 @@ In the digital interface, a temperature sensor and the state of four deployment 
 
 \section{Electrical Power System}
 
-EPS\nomenclature{\textbf{EPS}}{\textit{Electrical Power System}.} \cite{eps2}
+The EPS\nomenclature{\textbf{EPS}}{\textit{Electrical Power System}.} is the module designed to harvest, store and distribute energy for the satellite. The energy harvesting system is based on solar energy conversion through te solar panels attached to the CubeSat structure. The EPS is designed to operate the solar panels at their maximum power point (MPPT\nomenclature{\textbf{MPPT}}{\textit{Maximum Power Point Tracking}.}). The board also measures the solar panels current, voltage and the temperature of the batteries. The harvested solar energy is stored in a battery module connected to the EPS. The energy distribution is done by several integrated buck DC-DC converters. The full EPS system is composed of the solar panels, the EPS PCB and the battery module. A general view of the EPS board can be seen in \autoref{fig:eps2}.
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[width=0.7\textwidth]{figures/eps2-pcb-3d}
+        \caption{EPS module.}
+        \label{fig:eps2}
+    \end{center}
+\end{figure}
+
+The module is a direct upgrade from the EPS of FloripaSat-1 \cite{floripasat}, which grants a flight heritage rating. The improvements focus on providing a cleaner and more generic implementation in comparison with the previous version, more reliability in software, and adaptations for the new mission requirements.
+
+More information about this module can be found in \cite{eps2}.
 
 \subsection{Battery Module}
 
