@@ -34,7 +34,19 @@
 
 \section{On-Board Data Handling}
 
-OBDH\nomenclature{\textbf{OBDH}}{\textit{On-Board Data Handling}.} \cite{obdh2}
+The OBDH\nomenclature{\textbf{OBDH}}{\textit{On-Board Data Handling}.} 2.0 is an On-Board Computer (OBC) module designed for nanosatellites. The module is responsible for synchronizing actions and the data flow between other modules (i.e., power module, communication module, payloads) and the Earth segment. It packs the generated data into data frames and transmit back to Earth through a communication module, or stores it on a non-volatile memory for later retrieval. Commands sent from Earth segment to the CubeSat are received by radio transceivers located in the communication module and redirected to the OBDH, which takes the appropriate action or forward the commands to the target module.
+
+The module is a direct upgrade from the OBDH of FloripaSat-1 \cite{floripasat}, which grants a flight heritage rating. The improvements focus on providing a cleaner and more generic implementation in comparison with the previous version, more reliability in software and hardware implementations, and adaptations for the new mission requirements. The board of the module can be seen in \autoref{fig:obdh2}.
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[width=0.7\textwidth]{figures/obdh2-pcb-3d}
+        \caption{OBDH module.}
+        \label{fig:obdh2}
+    \end{center}
+\end{figure}
+
+More information about this module can be found in \cite{obdh2}.
 
 \section{Telemetry, Tracking and Command Module}
 
