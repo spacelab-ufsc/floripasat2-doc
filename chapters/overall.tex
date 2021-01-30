@@ -172,18 +172,18 @@
             \cmidrule{3-6}
                                       &                       & \textit{ID}  & \textit{Source Callsign}   & \textit{Data (up to 220 bytes)}            & \textit{Size (bytes)} \\
             \midrule
-            \multirow{6}{*}{Beacon}   & EPS Data              & 00h & \multirow{6}{*}{``0'' + ``PY0EGU''} & EPS + TTC data                             & 58           \\
+            \multirow{4}{*}{Beacon}   & EPS Data              & 00h & \multirow{6}{*}{``0'' + ``PY0EGU''} & EPS + TTC data                             & 58           \\
                                       & TTC Data              & 01h &                                     & TTC data                                   & 18           \\
                                       & EPS Data              & 02h &                                     & EPS + TTC data                             & 39           \\
                                       & TTC Data              & 03h &                                     & TTC data                                   & 18           \\
             \midrule
-            \multirow{6}{*}{Downlink} & Telemetry             & 10h & \multirow{6}{*}{``0'' + ``PY0EGU''} & Flags + OBDH/EPS data                      & 220          \\
+            \multirow{5}{*}{Downlink} & Telemetry             & 10h & \multirow{6}{*}{``0'' + ``PY0EGU''} & Flags + OBDH/EPS data                      & 220          \\
                                       & Ping Answer           & 11h &                                     & Requester callsign                         & 15           \\
                                       & Data Request Answer   & 12h &                                     & Req. callsign + data                       & 15 to 155    \\
                                       & Hibernation Feedback  & 13h &                                     & Req. callsign + hibernation in hours       & 17           \\
                                       & Message Broadcast     & 14h &                                     & Req. + dst. callsign + message             & 22 to 60     \\
             \midrule
-            \multirow{3}{*}{Uplink}   & Ping Request          & 20h & \multirow{3}{*}{Any Callsign}       & None                                       & 8            \\
+            \multirow{4}{*}{Uplink}   & Ping Request          & 20h & \multirow{3}{*}{Any Callsign}       & None                                       & 8            \\
                                       & Data Request          & 21h &                                     & Data flags + count + origin + offset       & 16           \\
                                       & Hibernation Request   & 22h &                                     & Req. callsign + hibernation in hours + key & 29           \\
                                       & Broadcast Message     & 23h &                                     & Dst. callsign + message                    & 15 to 46     \\
