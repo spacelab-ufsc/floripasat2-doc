@@ -191,14 +191,64 @@ More information about these boards can be found in \cite{iip}.
 
 \section{Payloads}
 
+The GOLDS-UFSC satellite is planned to carry three different payloads on-board: ``\textit{EDC}'', ``\textit{Payload-X}'' and the ``\textit{Harsh Payload}''. Each one of these payloads are presented next.
+
 \subsection{Environmental Data Collection}
 
-EDC\nomenclature{\textbf{EDC}}{\textit{Environmental Data Collection}.} \cite{edc}
+The Environmental Data Collector (EDC\nomenclature{\textbf{EDC}}{\textit{Environmental Data Collection}.}) is a CubeSat-compatible payload that decodes signals from Platform Transmitter Terminals (PTTs) belonging to the Brazilian Environmental Data Collection System (SBCD\nomenclature{\textbf{SBCD}}{\textit{Sistema Brasileiro de Coleta de Dados}.}) and the Argos-2 System. It is the main payload of the GOLDS-UFSC mission.
+
+The main featues of this payload are listed below, a 3D model of the EDC board can be seen in \autoref{fig:edc-board}.
+
+\begin{itemize}
+    \item Reception/decoding of SBCD and Argos-2 signals on the 401.635 MHz $\pm$ 30 kHz frequency range.
+    \item Can decode up to 12 PTT signals simultaneously.
+    \item Attaches a header to decoded messages with frequency, time, and signal strength information.
+    \item Full speed I$^{2}$C interface (400 kbit/s) for the OBC communication.
+    \item Full-duplex RS-485 interface with fail-safe for the OBC communication.
+    \item 5 V power supply.
+    \item Memory capable of storing up to 64 decoded user messages.
+    \item Generates housekeeping information including current supply, board temperature, digitized signal RMS level, front-end PLL synchronism state and overcurrent events.
+    \item Can capture a 2048 samples sequence (16 ms window) from the received signal upon request.
+\end{itemize}
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[width=0.6\textwidth]{figures/edc-pcb-top}
+        \caption{EDC board.}
+        \label{fig:edc-board}
+    \end{center}
+\end{figure}
+
+As can be seen in \autoref{fig:exploded-view}, for this mission, two identical EDC boards will be used, in a cold redundancy configuration. More information about this payload can be found in \cite{edc}.
 
 \subsection{Redundant OBDH (Payload-X)}
 
-Payload-x \cite{payload-x}
+The Payload-X is a radiation-hardened reconfigurable hardware platform designed for a radioactive environment, having as a main feature the possibility to change the hardware configuration of the FPGA through remote uplink of its bitstream.
 
-\subsection{Radiation Monitor}
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[width=0.6\textwidth]{figures/payload-x-board}
+        \caption{Payload-X board.}
+        \label{fig:payload-x-board}
+    \end{center}
+\end{figure}
 
-.
+More information about this payload can be found in \cite{rigo2019}.
+
+\subsection{Radiation Monitor (Harsh Payload)}
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[width=0.7\textwidth]{figures/harsh-payload}
+        \caption{Radiation monitor board.}
+        \label{fig:harsh-payload}
+    \end{center}
+\end{figure}
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[width=0.7\textwidth]{figures/daughterboard-integration}
+        \caption{Integration of the radiation monitor payload in the OBDH.}
+        \label{fig:harsh-payload-integration}
+    \end{center}
+\end{figure}
