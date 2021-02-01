@@ -44,16 +44,64 @@
 
 \section{Link Budget}
 
+\subsection{Distance to Satellite at Horizon}
+
+\begin{itemize}
+    \item $R_{e}$ = Earth radius = 6378 km
+    \item $h$ = Satellite altitude = 600 km
+    \item $d$ = Distance to sattellite at horizon
+\end{itemize}
+
+\begin{equation}
+d = \sqrt{2\cdot R_{e}\cdot h + h^{2}} = \sqrt{2\cdot 6378\cdot 600 + 600^{2}} = \mathbf{2830\ km}
+\end{equation}
+
+
+%\section{Power at Receiver}
+
+%\begin{equation}
+%P_{r} = P_{t} + G_{t} + G_{r} - L_{p}\ [dB]
+%\end{equation}
+
+
 \subsection{VHF Link}
 
 \begin{itemize}
     \item Direction: \textbf{Downlink}
-    \item Frequency: \textbf{145,97 MHz}
+    \item Frequency ($f$): \textbf{145,97 MHz}
     \item Modulation: \textbf{MSK}
-    \item Datarate: \textbf{1200 bps}
-    \item Output Power: \textbf{30 dBm (1 W)}
-    \item Protocol: \textbf{NGHam}
+    \item Datarate ($baud$): \textbf{1200 bps}
+    \item Output Power ($P_{t}$): \textbf{30 dBm (1 W)}
+    \item Protocol: \textbf{NGHam (with FEC)}
+    \item Satellite antenna gain ($G_{r}$): \textbf{0 dB}
+    \item Groundstation antenna gain ($G_{t}$): \textbf{15 dB}
 \end{itemize}
+
+\subsubsection{Free-Space Path Loss}
+
+\begin{equation}
+FSPL = \left( \frac{4\pi \cdot d \cdot f}{c} \right)^{2}
+\end{equation}
+
+\begin{equation}
+    FSPL = 20\cdot \log\left(\frac{4\pi}{c}\right) + 20\cdot \log\left(d\right) + 20\cdot \log\left(f\right)\ [dB]
+\end{equation}
+
+\begin{equation}
+FSPL = 32,45 + 20\cdot \log\left(\frac{d}{1\ km}\right) + 20\cdot \log\left(\frac{f}{1\ MHz}\right)\ [dB]
+\end{equation}
+
+\begin{equation}
+FSPL_{max} = 32,45 + 20\cdot \log\left(\frac{2830}{1\ km}\right) + 20\cdot \log\left(\frac{145,97}{1\ MHz}\right) = \mathbf{144,8\ dB}
+\end{equation}
+
+\begin{equation}
+FSPL_{min} = 32,45 + 20\cdot \log\left(\frac{600}{1\ km}\right) + 20\cdot \log\left(\frac{145,97}{1\ MHz}\right) = \mathbf{131,3\ dB}
+\end{equation}
+
+\begin{equation}
+\mathbf{131,3 \leq L_{p} \leq 144,8\ dB}
+\end{equation}
 
 \subsection{UHF Links}
 
@@ -65,8 +113,22 @@
     \item Modulation: \textbf{MSK}
     \item Datarate: \textbf{4800 bps}
     \item Output power: \textbf{30 dBm (1 W)}
-    \item Protocol: \textbf{NGHam}
+    \item Protocol: \textbf{NGHam (with FEC)}
+    \item Satellite antenna gain ($G_{r}$): \textbf{0 dB}
+    \item Groundstation antenna gain ($G_{t}$): \textbf{18 dB}
 \end{itemize}
+
+\begin{equation}
+FSPL_{max} = 32,45 + 20\cdot \log\left(\frac{2830}{1\ km}\right) + 20\cdot \log\left(\frac{436,9}{1\ MHz}\right) = \mathbf{154,3\ dB}
+\end{equation}
+
+\begin{equation}
+FSPL_{min} = 32,45 + 20\cdot \log\left(\frac{600}{1\ km}\right) + 20\cdot \log\left(\frac{436,9}{1\ MHz}\right) = \mathbf{140,8\ dB}
+\end{equation}
+
+\begin{equation}
+\mathbf{140,8 \leq L_{p} \leq 154,3\ dB}
+\end{equation}
 
 \subsubsection{EDC UHF Link}
 
@@ -76,6 +138,8 @@
     \item Modulation: \textbf{BPSK}
     \item Datarate: \textbf{400 bps}
     \item Protocol: \textbf{SBCD}
+    \item Satellite antenna gain ($G_{r}$): \textbf{0 dB}
+    \item Groundstation antenna gain ($G_{t}$): \textbf{XX dB}
 \end{itemize}
 
 \section{PC-104 Bus}
