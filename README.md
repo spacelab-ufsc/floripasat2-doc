@@ -147,9 +147,11 @@ The following sections describe the mission subsystems, which placement, positio
 	</a>
 </p>
 
+<a href="https://github.com/spacelab-ufsc/obdh2">
 <img align="right" width="25%" src="https://github.com/spacelab-ufsc/obdh2/blob/master/doc/figures/obdh2-pcb-top.png">
+</a>
 
-The SpaceLab OBDH2 (On-Board Data Handling 2.0) is one of the service modules developed for GOLDS-UFSC Cubesat Mission. The OBDH2 is responsible to synchronize actions and the data flow between other modules (ie. EPS, Payloads) and the Earth segment. It packs the generated data into data frames and transmit back to Earth through TTC module, or stores it on a non-volatile memory for later retrieval. Commands sent from Earth segment to the cubesat will be received by the radio transceivers located in the TTC module and redirected to the OBDH2, which takes the appropriate action or forward them to the responsible module.
+The SpaceLab OBDH2 (On-Board Data Handling 2.0) is one of the service modules developed for GOLDS-UFSC Cubesat Mission. The OBDH2 is responsible to synchronize actions and the data flow between other modules (ie. EPS, Payloads) and the Earth segment. It packs the generated data into data frames and transmit back to Earth through TTC module, or stores it on a non-volatile memory for later retrieval. Commands sent from Earth segment to the cubesat will be received by the radio transceivers located in the TTC module and redirected to the OBDH2, which takes the appropriate action or forward them to the responsible module. All the OBDH2 project, source and documentation files are available freely on a [GitHub repository](https://github.com/spacelab-ufsc/obdh2) under its respective licenses.  
 
 
 <br><br>
@@ -175,9 +177,11 @@ The SpaceLab OBDH2 (On-Board Data Handling 2.0) is one of the service modules de
 	</a>
 </p>
 
+<a href="https://github.com/spacelab-ufsc/ttc">
 <img align="right" width="25%" src="https://github.com/spacelab-ufsc/golds-ufsc-doc/blob/master/figures/ttc-pcb-top.png">
+</a>
 
-The TTC (or TT&C) is the communication module of the CubeSats from SpaceLab. It is responsible to make the communication between the earth (a ground station) and a satellite, and is divided in two sub-modules: Beacon and telemetry. The beacon is a independent sub-module who transmits a periodic signal containing an identification data (ID) of the satellite and some basic telemetry data. The telemetry sub-module is the main communication device. It has a bidirectional data link to receive telecommands from the earth and transmit all the requested data. The telemetry sub-module is controlled by an external device (as example, an OBDH module).
+The TTC (or TT&C) is the communication module of the CubeSats from SpaceLab. It is responsible to make the communication between the earth (a ground station) and a satellite, and is divided in two sub-modules: Beacon and telemetry. The beacon is a independent sub-module who transmits a periodic signal containing an identification data (ID) of the satellite and some basic telemetry data. The telemetry sub-module is the main communication device. It has a bidirectional data link to receive telecommands from the earth and transmit all the requested data. The telemetry sub-module is controlled by an external device (as example, an OBDH module). All the TTC project, source and documentation files are available freely on a [GitHub repository](https://github.com/spacelab-ufsc/ttc) under its respective licenses.
 
 
 <br><br>
@@ -203,9 +207,11 @@ The TTC (or TT&C) is the communication module of the CubeSats from SpaceLab. It 
 	</a>
 </p>
 
+<a href="https://github.com/spacelab-ufsc/eps2">
 <img align="right" width="25%" src="https://github.com/spacelab-ufsc/eps2/blob/master/doc/figures/eps2-pcb-top.png">
+</a>
 
-The EPS2 has been designed to harvest, store and distribute energy for the GOLDS-UFSC CubeSat mission. The energy harvesting system is based on solar energy conversion through 10 solar panels attached to the structure. The EPS is designed to operate the solar panels at their maximum power point. The harvested solar energy is stored in 4 lithium-ion batteries connected in series/parallel. The energy distribution is done by several integrated DC-DC converters. The full EPS system is composed of the solar panels, the EPS PCB, and the Batteries PCB.
+The EPS2 has been designed to harvest, store and distribute energy for the GOLDS-UFSC CubeSat mission. The energy harvesting system is based on solar energy conversion through 10 solar panels attached to the structure. The EPS is designed to operate the solar panels at their maximum power point. The harvested solar energy is stored in 4 lithium-ion batteries connected in series/parallel. The energy distribution is done by several integrated DC-DC converters. The full EPS system is composed of the solar panels, the EPS PCB, and the Batteries PCB. All the EPS2 project, source and documentation files are available freely on a [GitHub repository](https://github.com/spacelab-ufsc/eps2) under its respective licenses.
 
 
 <br><br>
@@ -231,9 +237,11 @@ The EPS2 has been designed to harvest, store and distribute energy for the GOLDS
 	</a>
 </p>
 
+<a href="https://github.com/spacelab-ufsc/battery-module-4c">
 <img align="right" width="25%" src="https://github.com/spacelab-ufsc/battery-module-4c/blob/master/images/bat2-pcb-bottom.png">
+</a>
 
-The battery module is a separeted board from the EPS in order to accommodate 4 lithium-ion cells. Besides the cells, the board has connectors for interfacing signals and power lines with the EPS module, 2 power resistors to operate as heaters to maintain the cells temperature during eclipse periods, and 4 temperature sensors. The batteries used are the ICR18650-30B lithium-ion cells, which are connected in series and parallel to supply the required voltage and current. Each cell is fixed with 18650 metal holders and between the pairs there is the power resistor attached with a thermal element in the middle. Also, a mechanical mount is placed over the batteries and screwed to the board, providing better stress resistance.
+The battery module is a separeted board from the EPS in order to accommodate 4 lithium-ion cells. Besides the cells, the board has connectors for interfacing signals and power lines with the EPS module, 2 power resistors to operate as heaters to maintain the cells temperature during eclipse periods, and 4 temperature sensors. The batteries used are the ICR18650-30B lithium-ion cells, which are connected in series and parallel to supply the required voltage and current. Each cell is fixed with 18650 metal holders and between the pairs there is the power resistor attached with a thermal element in the middle. Also, a mechanical mount is placed over the batteries and screwed to the board, providing better stress resistance. All the BATC4 project, source and documentation files are available freely on a [GitHub repository](https://github.com/spacelab-ufsc/battery-module-4c) under its respective licenses.
 
 
 <br><br>
@@ -313,9 +321,11 @@ The Harsh Environment CubeSat DaughterBoard is the result of a partnership betwe
 	</a>
 </p>
 
+<a href="https://github.com/spacelab-ufsc/interface-board">
 <img align="right" width="25%" src="https://github.com/spacelab-ufsc/interface-board/blob/master/doc/figures/iip_fullset.PNG">
+</a>
 
-Interstage Interface Panels (IIP) are vertical mounted PCBs designed to give external access to the modules inside of a 2U or 3U CubeSat during final assembly, integration and testing. IIP is composed by 3 different boards, the complete set allows for the nanosatellite to be charged, programed and debugged.
+Interstage Interface Panels (IIP) are vertical mounted PCBs designed to give external access to the modules inside of a 2U or 3U CubeSat during final assembly, integration and testing. IIP is composed by 3 different boards, the complete set allows for the nanosatellite to be charged, programed and debugged. All the IIP project, source and documentation files are available freely on a [GitHub repository](https://github.com/spacelab-ufsc/interface-board) under its respective licenses.
 
 
 <br><br>
@@ -341,9 +351,11 @@ Interstage Interface Panels (IIP) are vertical mounted PCBs designed to give ext
 	</a>
 </p>
 
+<a href="https://github.com/spacelab-ufsc/pc104-adapter">
 <img align="right" width="25%" src="https://github.com/spacelab-ufsc/pc104-adapter/blob/master/doc/figures/pc104-adapter.png">
+</a>
 
-The PC-104 Adapter is a set of two boards that allow the connection between two separated stacks of PC-104 boards using PicoBlade cables. All the 104 pins of the PC-104 connector are connected through the cables. The Top Board has eight PicoBlade connectors (13 pins version) on the bottom side and a PC-104 connector (female) on the top side. The Bottom Board has eight PicoBlade connectors (13 pins version) on the top side and a PC-104 connector (male) on the bottom side.
+The PC-104 Adapter is a set of two boards that allow the connection between two separated stacks of PC-104 boards using PicoBlade cables. All the 104 pins of the PC-104 connector are connected through the cables. The Top Board has eight PicoBlade connectors (13 pins version) on the bottom side and a PC-104 connector (female) on the top side. The Bottom Board has eight PicoBlade connectors (13 pins version) on the top side and a PC-104 connector (male) on the bottom side. All the PC104-ADPT project, source and documentation files are available freely on a [GitHub repository](https://github.com/spacelab-ufsc/interface-board) under its respective licenses.
 
 
 <br><br>
@@ -438,9 +450,11 @@ The solar panels are manufactures by ORBITAL, a Brazilian company. The panels fe
 	</a>
 </p>
 
+<a href="https://github.com/spacelab-ufsc/flatsat-platform">
 <img align="right" width="25%" src="https://github.com/spacelab-ufsc/flatsat-platform/blob/master/doc/figures/flatsat_top_image.PNG">
+</a>
 
-The SpaceLab FlatSat Platform is a testbed for cubesat pcb modules. FlatSats enable easier, faster and secure method for testing subsystens indenpently or integrated in a flat design before going to assembly on a cubesat standard. The PCB can support up to 7 modules, all PC104 pins are interligated with each respective counterpart to flexibilize its use, only the particularity connection between modules need to be be taken into account.
+The SpaceLab FlatSat Platform is a testbed for cubesat pcb modules. FlatSats enable easier, faster and secure method for testing subsystens indenpently or integrated in a flat design before going to assembly on a cubesat standard. The PCB can support up to 7 modules, all PC104 pins are interligated with each respective counterpart to flexibilize its use, only the particularity connection between modules need to be be taken into account. All the PC104-ADPT project, source and documentation files are available freely on a [GitHub repository](https://github.com/spacelab-ufsc/flatsat-platform) under its respective licenses.
 
 
 <br><br>
@@ -466,7 +480,9 @@ The SpaceLab FlatSat Platform is a testbed for cubesat pcb modules. FlatSats ena
 	</a>
 </p>
 
+<a href="https://github.com/spacelab-ufsc/spacelab-decoder">
 <img align="right" width="25%" src="https://github.com/spacelab-ufsc/golds-ufsc-doc/blob/master/figures/spacelab-decoder.png">
+</a>
 
 SpaceLab Packet Decoder is a software to decode audio records from the satellites of SpaceLab. For now, this software is still under development and are not functional yet.
 
