@@ -159,7 +159,50 @@ The solar panels are a set of 5 custom made panels manufactured by ORBITAL, a Br
 
 \subsection{Kill-Switches and RBF}
 
-.
+Two electronic switches have been implemented into the design as to allow for the (redundant) deployment detection of the CubeSat when it is deployed from the POD. This electronic microswitch can be used to prevent the satellite from starting up during launch as is required for all CubeSat launches and hence acts as a Kill-Switch. The Kill-Switch is the Panasonic AV4 microswitch (AV402461), as can be seen in \autoref{fig:av402461}.
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[width=0.25\textwidth]{figures/av402461}
+        \caption{Panasonic AV402461 Microswitch.}
+        \label{fig:av402461}
+    \end{center}
+\end{figure}
+
+The Kill-Switch mechanism in the mechanical structure has combined the function of providing deployment and detection (\autoref{fig:kill-switch-installed}). The travel of the actual switch of the Kill-Switch itself is so short that the Kill-Switch could ``detect deployment'' of the CubeSat from the launch adapter simply due to launch vibrations. To overcome this issue the Kill-Switch has been rotated so that there is a positive obstruction in front of the switch which needs 8 mm of deployment before deployment can be detected with the Kill-Switch. In \autoref{fig:kill-switch-installed} the Kill-Switch parts are highlighted and the stowed and deployed configuration is shown.
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[width=0.85\textwidth]{figures/kill-switch-installed}
+        \caption{Kill-Switches installed in the mechanical structure.}
+        \label{fig:kill-switch-installed}
+    \end{center}
+\end{figure}
+
+The contact arrangement of the microswitch and the current rating are detailed in \autoref{fig:circuit-kill-switch} and \autoref{tab:kill-switch-specs}.
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[width=0.4\textwidth]{figures/circuit-kill-switch}
+        \caption{The contact arrangement of the microswitch.}
+        \label{fig:circuit-kill-switch}
+    \end{center}
+\end{figure}
+
+\begin{table}[!h]
+    \centering
+    \begin{tabular}{lcccc}
+        \toprule[1.5pt]
+        \textbf{Characteristic} & \textbf{Minimum} & \textbf{Typical} & \textbf{Maximum} & \textbf{Unit} \\
+        \midrule
+        Switch Current                      & 2     & 50    & 100   & mA \\
+        DC Voltage across switch contacts   & n/a   & n/a   & 30    & V \\
+        Contact resistance microswitch      & n/a   & n/a   & 200   & m$\Omega$ \\
+        \bottomrule[1.5pt]
+    \end{tabular}
+    \caption{Kill-Switch current rating and voltage range.}
+    \label{tab:kill-switch-specs}
+\end{table}
 
 \section{Attitude Control System}
 
