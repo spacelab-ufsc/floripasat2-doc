@@ -24,7 +24,17 @@
 
 \chapter{Link Budget Calculation} \label{anx:link-budget}
 
+This appendix shows the link budget calculation of all the satellite links (including the radio links of the payloads). The used method was taken from \cite{larson2005} (section 13.3).
+
 \section{Distance to Satellite at Horizon}
+
+The distance to satellite at horizon (the maximum theoretical distance between the satellite and a ground station) can be calculated using \autoref{eq:horizon-distance}.
+
+\begin{equation} \label{eq:horizon-distance}
+d = \sqrt{2\cdot R_{e}\cdot h + h^{2}}
+\end{equation}
+
+Where:
 
 \begin{itemize}
     \item $R_{e}$ = Earth radius = 6378 km
@@ -32,10 +42,11 @@
     \item $d$ = Distance to sattellite at horizon
 \end{itemize}
 
-\begin{equation}
-d = \sqrt{2\cdot R_{e}\cdot h + h^{2}} = \sqrt{2\cdot 6378\cdot 600 + 600^{2}} = \mathbf{2830\ km}
-\end{equation}
+So, the distance to satellite at horizon is:
 
+\begin{equation} \label{eq:horizon-distance-result}
+d = \sqrt{2\cdot 6378\cdot 600 + 600^{2}} = \mathbf{2830\ km}
+\end{equation}
 
 %\section{Power at Receiver}
 
@@ -46,18 +57,34 @@ d = \sqrt{2\cdot R_{e}\cdot h + h^{2}} = \sqrt{2\cdot 6378\cdot 600 + 600^{2}} =
 
 \section{Free-Space Path Loss}
 
-\begin{equation}
+The free-space path loss ($FSPL$) can be calculated using \autoref{eq:fspl}.
+
+\begin{equation} \label{eq:fspl}
 FSPL = \left( \frac{4\pi d f}{c} \right)^{2}
 \end{equation}
 
-\begin{equation}
+Where:
+
+\begin{itemize}
+    \item $d$ = Distance between the satellite and the ground station
+    \item $f$ = Radio frequency
+    \item $c$ = Speed of light
+\end{itemize}
+
+The FSPL value in decibels can be calculated with \autoref{eq:fsbl-db}.
+
+\begin{equation} \label{eq:fsbl-db}
     \begin{split}
         FSPL^{dB} & = 20\log\left(\frac{4\pi}{c}\right) + 20\log\left(d\right) + 20\log\left(f\right) \\
                   & = 32,45 + 20\log\left(\frac{d}{1\ km}\right) + 20\log\left(\frac{f}{1\ MHz}\right) \\
     \end{split}
 \end{equation}
 
+The minimum distance between the satellite and a ground station is the satellite altitude, in this case: 600 km. The maximum distance is the distance at horizon, defined by \autoref{eq:horizon-distance-result}.
+
 \subsection{Beacon}
+
+Considering the frequency of the beacon as 145,97 MHz, the minimum and maximum FSBL is:
 
 \begin{equation}
 FSPL^{dB}_{max} = 32,45 + 20\log\left(\frac{2830}{1\ km}\right) + 20\log\left(\frac{145,97}{1\ MHz}\right) = \mathbf{144,8\ dB}
@@ -73,25 +100,39 @@ FSPL^{dB}_{min} = 32,45 + 20\log\left(\frac{600}{1\ km}\right) + 20\log\left(\fr
 
 \subsection{Downlink/Uplink}
 
+Considering the frequency of the downlink/uplink as 436,9 MHz, the minimum and maximum FSBL is:
+
 \begin{equation}
-FSPL_{max} = 32,45 + 20\cdot \log\left(\frac{2830}{1\ km}\right) + 20\cdot \log\left(\frac{436,9}{1\ MHz}\right) = \mathbf{154,3\ dB}
+FSPL_{max} = 32,45 + 20\log\left(\frac{2830}{1\ km}\right) + 20\log\left(\frac{436,9}{1\ MHz}\right) = \mathbf{154,3\ dB}
 \end{equation}
 
 \begin{equation}
-FSPL_{min} = 32,45 + 20\cdot \log\left(\frac{600}{1\ km}\right) + 20\cdot \log\left(\frac{436,9}{1\ MHz}\right) = \mathbf{140,8\ dB}
+FSPL_{min} = 32,45 + 20\log\left(\frac{600}{1\ km}\right) + 20\log\left(\frac{436,9}{1\ MHz}\right) = \mathbf{140,8\ dB}
 \end{equation}
 
 \begin{equation}
-\mathbf{140,8 \leq L_{p} \leq 154,3\ dB}
+    \mathbf{140,8 \leq FSPL^{dB} \leq 154,3\ dB}
 \end{equation}
 
 \subsection{Uplink (Payload)}
 
-.
+Considering the frequency of the payload's uplink is 401,635 MHz, the minimum and maximum FSBL is:
+
+\begin{equation}
+FSPL_{max} = 32,45 + 20\log\left(\frac{2830}{1\ km}\right) + 20\log\left(\frac{401,635}{1\ MHz}\right) = \mathbf{153,6\ dB}
+\end{equation}
+
+\begin{equation}
+FSPL_{min} = 32,45 + 20\log\left(\frac{600}{1\ km}\right) + 20\log\left(\frac{401,635}{1\ MHz}\right) = \mathbf{140,1\ dB}
+\end{equation}
+
+\begin{equation}
+    \mathbf{140,1 \leq FSPL^{dB} \leq 153,6\ dB}
+\end{equation}
 
 \section{Signal-to-Noise-Ratio}
 
-The Signal-to-Noise-Ratio (SNR\nomenclature{\textbf{SNR}}{\textit{Signal To Noise Ratio}}) of the beacon signal can be expressed using the \autoref{eq:snr}:
+The Signal-to-Noise-Ratio (SNR\nomenclature{\textbf{SNR}}{\textit{Signal To Noise Ratio}}) of a transmitted signal at the receiver can be expressed using \autoref{eq:snr}:
 
 \begin{equation} \label{eq:snr}
 SNR = \frac{E_{b}}{N_{0}} = \frac{P_{t}G_{t}G_{r}}{kT_{s}RL_{p}}
@@ -109,6 +150,24 @@ Where:
     \item $L_{p}$ = Free-Space Path Loss (FSPL)
 \end{itemize}
 
+The system noise temperature ($T_{s}$) can be defined using \autoref{eq:system-noise-temperature}.
+
+\begin{equation} \label{eq:system-noise-temperature}
+    T_{s} = T_{ant} + T_{r}
+\end{equation}
+
+with:
+
+\begin{equation}
+    T_{r} = \frac{T_{0}}{L_{r}} (F - L_{r})
+\end{equation}
+
+and:
+
+\begin{equation}
+    F = 1 + \frac{T_{r}}{T_{0}} = 1 + \frac{323}{290} = 2,114
+\end{equation}
+
 The SNR value in decibels can be calculated using the \autoref{eq:snr-db}:
 
 \begin{equation} \label{eq:snr-db}
@@ -118,24 +177,115 @@ The SNR value in decibels can be calculated using the \autoref{eq:snr-db}:
     \end{split}
 \end{equation}
 
+Considering other losses in the system ($L_{s}$) (cable and connection losses as example), the \autoref{eq:snr-db} can be corrected as presented in \autoref{eq:snr-db-with-losses}.
+
+\begin{equation} \label{eq:snr-db-with-losses}
+    SNR^{dB} = P_{t}^{dBm} - 30 + G_{t}^{dBi} + G_{r}^{dBi} - L_{p}^{dB} - L_{s}^{dB} - 10\log k - 10\log T_{s} - 10\log R
+\end{equation}
+
 \subsection{Beacon}
 
+Using Equations \ref{eq:snr-db-with-losses} and \ref{eq:system-noise-temperature}, with:
+
+\begin{itemize}
+    \item $P_{t} = 30\ dBm$
+    \item $G_{t} = 0\ dBi$
+    \item $G_{r} = 12\ dBi$
+    \item $L_{p} = 144,8\ dB$
+    \item $L_{s} = 5\ dB$
+    \item $R = 1200\ bps$
+    \item $T_{0} = 290\ K$
+    \item $T_{r} = 323\ K$
+    \item $T_{ant} = \ K$
+\end{itemize}
+
 \begin{equation}
-SNR^{dB}_{max} = 30 - 30 + 0 + 15 - 131,3 + 228,6 - 30,64 - 30,79 = 50,87\ dB
+    F = 1 + \frac{T_{r}}{T_{0}} = 1 + \frac{323}{290} = 2,114
 \end{equation}
 
 \begin{equation}
-SNR^{dB}_{min} = 30 - 30 + 0 + 15 - 144,8 + 228,6 -30,64 -30,79 = 37,37\ dB
+    T_{r} = \frac{T_{0}}{L_{r}} (F - L_{r}) = \frac{290}{L_{r}} (2,114 - L_{r}) = \ K
 \end{equation}
 
 \begin{equation}
-\mathbf{37,37 \leq SNR^{dB} \leq 50,87\ dB}
+    T_{s} = T_{ant} + T_{r} =  = \ K
 \end{equation}
 
-\subsection{Downlink/Uplink}
+\begin{equation}
+    SNR^{dB} = 30 - 30 + 0 + 12 - 144,8 - 5 + 228,6 - 30,64 - 30,79 = 30,37\ dB
+\end{equation}
 
-.
+\begin{equation}
+\mathbf{SNR^{dB} \geq 30,87\ dB}
+\end{equation}
+
+\subsection{Downlink}
+
+Using Equations \ref{eq:snr-db-with-losses} and \ref{eq:system-noise-temperature}, with:
+
+\begin{itemize}
+    \item $P_{t} = 30\ dBm$
+    \item $G_{t} = 0\ dBi$
+    \item $G_{r} = 15\ dBi$
+    \item $L_{p} = 154,3\ dB$
+    \item $L_{s} = 5\ dB$
+    \item $R = 4800\ bps$
+    \item $T_{0} = 290\ K$
+    \item $T_{r} = \ K$
+    \item $T_{ant} = \ K$
+\end{itemize}
+
+\begin{equation}
+    SNR^{dB} = 30 - 30 + 0 + 15.5 - 154,3 - 5 + 228,6 - 30,64 - 36,81 = 17,35\ dB
+\end{equation}
+
+\begin{equation}
+\mathbf{SNR^{dB} \geq 17,35\ dB}
+\end{equation}
+
+\subsection{Uplink}
+
+Using Equations \ref{eq:snr-db-with-losses} and \ref{eq:system-noise-temperature}, with:
+
+\begin{itemize}
+    \item $P_{t} = 30\ dBm$
+    \item $G_{t} = 15\ dBi$
+    \item $G_{r} = 0\ dBi$
+    \item $L_{p} = 154,3\ dB$
+    \item $L_{s} = 7\ dB$
+    \item $R = 4800\ bps$
+    \item $T_{0} = 290\ K$
+    \item $T_{r} = \ K$
+    \item $T_{ant} = \ K$
+\end{itemize}
+
+\begin{equation}
+    SNR^{dB} = 47 - 30 + 15.5 + 0 - 154,3 - 7 + 228,6 - 31,39 - 36,81 = 31,60\ dB
+\end{equation}
+
+\begin{equation}
+    \mathbf{SNR^{dB} \geq 31,60\ dB}
+\end{equation}
 
 \subsection{Uplink (Payload)}
 
-.
+TBD
+
+\section{Link Margin}
+
+From \cite{larson2005}, the minimum SNR value at the received considering a $10^{-5}$ bit error rate is:
+
+\begin{itemize}
+    \item Beacon: $SNR^{dB} \geq 9,6\ dB$
+    \item Downlink/Uplink: $SNR^{dB} \geq 9,6\ dB$
+    \item Uplink (payload): $SNR^{dB} \geq XX\ dB$
+\end{itemize}
+
+And considering the link margin as the SNR of the link minus the SNR threshold for a given bit error, the link margin of the radio links of the satellite are:
+
+\begin{itemize}
+    \item Beacon: $30,87 - 9,6 = \mathbf{21,27\ dB}$
+    \item Downlink: $17,35 - 9,6 = \mathbf{7,75\ dB}$
+    \item Uplink: $31,60 - 9,6 = \mathbf{22\ dB}$
+    \item Uplink (payload): $X - X = \mathbf{XX\ dB}$
+\end{itemize}
