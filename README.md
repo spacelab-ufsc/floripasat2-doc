@@ -368,27 +368,27 @@ The PC-104 Adapter is a set of two boards that allow the connection between two 
 	</a>
 </p>
 
-<img align="right" width="25%" src="https://github.com/spacelab-ufsc/golds-ufsc-doc/blob/master/figures/adcs-1u.png">
+<img align="right" width="25%" src="https://github.com/spacelab-ufsc/golds-ufsc-doc/blob/master/figures/adcs.png">
 
 Our Attitude Control System (ACS) is a passive attitude system, which uses Earth's magnetic field to rotate and stabilize the satellite. The system is composed of one magnet to create a force to align the magnet with the Earth's magnetic field and four hysteresis bars to damp the cube oscillations and stabilize. They are placed in positions to minimize the magnet effect on the bars. As a passive magnetic attitude control system is used, it is possible to stabilize only two axis, and so, the cubesat will still rotate around one of its axis, even after stabilized.
 
 
 <br><br>
 
-## ISIS - 2U Mechanical Structure
+## USIPED - 2U Mechanical Structure
 
 <p align="left">
 	<a href="https://github.com/spacelab-ufsc/spacelab#versioning">
-		<img src="https://img.shields.io/badge/status-in--orbit%20validated-blue?style=for-the-badge">
+		<img src="https://img.shields.io/badge/status-under%20testing-yellow?style=for-the-badge">
 	</a>
 	<a href="https://github.com/spacelab-ufsc/spacelab#versioning">
-		<img src="https://img.shields.io/badge/purchased%20module-ISIS-lightgray?style=for-the-badge">
+		<img src="https://img.shields.io/badge/purchased%20module-USIPED-lightgray?style=for-the-badge">
 	</a>
 </p>
 
-<img align="right" width="25%" src="https://github.com/spacelab-ufsc/golds-ufsc-doc/blob/master/figures/isis-2u-structure.png">
+<img align="right" width="25%" src="https://github.com/spacelab-ufsc/golds-ufsc-doc/blob/master/figures/usiped-2u-structure.png">
 
-The ISISPACE 2-Unit CubeSat structure is developed as a generic, modular satellite structure based upon the CubeSat standard. The design created by ISIS allows for multiple mounting configurations, giving CubeSat developers maximum flexibility in their design process. The stack of PCBs and other flight modules can be build up first in the secondary structure and integrated with the load-carrying frames at the end of the process, ensuring accessibility of the flight avionics. In addition, the use of a load-carrying frame and detachable shear panels allows for access to all parts of the spacecraft avionics, even after final integration by removing one or more of the shear panels. The modular chassis allows for up to two 1-Unit stack of PCBs, or other modules, to be mounted inside the chassis.
+The USIPED 2-Unit CubeSat structure is developed as a generic, modular satellite structure based upon the CubeSat standard. The modular chassis allows for up to two 1-Unit stack of PCBs, or other modules, to be mounted inside the chassis, using the PC-104 standard and spacers attached to the structure. In addition, there are 4 slots in the middle section, providing space for the interface boards and the ACS. The solar panels and antennas are externally mounted, providing a complete mechanical solution.
 
 
 <br><br>
@@ -496,7 +496,7 @@ SpaceLab Packet Decoder is a software to decode audio records from the satellite
 
 <p float="left">
   	<a href="https://spacelab.ufsc.br/">
-  		<img src="https://github.com/spacelab-ufsc/golds-ufsc-doc/blob/master/figures/spacelab-logo-full-color-rgb-1000px%4072ppi.png" width="30%" />
+  		<img src="https://github.com/spacelab-ufsc/golds-ufsc-doc/blob/master/figures/spacelab-logo-full-color-rgb-1000px%4072ppi.png" width="37%" />
   	</a>
 </p>
 
@@ -512,7 +512,7 @@ SpaceLab Packet Decoder is a software to decode audio records from the satellite
 
 <p float="left">
   	<a href="http://www.inpe.br/crn/">
-  		<img src="https://github.com/spacelab-ufsc/golds-ufsc-doc/blob/master/figures/inpe-logo.png" width="33%" />
+  		<img src="https://github.com/spacelab-ufsc/golds-ufsc-doc/blob/master/figures/inpe-logo.png" width="23%" />
   	</a> 
 </p>
 
@@ -520,7 +520,7 @@ SpaceLab Packet Decoder is a software to decode audio records from the satellite
 
 <p float="left">
   	<a href="https://www.gov.br/aeb/pt-br">
-  		<img src="https://github.com/spacelab-ufsc/golds-ufsc-doc/blob/master/figures/aeb-logo.png" width="33%" />
+  		<img src="https://github.com/spacelab-ufsc/golds-ufsc-doc/blob/master/figures/aeb-logo.png" width="27%" />
   	</a>
 </p>
 
