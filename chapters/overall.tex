@@ -165,38 +165,38 @@ All equations and steps used to obtain the results of \autoref{tab:link-budget-r
 \begin{landscape}
     \begin{table}[ht]
         \centering
-        \begin{tabular}{llcccc}
+        \begin{tabular}{llccccc}
             \toprule[1.5pt]
-            \multirow{2}{*}{\textit{Link}} & \multirow{2}{*}{\textit{Packet Name}} & \multicolumn{4}{c}{\textit{Payload}} \\
+            \multirow{2}{*}{\textit{Link}} & \multirow{2}{*}{\textit{Packet Name}} & \multicolumn{4}{c}{\textit{Payload}} & \multirow{2}{*}{\textit{Access}} \\
             \cmidrule{3-6}
-                                      &                       & \textit{ID}  & \textit{Source Callsign}   & \textit{Data (up to 220 bytes)}            & \textit{Size (bytes)} \\
+                                      &                       & \textit{ID}  & \textit{Source Callsign}   & \textit{Data (up to 220 bytes)}            & \textit{Size (bytes)} & \\
             \midrule
-            \multirow{2}{*}{Beacon}   & EPS data              & 00h & \multirow{2}{*}{``0'' + ``PY0EGU''} & EPS data                                   & 58           \\
-                                      & TTC Data              & 01h &                                     & TTC data                                   & 18           \\
+            \multirow{2}{*}{Beacon}   & EPS data              & 00h & \multirow{2}{*}{``0'' + ``PY0EGU''} & EPS data                                   & 58                    & Public \\
+                                      & TTC Data              & 01h &                                     & TTC data                                   & 18                    & Public \\
             \midrule
-            \multirow{8}{*}{Downlink} & Telemetry             & 20h & \multirow{8}{*}{``0'' + ``PY0EGU''} & Flags + OBDH/EPS data                      & 220          \\
-                                      & Ping answer           & 21h &                                     & Requester callsign                         & 15           \\
-                                      & Data request answer   & 22h &                                     & Req. callsign + data                       & 15 to 155    \\
-                                      & Message broadcast     & 23h &                                     & Req. + dst. callsign + message             & 22 to 60     \\
-                                      & Hibernation feedback  & 24h &                                     & Req. callsign + hibernation in hours       & 17           \\
-                                      & EDC info              & 25h &                                     & PTT decoder + HK info + system state       & 79           \\
-                                      & EDC samples           & 26h &                                     & Timestamp + pkt. counter + samples         & 219          \\
-                                      & TC feedback           & 27h &                                     & Timestamp + TC packet ID                   & 13           \\
+            \multirow{8}{*}{Downlink} & Telemetry             & 20h & \multirow{8}{*}{``0'' + ``PY0EGU''} & Flags + OBDH/EPS data                      & 220                   & Public \\
+                                      & Ping answer           & 21h &                                     & Requester callsign                         & 15                    & Public \\
+                                      & Data request answer   & 22h &                                     & Req. callsign + data                       & 15 to 155             & Public \\
+                                      & Message broadcast     & 23h &                                     & Req. + dst. callsign + message             & 22 to 60              & Public \\
+                                      & Hibernation feedback  & 24h &                                     & Req. callsign + hibernation in hours       & 17                    & Public \\
+                                      & EDC info              & 25h &                                     & PTT decoder + HK info + system state       & 79                    & Public \\
+                                      & EDC samples           & 26h &                                     & Timestamp + pkt. counter + samples         & 219                   & Public \\
+                                      & TC feedback           & 27h &                                     & Req. callsign + TC packet ID + timestamp   & 13                    & Public \\
             \midrule
-            \multirow{14}{*}{Uplink}  & Ping Request          & 40h & \multirow{14}{*}{Any Callsign}      & None                                       & 8            \\
-                                      & Data Request          & 41h &                                     & Data flags + count + origin + offset       & 16           \\
-                                      & Broadcast Message     & 42h &                                     & Dst. callsign + message                    & 15 to 46     \\
-                                      & Enter hibernation     & 43h &                                     & Req. callsign + hibernation in hours + key & 29           \\
-                                      & Leave hibernation     & 44h &                                     & Command key                                & 16           \\
-                                      & Activate beacon       & 45h &                                     & Command key                                & 16           \\
-                                      & Deactivate beacon     & 46h &                                     & Command key                                & 16           \\
-                                      & Activate downlink     & 47h &                                     & Command key                                & 16           \\
-                                      & Deactivate downlink   & 48h &                                     & Command key                                & 16           \\
-                                      & Activate EDC          & 49h &                                     & Command key                                & 16           \\
-                                      & Deactivate EDC        & 4Ah &                                     & Command key                                & 16           \\
-                                      & Activate Payload X    & 4Bh &                                     & Command key                                & 16           \\
-                                      & Deactivate Payoad X   & 4Ch &                                     & Command key                                & 16           \\
-                                      & Get EDC info          & 4Dh &                                     & Command key                                & 16           \\
+            \multirow{14}{*}{Uplink}  & Ping Request          & 40h & \multirow{14}{*}{Any Callsign}      & None                                       & 8                     & Public \\
+                                      & Data Request          & 41h &                                     & Data flags + count + origin + offset       & 16                    & Public \\
+                                      & Broadcast Message     & 42h &                                     & Dst. callsign + message                    & 15 to 46              & Public \\
+                                      & Enter hibernation     & 43h &                                     & Req. callsign + hibernation in hours + key & 29                    & Private \\
+                                      & Leave hibernation     & 44h &                                     & Command key                                & 16                    & Private \\
+                                      & Activate beacon       & 45h &                                     & Command key                                & 16                    & Private \\
+                                      & Deactivate beacon     & 46h &                                     & Command key                                & 16                    & Private \\
+                                      & Activate downlink     & 47h &                                     & Command key                                & 16                    & Private \\
+                                      & Deactivate downlink   & 48h &                                     & Command key                                & 16                    & Private \\
+                                      & Activate EDC          & 49h &                                     & Command key                                & 16                    & Private \\
+                                      & Deactivate EDC        & 4Ah &                                     & Command key                                & 16                    & Private \\
+                                      & Activate Payload X    & 4Bh &                                     & Command key                                & 16                    & Private \\
+                                      & Deactivate Payoad X   & 4Ch &                                     & Command key                                & 16                    & Private \\
+                                      & Get EDC info          & 4Dh &                                     & Command key                                & 16                    & Private \\
             \bottomrule[1.5pt]
         \end{tabular}
         \caption{Telecommunication packets and their content.}
