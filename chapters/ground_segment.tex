@@ -54,9 +54,52 @@ There are two antennas in the ground station: One for VHF and one for the UHF ba
 
 More information about the VHF and UHF antennas can be found in \cite{2mcp14} and \cite{a719b} respectively.
 
-\subsection{Rotor}
+\subsubsection{Surge Protector}
 
 .
+
+\subsection{Rotators}
+
+Both antennas (VHF and UHF) track the satellite through a two axis rotator (azimuth and elevation). The used model is the Yaesu G-5500, which provides 450$^{\circ}$ azimuth and 180$^{\circ}$ elevation control of medium and large size unidirectional satellite antenna arrays under remote control from station operation position.
+
+A picture of the G-5500 rotator (and controller) can be seen in \autoref{fig:g5500}, the main characteristics can be found in \autoref{tab:grs-rotor}.
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[width=0.6\textwidth]{figures/g5500.jpg}
+        \caption{Yaesu G-5500 rotator and controller.}
+        \label{fig:g5500}
+    \end{center}
+\end{figure}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{lcc}
+        \toprule[1.5pt]
+        \textbf{Characteristic}                     & \textbf{Value}        & \textbf{Unit} \\
+        \midrule
+        Brand                                       & Yaesu                 & - \\
+        Model                                       & G-5500                & - \\
+        Voltage requirement                         & 110-120 or 200-240    & $V_{AC}$ \\
+        Motor voltage                               & 24                    & V$_{AC}$ \\
+        Rotation time (elevation, 180$^{\circ}$)    & 67                    & s \\
+        Rotation time (azimuth, 360$^{\circ}$)      & 58                    & s \\
+        Maximum continuous operation                & 5                     & min \\
+        Rotation torque (elevation)                 & 14                    & kg-m \\
+        Rotation torque (azimuth)                   & 6                     & kg-m \\
+        Braking torque (elevation and azimuth)      & 40                    & kg-m \\
+        Vertical load                               & 200                   & kg \\
+        Pointing accuracy                           & $\pm$ 4               & \% \\
+        Wind surface area                           & 1                     & $m^{2}$ \\
+        Weight (rotator)                            & 9                     & kg \\
+        Weight (controller)                         & 3                     & kg \\
+        \bottomrule[1.5pt]
+    \end{tabular}
+    \caption{Main characteristics of antennas' rotators.}
+    \label{tab:grs-rotor}
+\end{table}
+
+More information about the ground station rotator can be found in \cite{g5500}.
 
 \subsection{Amplifiers}
 
