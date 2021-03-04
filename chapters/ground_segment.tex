@@ -146,7 +146,7 @@ A picture of the power amplifier can be seen in \autoref{fig:zhl-50w}, the main 
 
 \subsubsection{Low Noise Amplifiers}
 
-LNA\nomenclature{\textbf{LNA}}{\textit{Low Noise Amplifier}}...
+LNA\nomenclature{\textbf{LNA}}{\textit{Low Noise Amplifier.}}...
 
 \subsection{Radios}
 
@@ -161,6 +161,20 @@ A picture of the IC-9700 radio can be seen in \autoref{fig:ic9700}.
         \includegraphics[width=0.7\textwidth]{figures/ic-9700.jpg}
         \caption{Icom IC-9700 radio transceiver.}
         \label{fig:ic9700}
+    \end{center}
+\end{figure}
+
+\subsubsection{Software Defined Radio}
+
+As presented in \autoref{fig:grs-block-diagram}, the ground segment also has an SDR\nomenclature{\textbf{SDR}}{\textit{Software Defined Radio.}} (Software Defined Radio) as transceiver. The used model is the USRP B210, from Ettus Research \cite{b210}, which is a fully integrated, single-board SDR with continuous frequency coverage from 70 MHz to 6 GHz. It combines the AD9361 RFIC direct-conversion transceiver providing up to 56 MHz of real-time bandwidth, an open and reprogrammable Spartan6 FPGA, and USB 3.0 connectivity. Also, a full support for the USRP Hardware Driver (UHD) software allows the use with the GNURadio framework.
+
+A picture of the USRP B210 SDR (with enclosure) can be seen in \autoref{fig:usrp-b210}.
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[width=0.6\textwidth]{figures/usrp-b210.jpg}
+        \caption{Ettus USRP B210 SDR.}
+        \label{fig:usrp-b210}
     \end{center}
 \end{figure}
 
