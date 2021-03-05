@@ -80,6 +80,36 @@ To test all modules during the development of the projet, a flatsat platform was
 
 More information about the Flatsat Platform can be found in \cite{flatsat}.
 
+\subsection{Environmental Tests}
+
+\subsubsection{Mass Verification}
+
+This test checks the total mass of the satellite (without RBF tag), which must be less than 2,66 kg \cite{cds}. The verification is made with a precision balance. \autoref{fig:mass-verification} examplifies this process with FloripaSat-I total mass.
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[width=0.5\textwidth]{figures/mass-test}
+        \caption{Mass verificatiton of FloripaSat-I.}
+        \label{fig:mass-verification}
+    \end{center}
+\end{figure}
+
+\subsubsection{Center of Gravity}
+
+This test checks the center of gravity (CG) of the satellite, which must be less than 2 cm from the geometric center (see \autoref{fig:cg}) \cite{cds}. To perform this test, a simple test-bench based on two parallel bars fixed on a plate (4 cm from each other) can be used. The geometric center of the satellite is put in the middle of the bars and, if the satellite does not fall, the CG is within the radius of 2 cm. This strategy does not measure the location of CG, however, it does prove if the satellite follows the requirement.
+
+\begin{figure}[!htb]
+    \begin{center}
+        \subfigure[$X$ axis.\label{fig:fsat-fm-x-axis}]{\includegraphics[width=0.2\textwidth]{figures/fsat_fm_x_axis.png}}
+        ~
+        \subfigure[$Y$ axis.\label{fig:fsat-fm-y-axis}]{\includegraphics[width=0.2\textwidth]{figures/fsat_fm_y_axis.png}}
+        ~
+        \subfigure[$Z$ axis.\label{fig:fsat-fm-z-axis}]{\includegraphics[width=0.2\textwidth]{figures/fsat_fm_z_axis.png}}
+        \caption{Center of gravity of FloripaSat-I within 2 cm from geometric center.}
+        \label{fig:cg}
+    \end{center}
+\end{figure}
+
 \section{Preliminary Results}
 
 .
