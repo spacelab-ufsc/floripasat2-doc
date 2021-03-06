@@ -82,6 +82,8 @@ More information about the Flatsat Platform can be found in \cite{flatsat}.
 
 \subsection{Environmental Tests}
 
+\cite{marcelino2021}
+
 \subsubsection{Mass Verification}
 
 This test checks the total mass of the satellite (without RBF tag), which must be less than 2,66 kg \cite{cds}. The verification is made with a precision balance. \autoref{fig:mass-verification} examplifies this process with FloripaSat-I total mass.
@@ -107,6 +109,69 @@ This test checks the center of gravity (CG) of the satellite, which must be less
         \subfigure[$Z$ axis.\label{fig:fsat-fm-z-axis}]{\includegraphics[width=0.2\textwidth]{figures/fsat_fm_z_axis.png}}
         \caption{Center of gravity of FloripaSat-I within 2 cm from geometric center.}
         \label{fig:cg}
+    \end{center}
+\end{figure}
+
+\subsubsection{Vibration Test}
+
+To measure and control the acceleration profile during the dynamic tests, accelerometers should be positioned on three external surfaces of the satellite, one on each axis, over areas without solar cells. The satellite should be fixed on a shaker. Figure \ref{fig:fsat-vibration-accel} shows some of the accelerometers and Figure \ref{fig:fsat-shaker} shows the satellite during a vibration test.
+
+\begin{figure}[!htb]
+    \begin{center}
+        \subfigure[Position of the accelerometers.\label{fig:fsat-vibration-accel}]{\includegraphics[height=4.5cm]{figures/fsat_fm_accel.jpg}}
+        ~
+        \subfigure[Shaker.\label{fig:fsat-shaker}]{\includegraphics[height=4.5cm]{figures/fsat_fm_shaker.jpg}}
+        \caption{Vibration test.}
+        \label{fig:vibration-test}
+    \end{center}
+\end{figure}
+
+The CubeSat should be tested entirely off, with RBF pin removed but with the Kill-Switches pressed, in a 2U Test POD, simulating the normal launching condition. The set of vibration tests follows \autoref{fig:vibration_procedure}.
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[width=0.6\textwidth]{figures/vibration_procedure.pdf}
+        \caption{Sequence of dynamic tests.}
+        \label{fig:vibration_procedure}
+    \end{center}
+\end{figure}
+
+A signature testing should be conducted before and after the tests (sinusoidal and random vibration), in order to identify the presence of significant variations in the dynamic response, a condition that may represent mechanical failures. For the signature task, \autoref{tab:vibration-test-dynamic-1} presents the specifications.
+
+\begin{table}[!h]
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule[1.5pt]
+            \textbf{Name}    & \textbf{Parameter}       \\
+            \midrule
+            Test method      & Sinusoidal sweep testing \\
+            Frequency range  & 5 - 2000 Hz              \\
+            Vibration level  & 0,25 g                   \\
+            Sweep rate       & 2 octaves per minute     \\
+            Number of sweeps & 1 (5 - 2000 Hz)          \\
+            Test axes        & 3 ($X$, $Y$, $Z$)        \\
+            \bottomrule[1.5pt]
+        \end{tabular}
+        \caption{Resonance survey test (signature).}
+        \label{tab:vibration-test-dynamic-1}
+    \end{center}
+\end{table}
+
+%Regarding the sinusoidal sweeping vibration, Table 3 brings the envelope of the test, and so does Fig. 24 in a graphic format.
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[width=0.7\textwidth]{figures/sine_test.pdf}
+        \caption{Sinusoidal sweeping vibration curve.}
+        \label{fig:vibration-sinusoidal-curve}
+    \end{center}
+\end{figure}
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[width=0.7\textwidth]{figures/random_vibration.pdf}
+        \caption{Random vibration curve.}
+        \label{fig:vibration-test}
     \end{center}
 \end{figure}
 
