@@ -175,6 +175,44 @@ A signature testing should be conducted before and after the tests (sinusoidal a
     \end{center}
 \end{figure}
 
+\subsubsection{Thermal Test}
+
+For the thermal tests, thermocouples should be attached on different points on the surface of the satellite, including over the solar panels and structure. As an example, \autoref{fsat-thermal-test} shows FloripaSat-I ready for thermal tests. The parameters of the tests are indicated in \autoref{tab:fsat-thermal-cycling}.
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[width=0.5\textwidth]{figures/fsat_fm_thermal_cycling.jpg}
+        \caption{FloripaSat-I during the thermal cycling (with thermocouples).}
+        \label{fig:fsat-thermal-test}
+    \end{center}
+\end{figure}
+
+\begin{table}[!h]
+    \begin{center}
+        \begin{tabular}{llll}
+            \toprule[1.5pt]
+            \multicolumn{2}{c}{\textbf{Thermal cycle}}  & \multicolumn{2}{c}{\textbf{Bake out}}        \\
+            \midrule
+            \textbf{Parameter}     & \textbf{Value}     & \textbf{Parameter} & \textbf{Value}          \\
+            \midrule
+            Number of cycles       & 2                  & \multicolumn{2}{c}{Part 1}                   \\
+            \cmidrule{3-4}
+            Min. temp. ($T_{min}$) & -15 $^\circ$C      & Pressure           & <1$\times 10^{-4}$ mbar \\
+            Max. temp. ($T_{max}$) & +50 $^\circ$C      & Temperature        & 23 $^\circ$C            \\
+            Duration in $T_{min}$  & 30 min             & Duration           & 12 hours                \\
+            \cmidrule{3-4}
+            Duration in $T_{max}$  & 60 min             & \multicolumn{2}{c}{Part 2}                   \\
+            \cmidrule{3-4}
+            Heating rate           & 5.5 $^\circ$C/min  & Pressure           & <1$\times 10^{-4}$ mbar \\
+            Cooling rate           & 3.5 $^\circ$C/min  & Temperature        & 60 $^\circ$C            \\
+            Stabilization criteria & 1 $^\circ$C/10 min & Duration           & 6 hours                 \\
+            \bottomrule[1.5pt]
+        \end{tabular}
+        \caption{Parameters for the bake out and thermal cycling.}
+        \label{tab:fsat-thermal-cycling}
+    \end{center}
+\end{table}
+
 \section{Preliminary Results}
 
 .
