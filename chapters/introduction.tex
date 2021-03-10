@@ -24,7 +24,7 @@
 
 \chapter{Introduction} \label{ch:introduction}
 
-The GOLDS-UFSC is a satellite project of a 2U CubeSat (10 $\times$ 10 $\times$ 22,70 cm). This nanosatellite is the sequence project of the FloripaSat-I CubeSat \cite{floripasat}, both developed by SpaceLab \cite{spacelab}. This second project is being developed in partneship with INPE\nomenclature{\textbf{INPE}}{\textit{Instituto Nacional de Pesquisas Espaciais.}} (\textit{Instituto Nacional de Pesquisas Espaciais}), who is supplying the main payload of the mission: The EDC board (\textit{Environmental Data Collection}) \cite{edc}. The name ``GOLDS\nomenclature{\textbf{GOLDS}}{\textit{Global Open Collecting Data System}}'' stands for ``Global Open Collecting Data System'', and it is the nomenclature of a collaborative CubeSat constellation for environmental data collection planned as part of the Brazilian space program \cite{golds}.
+The GOLDS-UFSC is a satellite project of a 2U CubeSat (10$\times$10$\times$22,70 cm). This nanosatellite is the sequence project of the FloripaSat-I CubeSat \cite{floripasat}, both developed by SpaceLab \cite{spacelab}. This second project is being developed in partneship with INPE\nomenclature{\textbf{INPE}}{\textit{Instituto Nacional de Pesquisas Espaciais.}} (\textit{Instituto Nacional de Pesquisas Espaciais}), who is supplying the main payload of the mission: The EDC board (\textit{Environmental Data Collection}) \cite{edc}. The name ``GOLDS\nomenclature{\textbf{GOLDS}}{\textit{Global Open Collecting Data System}}'' stands for ``Global Open Collecting Data System'', and it is the nomenclature of a collaborative CubeSat constellation for environmental data collection planned as part of the Brazilian space program \cite{golds}.
 
 This project started just after the launch of FloripaSat-I (first half of 2020) and is planned to be launched in 2022. Most of the embedded electronics is partially or totally based on the FloripaSat-I satellite, with the same and/or improved versions of the modules. In other words, this project has at some level a flight heritage.
 
@@ -34,19 +34,23 @@ This project started just after the launch of FloripaSat-I (first half of 2020) 
 
 \section{Mission Objectives}
 
+The main objectives of this mission are enumerated below:
+
 \begin{enumerate}
     \item To serve as a host platform for the EDC payload.
     \item Validate the EDC payload in orbit.
     \item Validate EDC functionality in orbit.
     \item Validate core-satellite functions in orbit.
-    \item Evaluate the behavior of the core modules.
+    \item Evaluate the behavior of the core modules in a 2U mission.
     \item Perform experiments on radiation effects in electronic components in orbit.
-    \item Serve as relay for amateur radio communications.
+    \item Serve as relay for amateur radio communications, as a contribution to the amateur radio community.
 \end{enumerate}
 
 \section{Project Members}
 
-A list with the current members of the project (2021/02/08) can be seen in \autoref{tab:team-members}.
+All people involved in the project are students, professors and researchers from Federal University of Santa Catarina (UFSC), the National Institute for Space Research (INPE) and the Brazilian Space Agency (AEB\nomenclature{\textbf{AEB}}{\textit{Agência Espacial Brasileira.}}).
+
+A list with the current members directly related to the project (2021/02/08) can be seen in \autoref{tab:team-members}.
 
 \begin{table}[ht]
     \centering
@@ -60,14 +64,15 @@ A list with the current members of the project (2021/02/08) can be seen in \auto
         Laio Oriel Seman                    & Ph.D      & Researcher            & UFSC \\
         Manoel Jozeane Mafra de Carvalho    & Ph.D.     & Researcher            & INPE \\
         José Marcelo Duarte                 & Ph.D.     & Researcher            & INPE \\
-        Cezar Rigo                          & M.Sc.     & Ph.D. Student         & UFSC \\
+        Rodrigo Leonardi                    & Ph.D.     & Researcher            & AEB \\
+        Cezar Antônio Rigo                  & M.Sc.     & Ph.D. Student         & UFSC \\
         Edemar Morsch Filho                 & M.Sc.     & Ph.D. Student         & UFSC \\
         Gabriel Mariano Marcelino           & M.Sc.     & Ph.D. Student         & UFSC \\
         Thiago Martins                      & M.Sc.     & Ph.D. Student         & UFSC \\
-        Vinicius Pimenta                    & B.Eng.    & Master's Student      & UFSC \\
+        Vinicius Pimenta Bernardo           & B.Eng.    & Master's Student      & UFSC \\
         Amanda Medeiros                     & -         & Undergraduate Student & UFSC \\
-        André Mattos                        & -         & Undergraduate Student & UFSC \\
-        Augusto Vassoler                    & -         & Undergraduate Student & UFSC \\
+        André Martins Pio de Mattos         & -         & Undergraduate Student & UFSC \\
+        Augusto Cezar Boldori Vassoler      & -         & Undergraduate Student & UFSC \\
         Daniel Baron                        & -         & Undergraduate Student & UFSC \\
         João Cláudio Elsen Barcellos        & -         & Undergraduate Student & UFSC \\
         Lorenzo Maturano                    & -         & Undergraduate Student & UFSC \\
@@ -75,12 +80,14 @@ A list with the current members of the project (2021/02/08) can be seen in \auto
         Maurício Sinigaglia                 & -         & Undergraduate Student & UFSC \\
         Tatiane dal Ross                    & -         & Undergraduate Student & UFSC \\
         Victor Noster                       & -         & Undergratuate Student & UFSC \\
-        Yan Azeredo                         & -         & Undergraduate Student & UFSC \\
+        Yan Castro de Azeredo               & -         & Undergraduate Student & UFSC \\
         \bottomrule[1.5pt]
     \end{tabular}
-    \caption{Project members.}
+    \caption{Project members (2021/02/08).}
     \label{tab:team-members}
 \end{table}
+
+All the used modules and methods used in this project are based in a lot of past works, most of it being the FloripaSat-I and the EDC projects. The list with the indirectly involved people are much bigger.
 
 \section{Mission Patch}
 
