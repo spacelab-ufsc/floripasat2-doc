@@ -1,8 +1,8 @@
 <h1 align="center">
-  	<a href="spacelab.ufsc.br"><img src="https://github.com/spacelab-ufsc/golds-ufsc-doc/blob/master/figures/golds-ufsc-patch.png" alt="GOLDS-UFSC" width="30%"></a>
-  	<br>
-  	GOLDS-UFSC MISSION
-  	<br>
+    <a href="spacelab.ufsc.br"><img src="https://github.com/spacelab-ufsc/golds-ufsc-doc/blob/master/figures/golds-ufsc-patch.png" alt="FloripaSat-2" width="30%"></a>
+    <br>
+    FLORIPASAT-2 MISSION
+    <br>
 </h1>
 
 <h4 align="center">A compilation of the mission documents, diagrams, spreadsheets and figures.</h4>
@@ -47,17 +47,17 @@
 
 ## Overview
 
-GOLDS-UFSC is a space technology demonstration mission created by the Federal University of Santa Catarina. The main goal is to provide the service module for the Environmental Data Collector (EDC) payload from INPE-RN. The service module was developed at UFSC and it has three main components: the Electric Power System (EPS), the On-Board Data Handling (OBDH) and Telemetry, Tracking and Command (TT&C).
+FloripaSat-2 is a space technology demonstration mission created by the Federal University of Santa Catarina. The main goal is to provide the service module for the Environmental Data Collector (EDC) payload from INPE-RN. The service module was developed at UFSC and it has three main components: the Electric Power System (EPS), the On-Board Data Handling (OBDH) and Telemetry, Tracking and Command (TT&C).
 
 Besides performing the EDC main functionalities, the mission will contribute to validating key technologies that will enable faster and cheaper development of future satellites reusing the same core structure. As an educational mission, it also serves to train engineering students in space mission conception, design, implementation and operation in all areas involved. 
 
-It also acts as an experimenting platform for research in space technologies developed before, during, and after the operations phase of the mission, providing empirical data for experiments of many kinds. GOLDS-UFSC is expected to be launched by the end of 2020. Details of all systems developed for the mission are described in the documents listed in this repository in a top-level fashion and the detailed technical module documents in their respective repositories. This documentation structure is described in the <a href="#repository-organization">repository organization</a> section.
+It also acts as an experimenting platform for research in space technologies developed before, during, and after the operations phase of the mission, providing empirical data for experiments of many kinds. FloripaSat-2 is expected to be launched by the end of 2020. Details of all systems developed for the mission are described in the documents listed in this repository in a top-level fashion and the detailed technical module documents in their respective repositories. This documentation structure is described in the <a href="#repository-organization">repository organization</a> section.
 
 
 
 ## Mission Statement
 
-GOLDS-UFSC is a service module for INPE’s EDC payload, and also a platform for
+FloripaSat-2 is a service module for INPE’s EDC payload, and also a platform for
 the test of core spacecraft technologies in a microgravity, high-radiation and low Earth orbit
 environment.
 
@@ -78,18 +78,18 @@ environment.
 ## Mission Requeriments
 
 1. The power system shall be able to harvest solar energy.
-2. The power system shall be able to store energy for use when GOLDS-UFSC is eclipsed.
+2. The power system shall be able to store energy for use when FloripaSat-2 is eclipsed.
 3. The power system shall supply energy to all other modules.
 4. The data handling system shall communicate with the other modules and store their data.
 5. The communications system shall send a beacon signal periodically using VHF radio.
 6. The communications system shall send the CubeSat telemetry using UHF radio.
 7. The communications system shall be able to receive telecommands and respond to them accordingly.
 8. The attitude system shall be able to perform a 1-axis stabilization of the CubeSat.
-9. GOLDS-UFSC shall have the capability to receive and execute a shutdown telecommand, therefore ceasing all transmissions.
+9. FloripaSat-2 shall have the capability to receive and execute a shutdown telecommand, therefore ceasing all transmissions.
 10. The downlink transmissions shall be done once at a time, either telemetry or beacon.
 11. The ground station shall operate under the proper radio frequency communication licenses.
-12. GOLDS-UFSC shall comply with international and Brazilian radio license agreements and restrictions.
-13. The team shall build and operate a ground station for full communication with GOLDS-UFSC.
+12. FloripaSat-2 shall comply with international and Brazilian radio license agreements and restrictions.
+13. The team shall build and operate a ground station for full communication with FloripaSat-2.
 
 
 
@@ -151,7 +151,7 @@ The following sections describe the mission subsystems, which placement, positio
 <img align="right" width="25%" src="https://github.com/spacelab-ufsc/obdh2/blob/master/doc/figures/obdh2-pcb-top.png">
 </a>
 
-The SpaceLab OBDH2 (On-Board Data Handling 2.0) is one of the service modules developed for GOLDS-UFSC Cubesat Mission. The OBDH2 is responsible to synchronize actions and the data flow between other modules (ie. EPS, Payloads) and the Earth segment. It packs the generated data into data frames and transmit back to Earth through TTC module, or stores it on a non-volatile memory for later retrieval. Commands sent from Earth segment to the cubesat will be received by the radio transceivers located in the TTC module and redirected to the OBDH2, which takes the appropriate action or forward them to the responsible module. All the OBDH2 project, source and documentation files are available freely on a [GitHub repository](https://github.com/spacelab-ufsc/obdh2) under its respective licenses.  
+The SpaceLab OBDH2 (On-Board Data Handling 2.0) is one of the service modules developed for FloripaSat-2 Cubesat Mission. The OBDH2 is responsible to synchronize actions and the data flow between other modules (ie. EPS, Payloads) and the Earth segment. It packs the generated data into data frames and transmit back to Earth through TTC module, or stores it on a non-volatile memory for later retrieval. Commands sent from Earth segment to the cubesat will be received by the radio transceivers located in the TTC module and redirected to the OBDH2, which takes the appropriate action or forward them to the responsible module. All the OBDH2 project, source and documentation files are available freely on a [GitHub repository](https://github.com/spacelab-ufsc/obdh2) under its respective licenses.
 
 
 <br><br>
@@ -211,7 +211,7 @@ The TTC (or TT&C) is the communication module of the CubeSats from SpaceLab. It 
 <img align="right" width="25%" src="https://github.com/spacelab-ufsc/eps2/blob/master/doc/figures/eps2-pcb-top.png">
 </a>
 
-The EPS2 has been designed to harvest, store and distribute energy for the GOLDS-UFSC CubeSat mission. The energy harvesting system is based on solar energy conversion through 10 solar panels attached to the structure. The EPS is designed to operate the solar panels at their maximum power point. The harvested solar energy is stored in 4 lithium-ion batteries connected in series/parallel. The energy distribution is done by several integrated DC-DC converters. The full EPS system is composed of the solar panels, the EPS PCB, and the Batteries PCB. All the EPS2 project, source and documentation files are available freely on a [GitHub repository](https://github.com/spacelab-ufsc/eps2) under its respective licenses.
+The EPS2 has been designed to harvest, store and distribute energy for the FloripaSat-2 CubeSat mission. The energy harvesting system is based on solar energy conversion through 10 solar panels attached to the structure. The EPS is designed to operate the solar panels at their maximum power point. The harvested solar energy is stored in 4 lithium-ion batteries connected in series/parallel. The energy distribution is done by several integrated DC-DC converters. The full EPS system is composed of the solar panels, the EPS PCB, and the Batteries PCB. All the EPS2 project, source and documentation files are available freely on a [GitHub repository](https://github.com/spacelab-ufsc/eps2) under its respective licenses.
 
 
 <br><br>
