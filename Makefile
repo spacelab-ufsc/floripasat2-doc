@@ -1,6 +1,6 @@
 SRC=main
 DOC_VERSION=v0.1
-TARGET=slb-golds-doc-$(DOC_VERSION)
+TARGET=slb-fsat2-doc-$(DOC_VERSION)
 
 ifndef BUILD_DIR
 	BUILD_DIR=build
