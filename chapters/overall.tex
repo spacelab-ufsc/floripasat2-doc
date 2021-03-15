@@ -178,9 +178,9 @@ All equations and steps used to obtain the results of \autoref{tab:link-budget-r
         \centering
         \begin{tabular}{llccccc}
             \toprule[1.5pt]
-            \multirow{2}{*}{\textit{Link}} & \multirow{2}{*}{\textit{Packet Name}} & \multicolumn{4}{c}{\textit{Payload}} & \multirow{2}{*}{\textit{Access}} \\
+            \multirow{2}{*}{\textbf{Link}} & \multirow{2}{*}{\textbf{Packet Name}} & \multicolumn{4}{c}{\textbf{Payload}} & \multirow{2}{*}{\textbf{Access}} \\
             \cmidrule{3-6}
-                                      &                       & \textit{ID}  & \textit{Source Callsign}   & \textit{Data (up to 220 bytes)}            & \textit{Size (bytes)} & \\
+                                      &                       & \textbf{ID}  & \textbf{Source Callsign}   & \textbf{Data (up to 220 bytes)}            & \textbf{Size (bytes)} & \\
             \midrule
             \multirow{2}{*}{Beacon}   & EPS data              & 00h & \multirow{2}{*}{``0'' + ``PY0EGU''} & EPS data                                   & 58                    & Public \\
                                       & TTC Data              & 01h &                                     & TTC data                                   & 18                    & Public \\
@@ -214,3 +214,47 @@ All equations and steps used to obtain the results of \autoref{tab:link-budget-r
         \label{tab:packets-struct}
     \end{table}
 \end{landscape}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{lcL{0.53\textwidth}c}
+        \toprule[1.5pt]
+        \textbf{Packet} & \textbf{Position} & \textbf{Content} & \textbf{Length [bytes]} \\
+        \midrule
+        \multirow{22}{*}{EPS data} & 0  & Packet ID (00h)                       & 1 \\
+                                   & 1  & Source callsign (``0PY0EGU'')         & 7 \\
+                                   & 8  & Timestamp in ms                       & 4 \\
+                                   & 12 & Battery cell 1 voltage in mV          & 2 \\
+                                   & 14 & Battery cell 2 voltage in mV          & 2 \\
+                                   & 16 & Battery current in mA                 & 2 \\
+                                   & 18 & Battery charge in mAh                 & 2 \\
+                                   & 20 & Battery cell 1 temperature in K       & 2 \\
+                                   & 22 & Battery cell 2 temperature in K       & 2 \\
+                                   & 24 & Battery monitor temperature in K      & 2 \\
+                                   & 26 & Solar panel voltage in mV (-Y and +X) & 2 \\
+                                   & 28 & Solar panel voltage in mV (-X and +Z) & 2 \\
+                                   & 30 & Solar panel voltage in mV (-Z and +Y) & 2 \\
+                                   & 32 & Solar panel current in mA (-Y)        & 2 \\
+                                   & 34 & Solar panel current in mA (+Y)        & 2 \\
+                                   & 36 & Solar panel current in mA (-X)        & 2 \\
+                                   & 38 & Solar panel current in mA (+X)        & 2 \\
+                                   & 40 & Solar panel current in mA (-Z)        & 2 \\
+                                   & 42 & Solar panel current in mA (+Z)        & 2 \\
+                                   & 44 & Temperature of the EPS $\mu$C in K    & 2 \\
+        \cmidrule{4-4}
+                                   &    &                                       & 46 \\
+        \midrule
+        \multirow{9}{*}{TTC data}  & 0  & Packet ID (01h)                       & 1 \\
+                                   & 1  & Source callsign (``0PY0EGU'')         & 7 \\
+                                   & 8  & Timestamp in ms                       & 4 \\
+                                   & 12 & Temperature of the TTC $\mu$C in K    & 2 \\
+                                   & 14 & Reset counter                         & 2 \\
+                                   & 16 & Last reset cause                      & 1 \\
+                                   & 15 & Temperature of the beacon radio in K  & 2 \\
+        \cmidrule{4-4}
+                                   &    &                                       & 19 \\
+        \bottomrule[1.5pt]
+    \end{tabular}
+    \caption{Beacon packets.}
+    \label{tab:beacon-packets}
+\end{table}
