@@ -47,7 +47,42 @@ The CubeSat's subsystems are positioned in the 2U physical structure as exemplif
 
 \section{Orbit Parameters}
 
-.
+GMAT\nomenclature{\textbf{GMAT}}{\textit{General Mission Analysis Tool.}} \cite{gmat}
+
+\begin{table}[!h]
+    \centering
+    \begin{tabular}{lcc}
+        \toprule[1.5pt]
+        \textbf{Parameters} & \textbf{Value} & \textbf{Unit} \\
+        \midrule
+        Altitude                & 650           & km \\
+        Eccentricity            & 0,0015051     & $^{\circ}$ \\
+        Inclination             & 97,9750       & $^{\circ}$ \\
+        RAAN                    & 85,5100       & $^{\circ}$ \\
+        Arg. of Perigee (AOP)   & 194,87        & $^{\circ}$ \\
+        TA                      & 99,8877       & $^{\circ}$ \\
+        Mean motion             & 14,8130       & rev/day \\
+        \bottomrule[1.5pt]
+    \end{tabular}
+    \caption{Initial orbit parameters.}
+    \label{tab:orbit-parameters}
+\end{table}
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[width=0.6\textwidth]{figures/fsat2-gmat.png}
+        \caption{FloripaSat-2 orbit simulation on GMAT.}
+        \label{fig:fsat2-gmat}
+    \end{center}
+\end{figure}
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[width=\textwidth]{figures/fsat2-gmat-groundtrack.pdf}
+        \caption{FloripaSat-2 simulated groundtrack.}
+        \label{fig:fsat2-gmat-groundtrack}
+    \end{center}
+\end{figure}
 
 \section{Power Budget}
 
