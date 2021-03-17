@@ -49,24 +49,34 @@ The CubeSat's subsystems are positioned in the 2U physical structure as exemplif
 
 GMAT\nomenclature{\textbf{GMAT}}{\textit{General Mission Analysis Tool.}} \cite{gmat}
 
+\cite{marino2016}
+
 \begin{table}[!h]
     \centering
     \begin{tabular}{lcc}
         \toprule[1.5pt]
         \textbf{Parameters} & \textbf{Value} & \textbf{Unit} \\
         \midrule
-        Altitude                & 650           & km \\
+        Altitude                & 550           & km \\
         Eccentricity            & 0,0015051     & $^{\circ}$ \\
         Inclination             & 97,9750       & $^{\circ}$ \\
         RAAN                    & 85,5100       & $^{\circ}$ \\
         Arg. of Perigee (AOP)   & 194,87        & $^{\circ}$ \\
         TA                      & 99,8877       & $^{\circ}$ \\
-        Mean motion             & 14,8130       & rev/day \\
         \bottomrule[1.5pt]
     \end{tabular}
-    \caption{Initial orbit parameters.}
+    \caption{Initial orbit parameters (adapter from FloripaSat-I).}
     \label{tab:orbit-parameters}
 \end{table}
+
+The following parameters were chosen for the setup of GMAT software:
+
+\begin{itemize}
+    \item Force model for gravitational field: ``\textit{Earth Gravitational Model 1996 (EGM96)}''
+    \item Propagator: ``\textit{PrinceDorman78}''
+    \item Drag coefficient: 2,2
+    \item Drag atmosphere model: ``\textit{Mass Spectrometry and Incoherent Scatter (MSISE90)}''
+\end{itemize}
 
 \begin{figure}[!ht]
     \begin{center}
@@ -81,6 +91,18 @@ GMAT\nomenclature{\textbf{GMAT}}{\textit{General Mission Analysis Tool.}} \cite{
         \includegraphics[width=\textwidth]{figures/fsat2-gmat-groundtrack.pdf}
         \caption{FloripaSat-2 simulated groundtrack.}
         \label{fig:fsat2-gmat-groundtrack}
+    \end{center}
+\end{figure}
+
+\subsection{Lifetime Analysis}
+
+Considering the same parameters of the FloripaSat-I, but an initial altitude of 550 km, the simulations on GMAT showed that the satellite decays approximately in 2000 days ($\cong$ 5 years), as can be seen in \autoref{fig:lifetime-analysis}.
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[width=\textwidth]{curves/lifetime.pdf}
+        \caption{Lifetime analysis on GMAT.}
+        \label{fig:lifetime-analysis}
     \end{center}
 \end{figure}
 
