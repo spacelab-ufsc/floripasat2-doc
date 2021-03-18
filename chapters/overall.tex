@@ -106,11 +106,31 @@ Considering the same parameters of FloripaSat-I, but with an initial altitude of
     \end{center}
 \end{figure}
 
-\subsection{Ground Station Passes Analysis}
+\subsection{Ground Station Passes and Data Transfer Analysis}
 
-Considering two ground stations, one at the SpaceLab installations in Florianópolis and other at the INPE/CRN installations in Natal, both with a minimum elevation of 15$^{\circ}$, the following results were achieved during the simulations on GMAT.
+Considering two ground stations, one at the SpaceLab installations in Florianópolis (27$^{\circ}$ 36' 00.9" S, 48$^{\circ}$ 31' 03.2" W) and other at the INPE/CRN installations in Natal (5$^{\circ}$ 50' 10.1" S, 35$^{\circ}$ 12' 27.5" W), both with a minimum elevation of 15$^{\circ}$, the following results were achieved during the simulations on GMAT (\autoref{tab:grs-contacts-analysis}).
 
+\begin{table}[!h]
+    \centering
+    \begin{tabular}{lccc}
+        \toprule[1.5pt]
+        \textbf{Parameter} & \textbf{UFSC Station} & \textbf{INPE-RN Station} & \textbf{Unit} \\
+        \midrule
+        Minimum elevation to a valid contact    & 15    & 15    & $^{\circ}$ \\
+        Number of contacts                      & 143   & 125   & - \\
+        Minimum contact period                  & 24    & 34    & sec \\
+        Maximum contact period                  & 395   & 394   & sec \\
+        Average contact period                  & 303   & 298   & sec \\
+        Total contact period                    & 43394 & 37205 & sec \\
+        \bottomrule[1.5pt]
+    \end{tabular}
+    \caption{Ground station contacts analysis during the first 60 days of operation.}
+    \label{tab:grs-contacts-analysis}
+\end{table}
 
+As can be seen from \autoref{tab:grs-contacts-analysis}, during the first 60 days of operation, considering the two main ground stations that will contact the satellite, the total contact period is 80599 seconds (43394 + 37205). With the data rate of the downlink/uplink as 4800 bps, this time period will allow a data transfer of 48359400 bytes (or 46,12 M$_{i}$B) between FloripaSat-2 and the Earth. Using the lifetime of the satellite from the previous analysis (2000 days), and an average data transfer per day of 805990 bits, the total theoretical raw data transfer during the whole operation of the satellite will be approximately 1,5 G$_{i}$B.
+
+These values can be even bigger if a smaller minimum elevation is considered.
 
 \section{Power Budget}
 
