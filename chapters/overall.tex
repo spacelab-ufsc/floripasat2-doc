@@ -45,11 +45,9 @@ The CubeSat's subsystems are positioned in the 2U physical structure as exemplif
 
 .
 
-\section{Orbit Parameters}
+\section{Orbit Parameters and Analysis}
 
-GMAT\nomenclature{\textbf{GMAT}}{\textit{General Mission Analysis Tool.}} \cite{gmat}
-
-\cite{marino2016}
+To define the orbit parameters and simulate the behaviour of the satellite during its operation, the GMAT\nomenclature{\textbf{GMAT}}{\textit{General Mission Analysis Tool.}} software was used \cite{gmat}. The orbit parameters was based on the FloripaSat-I TLE\nomenclature{\textbf{TLE}}{\textit{Two-Line Element.}}, but with a lower altitude. These parameters can be seen in \autoref{tab:orbit-parameters}.
 
 \begin{table}[!h]
     \centering
@@ -65,18 +63,21 @@ GMAT\nomenclature{\textbf{GMAT}}{\textit{General Mission Analysis Tool.}} \cite{
         TA                      & 99,8877       & $^{\circ}$ \\
         \bottomrule[1.5pt]
     \end{tabular}
-    \caption{Initial orbit parameters (adapter from FloripaSat-I).}
+    \caption{Initial orbit parameters (adapted from FloripaSat-I).}
     \label{tab:orbit-parameters}
 \end{table}
 
-The following parameters were chosen for the setup of GMAT software:
+The parameters of the simulation on GMAT was based on \cite{marino2016} and can be seen below:
 
 \begin{itemize}
     \item Force model for gravitational field: ``\textit{Earth Gravitational Model 1996 (EGM96)}''
     \item Propagator: ``\textit{PrinceDorman78}''
     \item Drag coefficient: 2,2
     \item Drag atmosphere model: ``\textit{Mass Spectrometry and Incoherent Scatter (MSISE90)}''
+    \item Epoch: 01 Jan 2022 11:59:28.000
 \end{itemize}
+
+The \autoref{fig:fsat2-gmat} shows the 3D representation of the FloripaSat-2 orbit simulation, \autoref{fig:fsat2-gmat-groundtrack} shows the ground track of the first day of operation.
 
 \begin{figure}[!ht]
     \begin{center}
@@ -93,6 +94,8 @@ The following parameters were chosen for the setup of GMAT software:
         \label{fig:fsat2-gmat-groundtrack}
     \end{center}
 \end{figure}
+
+The next sections present some analysis based on the results obtained on the simulations executed on GMAT.
 
 \subsection{Lifetime Analysis}
 
@@ -130,7 +133,7 @@ Considering two ground stations, one at the SpaceLab installations in Florianóp
 
 As can be seen from \autoref{tab:grs-contacts-analysis}, during the first 60 days of operation, considering the two main ground stations that will contact the satellite, the total contact period is 80599 seconds (43394 + 37205). With the data rate of the downlink/uplink as 4800 bps, this time period will allow a data transfer of 48359400 bytes (or 46,12 M$_{i}$B) between FloripaSat-2 and the Earth. Using the lifetime of the satellite from the previous analysis (2000 days), and an average data transfer per day of 805990 bits, the total theoretical raw data transfer during the whole operation of the satellite will be approximately 1,5 G$_{i}$B.
 
-These values can be even bigger if a smaller minimum elevation is considered.
+These values can be even bigger if a smaller minimum elevation is considered, or with more ground stations in other locations.
 
 \section{Power Budget}
 
