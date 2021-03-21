@@ -268,10 +268,10 @@ All equations and steps used to obtain the results of \autoref{tab:link-budget-r
             \cmidrule{3-6}
                                       &                       & \textbf{ID}  & \textbf{Source Callsign}   & \textbf{Data (up to 220 bytes)}            & \textbf{Size (bytes)} & \\
             \midrule
-            \multirow{2}{*}{Beacon}   & EPS data              & 00h & \multirow{2}{*}{``0'' + ``PY0EGU''} & EPS data                                   & 58                    & Public \\
+            \multirow{2}{*}{Beacon}   & EPS data              & 00h & \multirow{2}{*}{``0'' + ``PY0EFS''} & EPS data                                   & 58                    & Public \\
                                       & TTC Data              & 01h &                                     & TTC data                                   & 18                    & Public \\
             \midrule
-            \multirow{8}{*}{Downlink} & Telemetry             & 20h & \multirow{8}{*}{``0'' + ``PY0EGU''} & Flags + OBDH/EPS data                      & 220                   & Public \\
+            \multirow{8}{*}{Downlink} & Telemetry             & 20h & \multirow{8}{*}{``0'' + ``PY0EFS''} & Flags + OBDH/EPS data                      & 220                   & Public \\
                                       & Ping answer           & 21h &                                     & Requester callsign                         & 15                    & Public \\
                                       & Data request answer   & 22h &                                     & Req. callsign + data                       & 15 to 155             & Public \\
                                       & Message broadcast     & 23h &                                     & Req. + dst. callsign + message             & 22 to 60              & Public \\
@@ -308,7 +308,7 @@ All equations and steps used to obtain the results of \autoref{tab:link-budget-r
         \textbf{Packet} & \textbf{Position} & \textbf{Content} & \textbf{Length [bytes]} \\
         \midrule
         \multirow{22}{*}{EPS data} & 0  & Packet ID (00h)                       & 1 \\
-                                   & 1  & Source callsign (``0PY0EGU'')         & 7 \\
+                                   & 1  & Source callsign (``0PY0EFS'')         & 7 \\
                                    & 8  & Timestamp in ms                       & 4 \\
                                    & 12 & Battery cell 1 voltage in mV          & 2 \\
                                    & 14 & Battery cell 2 voltage in mV          & 2 \\
@@ -331,7 +331,7 @@ All equations and steps used to obtain the results of \autoref{tab:link-budget-r
                                    &    &                                       & 46 \\
         \midrule
         \multirow{9}{*}{TTC data}  & 0  & Packet ID (01h)                       & 1 \\
-                                   & 1  & Source callsign (``0PY0EGU'')         & 7 \\
+                                   & 1  & Source callsign (``0PY0EFS'')         & 7 \\
                                    & 8  & Timestamp in ms                       & 4 \\
                                    & 12 & Temperature of the TTC $\mu$C in K    & 2 \\
                                    & 14 & Reset counter                         & 2 \\
