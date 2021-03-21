@@ -97,6 +97,8 @@ The \autoref{fig:fsat2-gmat} shows the 3D representation of the FloripaSat-2 orb
 
 The next sections present some analysis based on the results obtained on the simulations executed on GMAT.
 
+The source files of the GMAT simulation are available in \cite{fsat2-mechanical}.
+
 \subsection{Lifetime Analysis}
 
 Considering the same parameters of FloripaSat-I, but with an initial altitude of 550 km, the simulations on GMAT showed that the satellite decays approximately in 2000 days ($\cong$ 5 years), as can be seen in \autoref{fig:lifetime-analysis}.
@@ -173,11 +175,15 @@ All equations and steps used to obtain the results of \autoref{tab:link-budget-r
 
 \section{PC-104 Bus}
 
+To electrically connect all the satellite modules, a PC-104 bus standard is being used. This bus is composed by 104 lines disposed by four rows of 26 pins each (with a vertical and horizontal pitch of 2,54 mm).
+
+Using the \autoref{fig:pc104-ref-diagram} as reference, all used positions and signals of the PC-104 bus are presented in \autoref{tab:pc104-pinout}. The \autoref{tab:pc104-signals} describes each signal and which modules are connected to them.
+
 \begin{figure}[!ht]
     \begin{center}
         \includegraphics[width=0.5\textwidth]{figures/pc104-diagram}
-        \label{fig:pc104-diagram}
-        \caption{Reference diagram of the PC-104 bus.}
+        \caption{Reference diagram of the PC-104 bus (top view of a generic module).}
+        \label{fig:pc104-ref-diagram}
     \end{center}
 \end{figure}
 
@@ -256,6 +262,10 @@ All equations and steps used to obtain the results of \autoref{tab:link-budget-r
     \caption{PC-104 bus signal description.}
     \label{tab:pc104-signals}
 \end{table}
+
+The distribution pattern of pins adopted in this project is a mix of multiple different patterns from CubeSat modules manufacturers, like GomSpace, ISIS and Endurosat. Some pins are positioned to attend specific project requirements, and it is possible that the adopted pattern is not totally compatible to some commercial modules.
+
+Beyond the PC-104 bus, there are some signals connected directly by wires and cables, like the control and power pins of the antenna module, the battery charger and the programming ports.
 
 \section{Telecommunication}
 
