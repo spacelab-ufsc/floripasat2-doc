@@ -354,3 +354,75 @@ Beyond the PC-104 bus, there are some signals connected directly by wires and ca
     \caption{Beacon packets.}
     \label{tab:beacon-packets}
 \end{table}
+
+\begin{longtable}[c]{lcL{0.4\textwidth}c}
+    \toprule[1.5pt]
+    \textbf{Packet} & \textbf{Position} & \textbf{Content} & \textbf{Length [bytes]} \\
+    \midrule
+    \multirow{3}{*}{Telemetry}              & 0  & Packet ID (20h)                      & 1 \\
+                                            & 1  & Source callsign (``0PY0EFS'')        & 7 \\
+                                            &    &                                      & 8 \\
+    \cmidrule{4-4}
+                                            &    &                                      & 8 \\
+    \multirow{3}{*}{Ping answer}            & 0  & Packet ID (21h)                      & 1 \\
+                                            & 1  & Source callsign (``0PY0EFS'')        & 7 \\
+                                            & 8  & Requester callsign                   & 7 \\
+    \cmidrule{4-4}
+                                            &    &                                      & 15 \\
+    \multirow{3}{*}{Data request answer}    & 0  & Packet ID (22h)                      & 1 \\
+                                            & 1  & Source callsign (``0PY0EFS'')        & 7 \\
+                                            & 8  & Requester callsign                   & 7 \\
+    \cmidrule{4-4}
+                                            &    &                                      & 15 \\
+    \multirow{5}{*}{Message broadcast}      & 0  & Packet ID (23h)                      & 1 \\
+                                            & 1  & Source callsign (``0PY0EFS'')        & 7 \\
+                                            & 8  & Requester callsign                   & 7 \\
+                                            & 15 & Destination callsign                 & 7 \\
+                                            & 22 & Message                              & up to 38 \\
+    \cmidrule{4-4}
+                                            &    &                                      & 22 to 60 \\
+    \multirow{4}{*}{Hibernation feedback}   & 0  & Packet ID (24h)                      & 1 \\
+                                            & 1  & Source callsign (``0PY0EFS'')        & 7 \\
+                                            & 8  & Requester callsign                   & 7 \\
+                                            & 15 & Hibernation in hours                 & 2 \\
+    \cmidrule{4-4}
+                                            &    &                                      & 17 \\
+    \multirow{22}{*}{EDC info}              & 0  & Packet ID (25h)                      & 1 \\
+                                            & 1  & Source callsign (``0PY0EFS'')        & 7 \\
+                                            & 8  & PTT signal receiving time            & 4 \\
+                                            & 12 & Error code                           & 1 \\
+                                            & 13 & Carrier frequency                    & 2 \\
+                                            & 15 & Carrier amplitude at ADC interface output & 2 \\
+                                            & 17 & User message length in bytes         & 1 \\
+                                            & 18 & ARGOS-2 PTT-A2 user message          & 35 \\
+                                            & 53 & Current time since J2000 epoch       & 4 \\
+                                            & 57 & Elapsed time since last reset        & 4 \\
+                                            & 61 & System current supply in mA          & 2 \\
+                                            & 63 & System voltage supply in mV          & 2 \\
+                                            & 64 & EDC board temperature                & 1 \\
+                                            & 65 & RF front end LO                      & 1 \\
+                                            & 66 & RMS level at front-end output        & 2 \\
+                                            & 68 & Generated PTT packages since last initialization & 1 \\
+                                            & 69 & Max                                  & 1 \\
+                                            & 70 & Memory error count                   & 1 \\
+                                            & 71 & Current time                         & 4 \\
+                                            & 75 & Number of PTT package available for reading & 1 \\
+                                            & 76 & PTT decoder task status              & 1 \\
+                                            & 77 & ADC sampler state                    & 1 \\
+    \cmidrule{4-4}
+                                            &    &                                      & 78 \\
+    \multirow{9}{*}{EDC samples}            & 0  & Packet ID (26h)                      & 1 \\
+                                            & 1  & Source callsign (``0PY0EFS'')        & 7 \\
+                                            & 8  & Elapsed time since J2000 epoch       & 4 \\
+                                            & 12 & ADC sample packet number             & 1 \\
+                                            & 13 & First ADC I-sample                   & 2 \\
+                                            & 15 & First ADC Q-sample                   & 2 \\
+                                            & ... & ...                                 & ... \\
+                                            & 213 & N ADC I-sample                      & 2 \\
+                                            & 215 & N ADC Q-sample                      & 2 \\
+    \cmidrule{4-4}
+                                            &    &                                      & 217 \\
+    \bottomrule[1.5pt]
+    \caption{Downlink packets.}
+    \label{tab:downlink-packets}
+\end{longtable}
