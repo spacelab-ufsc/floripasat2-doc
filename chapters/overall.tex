@@ -139,6 +139,51 @@ These values can be even bigger if a smaller minimum elevation is considered, or
 
 \section{Power Budget}
 
+According to section 10.3 of \cite{larson2005}, the power budget of satellite can be determined through three steps:
+
+\begin{enumerate}
+    \item Prepare operating power budget
+    \item Size the battery
+    \item Estimate power degradation over mission life
+\end{enumerate}
+
+\subsection{Operating Power Budget}
+
+\begin{table}[!h]
+    \centering
+    \begin{tabular}{lccccc}
+        \toprule[1.5pt]
+        \multirow{2}{*}{\textbf{Module}} & \multirow{2}{*}{\textbf{Voltage [V]}}    & \multicolumn{2}{c}{\textbf{Current [mA]}} & \multicolumn{2}{c}{\textbf{Power [mW]}} \\
+                                         &                                          & \textbf{Min.} & \textbf{Max.}             & \textbf{Min.} & \textbf{Max.} \\
+        \midrule
+        OBDH                & 3,3   & TBD   & TBD   & TBD   & TBD \\
+        TTC ($\mu$C)        & 3,3   & TBD   & TBD   & TBD   & TBD \\
+        TTC (radio module)  & 5     & TBD   & 650   & TBD   & 3250 \\
+        EPS (digital part)  & 3,3   & TBD   & TBD   & TBD   & TBD \\
+        EPS (heater)        & 3,3   & TBD   & TBD   & TBD   & TBD \\
+        Antenna module      & 3,3   & TBD   & TBD   & TBD   & TBD \\
+        Payload EDC         & 5     & 250   & 250   & 1250  & 1250 \\
+        Payload-X           & 5     & TBD   & TBD   & TBD   & TBD \\
+        Payload Harsh       & 3,3   & TBD   & TBD   & TBD   & TBD \\
+        \bottomrule[1.5pt]
+    \end{tabular}
+    \caption{Power requirements of the subsystems and payloads of the satellite.}
+    \label{tab:power-requirements}
+\end{table}
+
+Assumptions:
+
+\begin{itemize}
+    \item One of the EDC payload is always off (cold redundancy).
+    \item The Payload-X and the Harsh payload are turned on just during limited periods.
+\end{itemize}
+
+\subsection{Battery Sizing}
+
+.
+
+\subsection{Power Degradation Over Mission Life}
+
 .
 
 \section{Link Budget}
