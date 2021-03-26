@@ -1,5 +1,5 @@
 <h1 align="center">
-    <a href="spacelab.ufsc.br"><img src="https://github.com/spacelab-ufsc/golds-ufsc-doc/blob/master/figures/golds-ufsc-patch.png" alt="FloripaSat-2" width="30%"></a>
+    <a href="spacelab.ufsc.br"><img src="https://github.com/spacelab-ufsc/golds-ufsc-doc/blob/master/figures/floripasat2-patch.png" alt="FloripaSat-2" width="30%"></a>
     <br>
     FLORIPASAT-2 MISSION
     <br>
