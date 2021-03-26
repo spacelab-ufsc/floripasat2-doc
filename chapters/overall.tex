@@ -184,7 +184,10 @@ Assumptions:
 
 \subsection{Power Degradation Over Mission Life}
 
-.
+\begin{itemize}
+    \item Solar panels degradation
+    \item Battery degradation
+\end{itemize}
 
 \section{Link Budget}
 
@@ -326,7 +329,7 @@ Beyond the PC-104 bus, there are some signals connected directly by wires and ca
             \multirow{2}{*}{Beacon}   & EPS data              & 00h & \multirow{2}{*}{``0'' + ``PY0EFS''} & EPS data                                   & 58                    & Public \\
                                       & TTC Data              & 01h &                                     & TTC data                                   & 18                    & Public \\
             \midrule
-            \multirow{8}{*}{Downlink} & Telemetry             & 20h & \multirow{8}{*}{``0'' + ``PY0EFS''} & Flags + OBDH/EPS data                      & 220                   & Public \\
+            \multirow{8}{*}{Downlink} & General telemetry     & 20h & \multirow{8}{*}{``0'' + ``PY0EFS''} & OBDH/EPS data                              & 75                    & Public \\
                                       & Ping answer           & 21h &                                     & Requester callsign                         & 15                    & Public \\
                                       & Data request answer   & 22h &                                     & Req. callsign + data                       & 15 to 155             & Public \\
                                       & Message broadcast     & 23h &                                     & Req. + dst. callsign + message             & 22 to 60              & Public \\
@@ -400,11 +403,47 @@ Beyond the PC-104 bus, there are some signals connected directly by wires and ca
     \toprule[1.5pt]
     \textbf{Packet} & \textbf{Position} & \textbf{Content} & \textbf{Length [bytes]} \\
     \midrule
-    \multirow{3}{*}{Telemetry}              & 0  & Packet ID (20h)                      & 1 \\
-                                            & 1  & Source callsign (``0PY0EFS'')        & 7 \\
-                                            &    &                                      & 8 \\
+    \multirow{39}{*}{General telemetry}     & 0  & Packet ID (20h)                              & 1 \\
+                                            & 1  & Source callsign (``0PY0EFS'')                & 7 \\
+                                            & 8  & Time counter in milliseconds                 & 4 \\
+                                            & 12 & Temperature of the OBDH $\mu$C in Kelvin     & 2 \\
+                                            & 14 & Input current of the OBDH in mA              & 2 \\
+                                            & 16 & Input voltage of the OBDH in mV              & 2 \\
+                                            & 18 & Last reset cause of the OBDH                 & 1 \\
+                                            & 19 & Reset counter of the OBDH                    & 2 \\
+                                            & 21 & Last valid telecommand (uplink packet ID)    & 1 \\
+                                            & 22 & Temperature of the radio in Kelvin           & 2 \\
+                                            & 24 & RSSI of the last valid telecommand           & 2 \\
+                                            & 26 & Temperature of the antenna in Kelvin         & 2 \\
+                                            & 28 & Antenna status                               & 2 \\
+                                            & 30 & Payloads status                              & 1 \\
+                                            & 31 & Temperature of the EPS $\mu$C in K           & 2 \\
+                                            & 33 & EPS circuitry and Beacon MCU current in mA   & 2 \\
+                                            & 35 & Last reset cause of the EPS                  & 1 \\
+                                            & 36 & Reset counter (EPS)                          & 2 \\
+                                            & 38 & -Y and +X sides solar panel voltage in mV    & 2 \\
+                                            & 40 & -X and +Z sides solar panel voltage in mV    & 2 \\
+                                            & 42 & -Z and +Y sides solar panel voltage in mV    & 2 \\
+                                            & 44 & -Y side solar panel current in mA            & 2 \\
+                                            & 46 & +Y side solar panel current in mA            & 2 \\
+                                            & 48 & -X side solar panel current in mA            & 2 \\
+                                            & 50 & +X side solar panel current in mA            & 2 \\
+                                            & 52 & -Z side solar panel current in mA            & 2 \\
+                                            & 54 & +Z side solar panel current in mA            & 2 \\
+                                            & 55 & MPPT 1 duty cycle in \%                      & 1 \\
+                                            & 56 & MPPT 2 duty cycle in \%                      & 1 \\
+                                            & 57 & MPPT 3 duty cycle in \%                      & 1 \\
+                                            & 59 & Main power bus voltage in mV                 & 2 \\
+                                            & 61 & Batteries voltage in mV                      & 2 \\
+                                            & 63 & Batteries current in mA                      & 2 \\
+                                            & 65 & Batteries average current in mA              & 2 \\
+                                            & 67 & Batteries accumulated current in mA          & 2 \\
+                                            & 69 & Batteries charge in mAh                      & 2 \\
+                                            & 71 & Battery monitor IC temperature in K          & 2 \\
+                                            & 73 & Battery heater 1 duty cycle in \%            & 1 \\
+                                            & 74 & Battery heater 2 duty cycle in \%            & 1 \\
     \cmidrule{4-4}
-                                            &    &                                      & 8 \\
+                                            &    &                                              & 75 \\
     \multirow{3}{*}{Ping answer}            & 0  & Packet ID (21h)                      & 1 \\
                                             & 1  & Source callsign (``0PY0EFS'')        & 7 \\
                                             & 8  & Requester callsign                   & 7 \\
@@ -529,3 +568,7 @@ Beyond the PC-104 bus, there are some signals connected directly by wires and ca
     \caption{Uplink packets.}
     \label{tab:uplink-packets}
 \end{longtable}
+
+\subsection{Operation Licenses}
+
+.
