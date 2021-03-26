@@ -41,6 +41,24 @@ The CubeSat's subsystems are positioned in the 2U physical structure as exemplif
 %   TBD 
 %   In \autoref{fig:datapath-diagram} there is a block diagram showing the satellite modules and the internal communication interfaces.
 
+\subsection{Deployment Sequence}
+
+The deployment sequence of the satellite is the routine to be executed just after the launch. The main objective of this operation is to the deploy the antennas and prepare the satellite to start its normal operation.
+
+Just after the satellite is ejected from the deployer, the kill-switches enables the electric power and the three core modules execute the boot sequence (EPS, OBDH and TTC). The EPS module is ready to operate when the boot finishes. The OBDH and the TTC modules waits for a determined period before starting the normal execution.
+
+As the OBDH and the TTC have access to the antenna module, both subsystem can control the deployment of the antennas. Following the CDS\nomenclature{\textbf{CDS}}{\textit{CubeSat Design Specification.}} specifications \cite{cds}, all CubeSats must wait 30 minutes to deploy the antennas and 45 minutes to transmit any RF signal. This way, the OBDH waits 45 minutes to send the deployment command to the antenna module. As redundancy, the TTC waits 55 minutes to execute the same operation.
+
+The \autoref{fig:deployment-flowchart} has a flowchart that illustrates the deployment sequence of the service modules.
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[width=0.5\textwidth]{figures/deployment-flowchart.pdf}
+        \caption{Flowchart of the deployment sequence.}
+        \label{fig:deployment-flowchart}
+    \end{center}
+\end{figure}
+
 \section{General Behaviour}
 
 .
