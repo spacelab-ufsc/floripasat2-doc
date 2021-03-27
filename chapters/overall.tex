@@ -59,6 +59,18 @@ The \autoref{fig:deployment-flowchart} has a flowchart that illustrates the depl
     \end{center}
 \end{figure}
 
+\subsection{Beacon Operation}
+
+After the boot sequence of the beacon microcontroller, the operation of the beacon starts. The normal operation consist on reading the data from the EPS and the TTC modules, transmit the valid data (EPS or TTC package, in this order of priority), wait 60 seconds and repeat this sequence. The \autoref{fig:beacon-flowchart} has a flowchart of this behaviour.
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[width=0.55\textwidth]{figures/beacon-flowchart.pdf}
+        \caption{Flowchart of the normal beacon operation.}
+        \label{fig:beacon-flowchart}
+    \end{center}
+\end{figure}
+
 \section{General Behaviour}
 
 .
