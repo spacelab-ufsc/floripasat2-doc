@@ -24,6 +24,14 @@
 
 \chapter{Ground Segment} \label{ch:ground-segment}
 
+This chapter describes the ground segment of the mission. It is composed by two ground stations (one at the INPE-RN installations and other at the SpaceLab installations) and many data collection platforms (PCD\nomenclature{\textbf{PCD}}{\textit{``Plataforma de Coleta de Dados'', or Data Collection Platform}}, or \textit{``Plataforma de Coleta de Dados''}), installed at a variety of locations on the brazilian territory.
+
+The control of the mission and the reception of the collected data will be performed mainly at these two ground stations, but if necessary, other stations can execute this task. The amateur radio link can be used by any station in the world since having the required equipment to it.
+
+\section{UFSC Ground Station}
+
+The UFSC ground station is currently being developed and prepared for this mission. This section presents the project of this station. A general block diagram can be seen in \autoref{fig:grs-block-diagram}.
+
 \begin{figure}[!ht]
     \begin{center}
         \includegraphics[width=\textwidth]{figures/grs-block-diagram.pdf}
@@ -32,9 +40,11 @@
     \end{center}
 \end{figure}
 
-\section{Hardware}
+In the next sections, a description of the main components of the station will be presented.
 
-\subsection{Antennas}
+\subsection{Hardware}
+
+\subsubsection{Antennas}
 
 There are two antennas in the ground station: One for VHF and one for the UHF band. The main characteristics of these antennas can be seen in \autoref{tab:grs-antennas}
 
@@ -62,11 +72,11 @@ There are two antennas in the ground station: One for VHF and one for the UHF ba
 
 More information about the VHF and UHF antennas can be found in \cite{2mcp14} and \cite{a719b} respectively.
 
-\subsubsection{Surge Protector}
+\paragraph{Surge Protector}
 
 .
 
-\subsection{Rotators}
+\subsubsection{Rotators}
 
 Both antennas (VHF and UHF) track the satellite through a two axis rotator (azimuth and elevation). The used model is the Yaesu G-5500, which provides 450$^{\circ}$ azimuth and 180$^{\circ}$ elevation control of medium and large size unidirectional satellite antenna arrays under remote control from station operation position.
 
@@ -109,9 +119,9 @@ A picture of the G-5500 rotator (and controller) can be seen in \autoref{fig:g55
 
 More information about the ground station rotator can be found in \cite{g5500}.
 
-\subsection{Amplifiers}
+\subsubsection{Amplifiers}
 
-\subsubsection{Power Amplifier}
+\paragraph{Power Amplifier}
 
 PA\nomenclature{\textbf{PA}}{\textit{Power Amplifier}}...
 
@@ -144,11 +154,11 @@ A picture of the power amplifier can be seen in \autoref{fig:zhl-50w}, the main 
     \label{tab:zhl-50w-specs}
 \end{table}
 
-\subsubsection{Low Noise Amplifiers}
+\paragraph{Low Noise Amplifiers}
 
 LNA\nomenclature{\textbf{LNA}}{\textit{Low Noise Amplifier.}}...
 
-\subsection{Radios}
+\subsubsection{Radios}
 
 The Icom IC-9700 \cite{ic9700} is an RF direct sampling receiver for 2 m and 70 cm. The IF receiver consists of a single, down conversion for 23 cm that is between 311 and 371 MHz. The PA provides 100 W on 2 m, 75 W on 70 cm, and 10 W on 23 cm.
 
@@ -164,7 +174,7 @@ A picture of the IC-9700 radio can be seen in \autoref{fig:ic9700}.
     \end{center}
 \end{figure}
 
-\subsubsection{Software Defined Radio}
+\paragraph{Software Defined Radio}
 
 As presented in \autoref{fig:grs-block-diagram}, the ground segment also has an SDR\nomenclature{\textbf{SDR}}{\textit{Software Defined Radio.}} (Software Defined Radio) as transceiver. The used model is the USRP B210, from Ettus Research \cite{b210}, which is a fully integrated, single-board SDR with continuous frequency coverage from 70 MHz to 6 GHz. It combines the AD9361 RFIC direct-conversion transceiver providing up to 56 MHz of real-time bandwidth, an open and reprogrammable Spartan6 FPGA, and USB 3.0 connectivity. Also, a full support for the USRP Hardware Driver (UHD) software allows the use with the GNURadio framework.
 
@@ -178,11 +188,11 @@ A picture of the USRP B210 SDR (with enclosure) can be seen in \autoref{fig:usrp
     \end{center}
 \end{figure}
 
-\subsection{Processing and Control}
+\subsubsection{Processing and Control}
 
 .
 
-\section{Satellite Tracking}
+\subsection{Satellite Tracking}
 
 To track the satellite and for orbit prediction, the GPredict software \cite{gpredict} will be used. Gpredict is a real-time satellite tracking and orbit prediction application. It can track a large number of satellites and display their position and other data in lists, tables, maps, and polar plots (radar view). Gpredict can also predict the time of future passes for a satellite, and provide you with detailed information about each pass. Gpredict is free software licensed under the GNU General Public License. A picture of the main window of GPredict can be seen in \autoref{fig:gpredict}.
 
@@ -194,7 +204,7 @@ To track the satellite and for orbit prediction, the GPredict software \cite{gpr
     \end{center}
 \end{figure}
 
-\section{Packet Decoding}
+\subsection{Packet Decoding}
 
 \cite{spacelab-decoder}
 
@@ -206,6 +216,10 @@ To track the satellite and for orbit prediction, the GPredict software \cite{gpr
     \end{center}
 \end{figure}
 
-\section{PCDs}
+\section{INPE-RN Ground Station}
 
-PCD\nomenclature{\textbf{PCD}}{\textit{``Plataforma de Coleta de Dados'', or Data Collection Platform}}...
+.
+
+\section{Data Collection Platforms (PCDs)}
+
+.
