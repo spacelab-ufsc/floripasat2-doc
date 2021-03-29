@@ -44,6 +44,8 @@ In the next sections, a description of the main components of the station will b
 
 \subsection{Hardware}
 
+This part describes the hardware side of the UFSC ground station and details the main peripherals that will be used in this project. Most of the components described here are represented in \autoref{fig:grs-block-diagram}.
+
 \subsubsection{Antennas}
 
 There are two antennas in the ground station: One for VHF and one for the UHF band. The main characteristics of these antennas can be seen in \autoref{tab:grs-antennas}
@@ -74,7 +76,17 @@ More information about the VHF and UHF antennas can be found in \cite{2mcp14} an
 
 \paragraph{Surge Protector}
 
-.
+To protect the ground station electronics of possible atmospheric discharges in the outside components, two surge protectors will be used (one for each antenna). The gas surge protectors safely discharge/deflect up to 5000 A of peak current to earth without causing damage to an independent ground. This kind of device is installed near the antennas, in cascade with the RF cables.
+
+For this project the model MFJ-270N will be used, and a picture of it can be seen in \autoref{fig:mfj-270n}.
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[width=0.4\textwidth]{figures/mfj-270n.jpeg}
+        \caption{MFJ-270N surge protector.}
+        \label{fig:mfj-270n}
+    \end{center}
+\end{figure}
 
 \subsubsection{Rotators}
 
