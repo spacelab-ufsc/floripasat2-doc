@@ -368,7 +368,7 @@ Beyond the PC-104 bus, there are some signals connected directly by wires and ca
                                       & EDC samples           & 26h &                                     & Timestamp + pkt. counter + samples         & 219                   & Public \\
                                       & TC feedback           & 27h &                                     & Req. callsign + TC packet ID + timestamp   & 13                    & Public \\
             \midrule
-            \multirow{12}{*}{Uplink}  & Ping Request          & 40h & \multirow{12}{*}{Any Callsign}      & None                                       & 8                     & Public \\
+            \multirow{10}{*}{Uplink}  & Ping Request          & 40h & \multirow{10}{*}{Any Callsign}      & None                                       & 8                     & Public \\
                                       & Data Request          & 41h &                                     & Data flags + count + origin + offset       & 16                    & Public \\
                                       & Broadcast Message     & 42h &                                     & Dst. callsign + message                    & 15 to 46              & Public \\
                                       & Enter hibernation     & 43h &                                     & Req. callsign + hibernation in hours + key & 29                    & Private \\
@@ -384,6 +384,41 @@ Beyond the PC-104 bus, there are some signals connected directly by wires and ca
         \label{tab:packets-struct}
     \end{table}
 \end{landscape}
+
+The ID of the modules that can be activated or deactivated are available in \autoref{tab:module-id}.
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{lcL{0.53\textwidth}c}
+        \toprule[1.5pt]
+        \textbf{Module} & \textbf{ID Number} \\
+        \midrule
+        Battery heater      & 0 \\
+        Beacon              & 1 \\
+        Periodic telemetry  & 2 \\
+        \bottomrule[1.5pt]
+    \end{tabular}
+    \caption{IDs of the modules that can be activated or deactivated.}
+    \label{tab:module-id}
+\end{table}
+
+The ID of the payloads, to be used in the activate/deactivate telecommands, are available in \autoref{tab:payload-id}.
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{lc}
+        \toprule[1.5pt]
+        \textbf{Payload} & \textbf{ID Number} \\
+        \midrule
+        EDC 1               & 0 \\
+        EDC 2               & 1 \\
+        Payload-X           & 2 \\
+        Radiation monitor   & 3 \\
+        \bottomrule[1.5pt]
+    \end{tabular}
+    \caption{IDs of the payloads.}
+    \label{tab:payload-id}
+\end{table}
 
 \begin{table}[ht]
     \centering
