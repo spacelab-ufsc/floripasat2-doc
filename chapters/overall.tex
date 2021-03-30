@@ -347,6 +347,20 @@ Beyond the PC-104 bus, there are some signals connected directly by wires and ca
 
 \section{Telecommunication}
 
+This section describes the configuration and behaviour of the telecommunication subsystems of the satellite. There are three types links available in the CubeSat: beacon, downlink and uplink. The beacon link is a periodic transmission of packets with a basic telemetry data of the satellite (containing data from the EPS or TTC subsystems). The downlink is the link used to receive all data from the satellite, including the results of all experiments, telemetry data and telecommands feedback. And the uplink is used for send telecommands from a ground station to the satellite.
+
+The payload of all packets follows the same structure, with an ID number, the source address (callsign) and the content of the packet (variable according to each type of packet). Following the NGHam protocol characteristics, the maximum length of a packet, including the ID and the source address, is 220 bytes. The \autoref{fig:fsat-pkt-structure} illustrates this packet structure.
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[width=0.5\textwidth]{figures/floripasat-packet-structure.pdf}
+        \caption{Payload structure of the FloripaSat-2 packets.}
+        \label{fig:fsat-pkt-structure}
+    \end{center}
+\end{figure}
+
+The \autoref{tab:packets-struct} summarizes all types of packets transmitted or received by the satellite, with the ID number, the structure and length of and the access type of each packet.
+
 \begin{landscape}
     \begin{table}[ht]
         \centering
