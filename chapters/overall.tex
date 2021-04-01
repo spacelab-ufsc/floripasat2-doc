@@ -407,9 +407,9 @@ The ID of the modules that can be activated or deactivated are available in \aut
         \toprule[1.5pt]
         \textbf{Module} & \textbf{ID Number} \\
         \midrule
-        Battery heater      & 0 \\
-        Beacon              & 1 \\
-        Periodic telemetry  & 2 \\
+        Battery heater      & 1 \\
+        Beacon              & 2 \\
+        Periodic telemetry  & 3 \\
         \bottomrule[1.5pt]
     \end{tabular}
     \caption{IDs of the modules that can be activated or deactivated.}
@@ -424,10 +424,10 @@ The ID of the payloads, to be used in the activate/deactivate telecommands, are 
         \toprule[1.5pt]
         \textbf{Payload} & \textbf{ID Number} \\
         \midrule
-        EDC 1               & 0 \\
-        EDC 2               & 1 \\
-        Payload-X           & 2 \\
-        Radiation monitor   & 3 \\
+        EDC 1               & 1 \\
+        EDC 2               & 2 \\
+        Payload-X           & 3 \\
+        Radiation monitor   & 4 \\
         \bottomrule[1.5pt]
     \end{tabular}
     \caption{IDs of the payloads.}
@@ -482,7 +482,7 @@ The ID of the payloads, to be used in the activate/deactivate telecommands, are 
     \toprule[1.5pt]
     \textbf{Packet} & \textbf{Position} & \textbf{Content} & \textbf{Length [bytes]} \\
     \midrule
-    \multirow{39}{*}{General telemetry}     & 0  & Packet ID (20h)                              & 1 \\
+    \multirow{42}{*}{General telemetry}     & 0  & Packet ID (20h)                              & 1 \\
                                             & 1  & Source callsign (``0PY0EFS'')                & 7 \\
                                             & 8  & Time counter in milliseconds                 & 4 \\
                                             & 12 & Temperature of the OBDH $\mu$C in Kelvin     & 2 \\
@@ -521,8 +521,11 @@ The ID of the payloads, to be used in the activate/deactivate telecommands, are 
                                             & 71 & Battery monitor IC temperature in K          & 2 \\
                                             & 73 & Battery heater 1 duty cycle in \%            & 1 \\
                                             & 74 & Battery heater 2 duty cycle in \%            & 1 \\
+                                            & 75 & Payload EDC status (00h=none, 01h=EDC\_1, 02h=EDC\_2, 03h=Both) & 1 \\
+                                            & 76 & Payload-X status (00h=OFF,01h=ON)            & 1 \\
+                                            & 77 & Radiation monitor status (00h=OFF,01h=ON)    & 1 \\
     \cmidrule{4-4}
-                                            &    &                                              & 75 \\
+                                            &    &                                              & 78 \\
     \multirow{3}{*}{Ping answer}            & 0  & Packet ID (21h)                      & 1 \\
                                             & 1  & Source callsign (``0PY0EFS'')        & 7 \\
                                             & 8  & Requester callsign                   & 7 \\
