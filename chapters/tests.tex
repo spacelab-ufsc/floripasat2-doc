@@ -24,9 +24,7 @@
 
 \chapter{Test Plan and Results} \label{ch:test-plan}
 
-\section{Test Procedure}
-
-The FloripaSat-2 test plan is structured into the following phases: module tests, focusing on the individual modules operation and behavior; FlatSat, first modules integration in a debug platform to validate the system from a development perspective; engineering integration, the final development campaign aiming to validate the system from a mission perspective; and flight integration, the actual CubeSat assembly using the flight components and final assessments to prepare the satellite to the launch. This section focus on providing an overview of the planned testing workflow and a description of the strategies approached to accomplish the mission objectives. The integration procedures and the qualification proccess are described with more depth in the \autoref{ch:ait}. The \autoref{tab:test-plan} summarizes the test plan and presents the components under test. 
+The FloripaSat-2 test plan is structured into four phases: Module tests, FlatSat, Engineering integration, and Flight integration. This plan is summarized in the \autoref{tab:test-plan} and includes the components under test for each phase. 
 
 \begin{table}[!h]
     \begin{center}
@@ -68,12 +66,15 @@ The FloripaSat-2 test plan is structured into the following phases: module tests
     \end{center}
 \end{table}
 
+This section focus on providing an overview of the planned testing workflow and a description of the strategies approached to accomplish the mission objectives. The module tests focus on the individual modules operation and behavior, in which a general template is provided in this document and each module applies it for their needs. The FlatSat phase is the first modules integration in a debug platform to validate the system from a development perspective (described with more details in \cite{flatsat}). Finally, the engineering integration is the final development campaign aiming to validate the system from a mission perspective and the flight integration is the actual CubeSat assembly using the flight components and final assessments to prepare the satellite for launch. The integration details, procedures and qualification proccess are described with more depth in the \autoref{ch:ait}. % maybe it will be splitted in a separated document
 
-\subsection{Module tests}
+\section{Module tests}
 
-The first phase is the foundation for the satellite, consolidating the base design for each subsystem and shaping their relations. Therefore, several techniques were employed to ensure a solid test strategy: several inspections of the boards design and manufacturing quality; manual experimental assessments of various hardware electrical, mechanical and behavioral parameters; remotely automated tests using a continuos integration (CI)\nomenclature{\textbf{CI}}{\textit{Continuos Integration.}} approach; and semi-automated tests using a hardware-in-the-loop (HIL)\nomenclature{\textbf{HIL}}{\textit{Hardware-In-the-Loop.}} strategy.
+The first phase is the foundation for the satellite, consolidating the base design for each subsystem and shaping their relations. Therefore, several techniques were employed to ensure a solid test strategy: several inspections of the boards design and manufacturing quality; manual experimental assessments of various hardware electrical, mechanical and behavioral parameters; remotely automated tests using a continuos integration (CI)\nomenclature{\textbf{CI}}{\textit{Continuos Integration.}} approach; semi-automated tests using a hardware-in-the-loop (HIL)\nomenclature{\textbf{HIL}}{\textit{Hardware-In-the-Loop.}} strategy; simulations; and CAD models assessment.
 
-The following topics lists the template workflow used to create the procedures for each subsystem. Each module documentation has its own test chapter describing the process in detail.
+\subsection{Workflow}
+
+The following topics lists the template workflow used to create the procedures for each subsystem. Each module documentation has its own test chapter describing the process in detail, from procedures to success criteria.
 
 % \item [\footnotesize{XX-00}] Text 
 \subsubsection{Visual Inspection} 
@@ -131,6 +132,7 @@ The following topics lists the template workflow used to create the procedures f
 
 \subsubsection{Module Testing}
 \begin{enumerate} \setlength\itemsep{-0.3em}
+    \item Run simulations and review results (if applicable)
     \item Review operation behavior against the documentation (if applicable)
     \item Review features and requirements fulfillment
     \item Review communication buses configuration and protocol (if applicable)
@@ -142,60 +144,20 @@ The following topics lists the template workflow used to create the procedures f
 \end{enumerate}
 
 
+\subsection{Continuos Integration}
+
+In order to detect errors and bugs in the early stages of development, a continuos integration workflow was setup for automated firmware tests focusing in small scope verfications (i.e., unit tests). Instead of executing the code in the target processor, the tests are executed remotely in a host computer through the usage of an unit testing framework, called "cmocka" \textcolor{red}{cite cmocka}. This tool allows to abstract the inherent hardware dependencies of embedded systems to enable firmware tests without errors introduced by hardware problems (exection in a consolidated platform, the computer), which provides an optimal behavioral assessment of the code implementations. This approach not only support remote testing, but promote continuos test execution, which is essencial to detect erros and architectural issues. The integration of these procedures is powered by "GitHub Actions" \textcolor{red}{cite GH Action}, which provides a host machine and a dashboard inside the same environment of the already used version control, source distribution and management tool.
+
+The unit tests follows a layered structure accordingly with the firmware layers. This is used alongside mockups (i.e., interfaces that abstract what the layer receive as input without having to implement the underlying functionality), which allows independency between the layers and abstract the actual hardware dependencies with an emulated behavior.
 
 
+\subsection{Hardware-In-the-Loop}
 
 
-
-
-
-
-\subsection{Hardware}
-
-\subsubsection{Output Power of the Radio Modules}
-
-The output power of the radio modules can be measured using a spectrum analyzer, as can be seen in the picture of \autoref{fig:rf-output-power-test}.
-
-\begin{figure}[!ht]
-    \begin{center}
-        \includegraphics[width=\textwidth]{figures/rf-output-power-test.jpg}
-        \caption{RF output power test with the radio modules connected to a spectrum analyzer.}
-        \label{fig:rf-output-power-test}
-    \end{center}
-\end{figure}
-
-The measured values for the beacon and downlink transmitters are available in Figures \ref{fig:beacon-power} and \ref{fig:downlink-power} respectively.
-
-\begin{figure}[!ht]
-    \begin{center}
-        \includegraphics[width=\textwidth]{curves/beacon_output_power.pdf}
-        \caption{Output power of the beacon radio.}
-        \label{fig:beacon-power}
-    \end{center}
-\end{figure}
-
-\begin{figure}[!ht]
-    \begin{center}
-        \includegraphics[width=\textwidth]{curves/downlink_output_power.pdf}
-        \caption{Output power of the downlink radio.}
-        \label{fig:downlink-power}
-    \end{center}
-\end{figure}
-
-\subsection{Software}
-
-\subsubsection{Unit Tests}
-
-\begin{itemize}
-    \item Hardware checks (might require mock circuitry).
-    \item Driver operation checks: not extensive, might use loopback and fake sensor data schemes for hardware checks.
-    \item Device operation checks: one test file for each device implemented, more extensive than driver checks, but should avoid development overhead.
-    \item Standalone application checks: evaluate the application logic (masking or faking operating system calls, such as waiting for queue or a delay). It should be implement without the operating system, in other words, evaluate inputs/outputs in dedicated main file.
-\end{itemize}
 
 \subsubsection{Integration Tests}
 
-\begin{itemize}
+\begin{itemize} \setlength\itemsep{-0.3em}
     \item Operating system initialization: assert memory allocation (RAM, stack, heap), hooks and etc;
     \item Boot sequence (as similar to the actual procedure as possible).
     \item Operating system task/queue/interrupts priority, constraints, size, depth and delay checks: use dummy task/queue/interrupts (same config as actual system).
@@ -206,7 +168,7 @@ The measured values for the beacon and downlink transmitters are available in Fi
 
 \subsubsection{Workflow}
 
-\begin{itemize}
+\begin{itemize} \setlength\itemsep{-0.3em}
     \item Always it is a build->flash->test, change main and repeat.
     \item It must have a test folder containing subfolders (hardware, drivers, devices, app, integration) and a json file (with name, path and type).
     \item Inside the workflow is called a python script that read this json and setup variables to allow running multiple main file swaps for each test type.
@@ -218,7 +180,9 @@ The measured values for the beacon and downlink transmitters are available in Fi
     \item Integration Tests = Tests performed per firmware component (several units abstracted).
 \end{itemize}
 
-\subsection{Flatsat}
+
+
+\section{Flatsat}
 
 To test all modules during the development of the projet, a flatsat platform was developed. The FlatSat Platform is a testbed for CubeSat PCB modules. FlatSats enable easier, faster and a secure method for testing subsystens independently while been integrated in a flat design before going to integration on a CubeSat form factor. The PCB can support up to 7 modules, all PC-104 pins are interligated to flexibilize its use, only the particularity connection between modules need to be be taken into account. One PC-104 has inverted pinout, the board also makes it possible to have two seperate power supplies, a UART to USB converter for 4 modules, kill-switches activation though SPDTs, Remove Before Flight (RBF) pin header, connector for charging batteries and SMA connectors for antennas. A picture of the flatsat board can be seen in \autoref{fig:flatsat-top}.
 
@@ -231,6 +195,9 @@ To test all modules during the development of the projet, a flatsat platform was
 \end{figure}
 
 More information about the Flatsat Platform can be found in \cite{flatsat}.
+
+
+
 
 \subsection{Environmental Tests}
 
@@ -367,6 +334,37 @@ For the thermal tests, thermocouples should be attached on different points on t
     \end{center}
 \end{table}
 
+
+
 \section{Preliminary Results}
 
-.
+
+\subsubsection{Output Power of the Radio Modules}
+
+The output power of the radio modules can be measured using a spectrum analyzer, as can be seen in the picture of \autoref{fig:rf-output-power-test}.
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[width=\textwidth]{figures/rf-output-power-test.jpg}
+        \caption{RF output power test with the radio modules connected to a spectrum analyzer.}
+        \label{fig:rf-output-power-test}
+    \end{center}
+\end{figure}
+
+The measured values for the beacon and downlink transmitters are available in Figures \ref{fig:beacon-power} and \ref{fig:downlink-power} respectively.
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[width=\textwidth]{curves/beacon_output_power.pdf}
+        \caption{Output power of the beacon radio.}
+        \label{fig:beacon-power}
+    \end{center}
+\end{figure}
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[width=\textwidth]{curves/downlink_output_power.pdf}
+        \caption{Output power of the downlink radio.}
+        \label{fig:downlink-power}
+    \end{center}
+\end{figure}
