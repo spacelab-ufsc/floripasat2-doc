@@ -26,6 +26,130 @@
 
 \section{Test Procedure}
 
+The FloripaSat-2 test plan is structured into the following phases: module tests, focusing on the individual modules operation and behavior; FlatSat, first modules integration in a debug platform to validate the system from a development perspective; engineering integration, the final development campaign aiming to validate the system from a mission perspective; and flight integration, the actual CubeSat assembly using the flight components and final assessments to prepare the satellite to the launch. This section focus on providing an overview of the planned testing workflow and a description of the strategies approached to accomplish the mission objectives. The integration procedures and the qualification proccess are described with more depth in the \autoref{ch:ait}. The \autoref{tab:test-plan} summarizes the test plan and presents the components under test. 
+
+\begin{table}[!h]
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule[1.5pt]
+            \textbf{Phase}    & \textbf{Components}       \\
+            \midrule
+            Module tests             & OBDH module \\
+                                     & EPS module \\
+                                     & TTC module \\
+                                     & BATC4 board \\
+                                     & IIP boards \\
+                                     & PC104-ADPT boards \\
+                                     & ACS components (simulation) \\
+                                     & Mechanical (CAD assessment) \\
+            \midrule
+            FlatSat                  & Satellite core (OBDH+EPS+TTC+BATC4) \\
+                                     & Satellite core + GRS \\
+                                     & Satellite core + Payloads \\
+                                     & Satellite core + Payloads + GRS \\
+                                     & Satellite (long-term evaluation) \\
+            \midrule
+            Engineering integration  & Mechanical assembly (repeated when required) \\
+            (clean room preferable)  & Satellite core + Payloads + GRS \\
+                                     & Satellite (long-term evaluation) \\
+                                     & Satellite + Solar Panels \\
+                                     & Preliminary environmental tests \\ 
+            \midrule
+            Flight integration       & Mechanical assembly (flight components) \\
+            (clean room mandatory)   & Satellite (short-term evaluation) \\
+                                     & Satellite + Antenna (deployment) \\
+                                     & Mechanical reassembly for flight \\
+                                     & Satellite (long-term evaluation) \\
+                                     & Qualification environmental tests \\ 
+            \bottomrule[1.5pt]
+        \end{tabular}
+        \caption{Test plan phases and tested components.}
+        \label{tab:test-plan}
+    \end{center}
+\end{table}
+
+
+\subsection{Module tests}
+
+The first phase is the foundation for the satellite, consolidating the base design for each subsystem and shaping their relations. Therefore, several techniques were employed to ensure a solid test strategy: several inspections of the boards design and manufacturing quality; manual experimental assessments of various hardware electrical, mechanical and behavioral parameters; remotely automated tests using a continuos integration (CI)\nomenclature{\textbf{CI}}{\textit{Continuos Integration.}} approach; and semi-automated tests using a hardware-in-the-loop (HIL)\nomenclature{\textbf{HIL}}{\textit{Hardware-In-the-Loop.}} strategy.
+
+The following topics lists the template workflow used to create the procedures for each subsystem. Each module documentation has its own test chapter describing the process in detail.
+
+% \item [\footnotesize{XX-00}] Text 
+\subsubsection{Visual Inspection} 
+\begin{enumerate} \setlength\itemsep{-0.3em}
+    \item Packaging quality assessment
+    \item Board manufacturing and assembly quality
+    \item 3D model comparison
+    \item Layers marker
+    \item Labels (schematics comparison) 
+    \item High resolution photos for documentation
+\end{enumerate}
+
+\subsubsection{Mechanical Inspection}
+\begin{enumerate} \setlength\itemsep{-0.3em}
+    \item Board dimensions and mounting holes positioning
+    \item Board weight measurement
+\end{enumerate}
+
+\subsubsection{Integration Inspection}
+\begin{enumerate} \setlength\itemsep{-0.3em}
+    \item Check connectors pinout against the documentation (not schematics)
+    \item Check connectors positioning (if applicable)
+\end{enumerate}
+
+\subsubsection{Electrical Inspection}
+\begin{enumerate} \setlength\itemsep{-0.3em}
+    \item Solder shorts
+    \item Missing components
+    \item Lifted pins
+    \item Poor soldering
+    \item Swapped components
+    \item Components partnumber
+    \item Components polarity (schematic comparison)
+    \item Components defined to not be soldered (DNP)
+\end{enumerate}
+
+\subsubsection{Electrical Testing}
+\begin{enumerate} \setlength\itemsep{-0.3em}
+    \item Continuity test
+    \item Power up procedures (check LEDs and testpoints)
+    \item Average input power consumption measurement
+    \item Average output power source measurement (if applicable) 
+    \item Power tracks temperature (if applicable)
+    \item Simple signal integrity (if applicable)
+\end{enumerate}
+
+\subsubsection{Functional Testing}
+\begin{enumerate} \setlength\itemsep{-0.3em}
+    \item Run a simple test code (if applicable) 
+    \item Run the system code (if applicable and available) 
+    \item Check the system hardware self-test flags (if applicable and available) 
+    \item Monitor basic LEDs behavior (if applicable) 
+    \item Monitor the debug serial port logs (if applicable)
+\end{enumerate}
+
+\subsubsection{Module Testing}
+\begin{enumerate} \setlength\itemsep{-0.3em}
+    \item Review operation behavior against the documentation (if applicable)
+    \item Review features and requirements fulfillment
+    \item Review communication buses configuration and protocol (if applicable)
+    \item Review data packages, power buses and control signals
+    \item Review and evaluate operation edge cases
+    \item Run remote automated code tests (if applicable)
+    \item Run system test codes in the board (if applicable)
+    \item Run latest stable code version, monitor logs and qualify behavior (if applicable)
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
 \subsection{Hardware}
 
 \subsubsection{Output Power of the Radio Modules}
