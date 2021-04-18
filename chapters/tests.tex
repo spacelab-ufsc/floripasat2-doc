@@ -153,34 +153,7 @@ The unit tests follows a layered structure accordingly with the firmware layers.
 
 \subsection{Hardware-In-the-Loop}
 
-
-
-\subsubsection{Integration Tests}
-
-\begin{itemize} \setlength\itemsep{-0.3em}
-    \item Operating system initialization: assert memory allocation (RAM, stack, heap), hooks and etc;
-    \item Boot sequence (as similar to the actual procedure as possible).
-    \item Operating system task/queue/interrupts priority, constraints, size, depth and delay checks: use dummy task/queue/interrupts (same config as actual system).
-    \item Short-term system check: after 1 hour, exit without error logs.
-    \item Mid-term system check: after 1 day, exit without error logs.
-    \item Long-term system check (used in flatsat): after 1 week, exit without flatsat/integration error logs.
-\end{itemize}
-
-\subsubsection{Workflow}
-
-\begin{itemize} \setlength\itemsep{-0.3em}
-    \item Always it is a build->flash->test, change main and repeat.
-    \item It must have a test folder containing subfolders (hardware, drivers, devices, app, integration) and a json file (with name, path and type).
-    \item Inside the workflow is called a python script that read this json and setup variables to allow running multiple main file swaps for each test type.
-    \item There are 5 different workflows, one for each test type: hardware, drivers, devices, app, integration;
-    \item The workflow, tests and scripts must be reviewed before each release.
-    \item Idea: for short/mid/long-term tests, the workflow should evaluate the log messages offline instead of real time, in which a job is scheduled to run just after this period and ``a script'' will read the log file and search for the test criteria, giving the actual CI result.
-    \item Idea: Inside the code, using the log message approach, we might create our ultra lightweight framework that consists of only log types (colors) and log messages (specific strings). This way we do not modify our current workflow and we can add a simple scheme to access the flight code.
-    \item Unit Tests = Tests performed per firmware unit.
-    \item Integration Tests = Tests performed per firmware component (several units abstracted).
-\end{itemize}
-
-
+In the context of embedded systems, many errors are caused by hardware issues and limitations. Then, it is important to assess the system operation running in the actual hardware platform. The hardware-in-the-loop strategy bring this elements in a more contolled and automated test environment. The idea is to execute the firmware in the board with an emphasis on evaluating the general behavior and operation flow, since there are several log messages used to report the system current status or action across the execution.
 
 \section{Flatsat}
 
@@ -194,9 +167,11 @@ To test all modules during the development of the projet, a flatsat platform was
     \end{center}
 \end{figure}
 
-More information about the Flatsat Platform can be found in \cite{flatsat}.
+Besides the hardware platform itself, during the FlatSat phase, a setup is used with the same structure as the hardware-in-the-loop strategy herein mentioned. Instead of using logs of one board, the analysis is performed from the perspective of all modules under test, which provides an evaluation of a complete system (satellite). More information about the Flatsat hardware platform and procedure details can be found in \cite{flatsat}.
 
+\section{Engineering integration}
 
+\section{Flight integration}
 
 
 \subsection{Environmental Tests}
