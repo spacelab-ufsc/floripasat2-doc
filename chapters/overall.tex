@@ -71,6 +71,18 @@ After the boot sequence of the beacon microcontroller, the operation of the beac
     \end{center}
 \end{figure}
 
+\subsection{OBDH Operation}
+
+After the boot sequence of the OBDH microcontroller, the operation of the OBDH starts. The normal operation consist on reading the housekeeping data from the EPS, TTC, payloads, antenna module and the OBDH (its own housekeeping data), save the read data on the non-volatile memory and transmit the housekeeping data of the satellite as a beacon. After that, it waits 60 seconds and check if a new telecommand was received, if true process the telecommand, if not, does nothing. After this sequence, these steps start again. The \autoref{fig:obdh-flowchart} has a flowchart of this behaviour.
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[width=0.63\textwidth]{figures/obdh-flowchart.pdf}
+        \caption{Flowchart of the normal OBDH operation.}
+        \label{fig:obdh-flowchart}
+    \end{center}
+\end{figure}
+
 \section{General Behaviour}
 
 .
