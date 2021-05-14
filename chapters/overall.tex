@@ -402,10 +402,10 @@ The \autoref{tab:packets-struct} summarizes all types of packets transmitted or 
             \cmidrule{3-6}
                                       &                       & \textbf{ID}  & \textbf{Source Callsign}   & \textbf{Data (up to 220 bytes)}            & \textbf{Size (bytes)} & \\
             \midrule
-            \multirow{2}{*}{Beacon}   & EPS data              & 00h & \multirow{2}{*}{``0'' + ``PY0EFS''} & EPS data                                   & 58                    & Public \\
+            \multirow{2}{*}{Beacon}   & EPS data              & 00h & \multirow{2}{*}{`` '' + ``PY0EFS''} & EPS data                                   & 58                    & Public \\
                                       & TTC Data              & 01h &                                     & TTC data                                   & 18                    & Public \\
             \midrule
-            \multirow{8}{*}{Downlink} & General telemetry     & 20h & \multirow{8}{*}{``0'' + ``PY0EFS''} & OBDH/EPS data                              & 75                    & Public \\
+            \multirow{8}{*}{Downlink} & General telemetry     & 20h & \multirow{8}{*}{`` '' + ``PY0EFS''} & OBDH/EPS data                              & 75                    & Public \\
                                       & Ping answer           & 21h &                                     & Requester callsign                         & 15                    & Public \\
                                       & Data request answer   & 22h &                                     & Req. callsign + data                       & 15 to 155             & Public \\
                                       & Message broadcast     & 23h &                                     & Req. + dst. callsign + message             & 22 to 60              & Public \\
@@ -473,7 +473,7 @@ The ID of the payloads, to be used in the activate/deactivate telecommands, are 
         \textbf{Packet} & \textbf{Position} & \textbf{Content} & \textbf{Length [bytes]} \\
         \midrule
         \multirow{22}{*}{EPS data} & 0  & Packet ID (00h)                       & 1 \\
-                                   & 1  & Source callsign (``0PY0EFS'')         & 7 \\
+                                   & 1  & Source callsign (`` PY0EFS'')         & 7 \\
                                    & 8  & Timestamp in ms                       & 4 \\
                                    & 12 & Battery cell 1 voltage in mV          & 2 \\
                                    & 14 & Battery cell 2 voltage in mV          & 2 \\
@@ -496,7 +496,7 @@ The ID of the payloads, to be used in the activate/deactivate telecommands, are 
                                    &    &                                       & 46 \\
         \midrule
         \multirow{9}{*}{TTC data}  & 0  & Packet ID (01h)                       & 1 \\
-                                   & 1  & Source callsign (``0PY0EFS'')         & 7 \\
+                                   & 1  & Source callsign (`` PY0EFS'')         & 7 \\
                                    & 8  & Timestamp in ms                       & 4 \\
                                    & 12 & Temperature of the TTC $\mu$C in K    & 2 \\
                                    & 14 & Reset counter                         & 2 \\
@@ -515,7 +515,7 @@ The ID of the payloads, to be used in the activate/deactivate telecommands, are 
     \textbf{Packet} & \textbf{Position} & \textbf{Content} & \textbf{Length [bytes]} \\
     \midrule
     \multirow{42}{*}{General telemetry}     & 0  & Packet ID (20h)                              & 1 \\
-                                            & 1  & Source callsign (``0PY0EFS'')                & 7 \\
+                                            & 1  & Source callsign (`` PY0EFS'')                & 7 \\
                                             & 8  & Time counter in milliseconds                 & 4 \\
                                             & 12 & Temperature of the OBDH $\mu$C in Kelvin     & 2 \\
                                             & 14 & Input current of the OBDH in mA              & 2 \\
@@ -559,30 +559,30 @@ The ID of the payloads, to be used in the activate/deactivate telecommands, are 
     \cmidrule{4-4}
                                             &    &                                              & 78 \\
     \multirow{3}{*}{Ping answer}            & 0  & Packet ID (21h)                      & 1 \\
-                                            & 1  & Source callsign (``0PY0EFS'')        & 7 \\
+                                            & 1  & Source callsign (`` PY0EFS'')        & 7 \\
                                             & 8  & Requester callsign                   & 7 \\
     \cmidrule{4-4}
                                             &    &                                      & 15 \\
     \multirow{3}{*}{Data request answer}    & 0  & Packet ID (22h)                      & 1 \\
-                                            & 1  & Source callsign (``0PY0EFS'')        & 7 \\
+                                            & 1  & Source callsign (`` PY0EFS'')        & 7 \\
                                             & 8  & Requester callsign                   & 7 \\
     \cmidrule{4-4}
                                             &    &                                      & 15 \\
     \multirow{5}{*}{Message broadcast}      & 0  & Packet ID (23h)                      & 1 \\
-                                            & 1  & Source callsign (``0PY0EFS'')        & 7 \\
+                                            & 1  & Source callsign (`` PY0EFS'')        & 7 \\
                                             & 8  & Requester callsign                   & 7 \\
                                             & 15 & Destination callsign                 & 7 \\
                                             & 22 & Message                              & up to 38 \\
     \cmidrule{4-4}
                                             &    &                                      & 22 to 60 \\
     \multirow{4}{*}{Hibernation feedback}   & 0  & Packet ID (24h)                      & 1 \\
-                                            & 1  & Source callsign (``0PY0EFS'')        & 7 \\
+                                            & 1  & Source callsign (`` PY0EFS'')        & 7 \\
                                             & 8  & Requester callsign                   & 7 \\
                                             & 15 & Hibernation in hours                 & 2 \\
     \cmidrule{4-4}
                                             &    &                                      & 17 \\
     \multirow{22}{*}{EDC info}              & 0  & Packet ID (25h)                      & 1 \\
-                                            & 1  & Source callsign (``0PY0EFS'')        & 7 \\
+                                            & 1  & Source callsign (`` PY0EFS'')        & 7 \\
                                             & 8  & PTT signal receiving time            & 4 \\
                                             & 12 & Error code                           & 1 \\
                                             & 13 & Carrier frequency                    & 2 \\
@@ -606,7 +606,7 @@ The ID of the payloads, to be used in the activate/deactivate telecommands, are 
     \cmidrule{4-4}
                                             &    &                                      & 78 \\
     \multirow{9}{*}{EDC samples}            & 0  & Packet ID (26h)                      & 1 \\
-                                            & 1  & Source callsign (``0PY0EFS'')        & 7 \\
+                                            & 1  & Source callsign (`` PY0EFS'')        & 7 \\
                                             & 8  & Elapsed time since J2000 epoch       & 4 \\
                                             & 12 & ADC sample packet number             & 1 \\
                                             & 13 & First ADC I-sample                   & 2 \\
