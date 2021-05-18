@@ -414,7 +414,7 @@ The \autoref{tab:packets-struct} summarizes all types of packets transmitted or 
                                       & EDC samples           & 26h &                                     & Timestamp + pkt. counter + samples         & 219                   & Public \\
                                       & TC feedback           & 27h &                                     & Req. callsign + TC packet ID + timestamp   & 13                    & Public \\
             \midrule
-            \multirow{10}{*}{Uplink}  & Ping Request          & 40h & \multirow{10}{*}{Any Callsign}      & None                                       & 8                     & Public \\
+            \multirow{11}{*}{Uplink}  & Ping Request          & 40h & \multirow{11}{*}{Any Callsign}      & None                                       & 8                     & Public \\
                                       & Data Request          & 41h &                                     & Data flags + count + origin + offset       & 16                    & Public \\
                                       & Broadcast Message     & 42h &                                     & Dst. callsign + message                    & 15 to 46              & Public \\
                                       & Enter hibernation     & 43h &                                     & Req. callsign + hibernation in hours + key & 29                    & Private \\
@@ -423,7 +423,8 @@ The \autoref{tab:packets-struct} summarizes all types of packets transmitted or 
                                       & Deactivate module     & 46h &                                     & Module ID + Command key                    & 17                    & Private \\
                                       & Activate Payload      & 47h &                                     & Payload ID + Command key                   & 17                    & Private \\
                                       & Deactivate Payload    & 48h &                                     & Payload ID + Command key                   & 17                    & Private \\
-                                      & Get EDC info          & 49h &                                     & Command key                                & 16                    & Private \\
+                                      & Erase memory          & 49h &                                     & Command key                                & 16                    & Private \\
+                                      & Get EDC info          & 50h &                                     & Command key                                & 16                    & Private \\
             \bottomrule[1.5pt]
         \end{tabular}
         \caption{Telecommunication packets and their content.}
