@@ -424,7 +424,7 @@ The \autoref{tab:packets-struct} summarizes all types of packets transmitted or 
                                       & Activate Payload      & 47h &                                     & Payload ID + Command key                   & 17                    & Private \\
                                       & Deactivate Payload    & 48h &                                     & Payload ID + Command key                   & 17                    & Private \\
                                       & Erase memory          & 49h &                                     & Command key                                & 16                    & Private \\
-                                      & Get EDC info          & 50h &                                     & Command key                                & 16                    & Private \\
+                                      & Get EDC info          & 4Ah &                                     & Command key                                & 16                    & Private \\
             \bottomrule[1.5pt]
         \end{tabular}
         \caption{Telecommunication packets and their content.}
@@ -675,10 +675,16 @@ The ID of the payloads, to be used in the activate/deactivate telecommands, are 
                                         & 9  & Command key (one for each payload)   & 8 \\
     \cmidrule{4-4}
                                         &    &                                      & 17 \\
-    \multirow{2}{*}{Get EDC info}       & 0  & Packet ID (49h)                      & 1 \\
+    \multirow{3}{*}{Erase memory}       & 0  & Packet ID (49h)                      & 1 \\
                                         & 1  & Ground station callsign              & 7 \\
+                                        & 8  & Command key                          & 8 \\
     \cmidrule{4-4}
-                                        &    &                                      & 8 \\
+                                        &    &                                      & 16 \\
+    \multirow{3}{*}{Get EDC info}       & 0  & Packet ID (4Ah)                      & 1 \\
+                                        & 1  & Ground station callsign              & 7 \\
+                                        & 8  & Command key                          & 8 \\
+    \cmidrule{4-4}
+                                        &    &                                      & 16 \\
     \bottomrule[1.5pt]
     \caption{Uplink packets.}
     \label{tab:uplink-packets}
