@@ -115,6 +115,22 @@ After the boot sequence of the OBDH microcontroller, the operation of the OBDH s
     \end{center}
 \end{figure}
 
+\subsection{EPS Operation}
+
+The operation of the EPS microcontroller starts shortly after the release of the CubeSat in its orbit by the deployer.
+In the first 60 minutes the module operation consist of reading the housekeeping data from its sensors and managing the duty cycles of the MPPT and heaters.
+When operational, the TTC and OBDH modules send separete periodic requests to the EPS for fowarding the housekeeping data acquired.
+The TTC receives a simplifed version while the OBDH receives a complete version of the data.
+The \autoref{fig:eps-flowchart} has a flowchart of this behaviour.
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[width=0.88\textwidth]{figures/eps_flowchart.pdf}
+        \caption{Flowchart of the normal EPS operation.}
+        \label{fig:eps-flowchart}
+    \end{center}
+\end{figure}
+
 \section{General Behaviour}
 
 .
