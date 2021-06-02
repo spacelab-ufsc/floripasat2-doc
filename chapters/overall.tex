@@ -109,7 +109,7 @@ After the boot sequence of the OBDH microcontroller, the operation of the OBDH s
 
 \begin{figure}[!ht]
     \begin{center}
-        \includegraphics[width=0.88\textwidth]{figures/tc-flowchart.pdf}
+        \includegraphics[width=0.8\textwidth]{figures/tc-flowchart.pdf}
         \caption{Flowchart of telecommand processing.}
         \label{fig:tc-flowchart}
     \end{center}
@@ -433,26 +433,25 @@ The \autoref{tab:packets-struct} summarizes all types of packets transmitted or 
             \multirow{2}{*}{Beacon}   & EPS data              & 00h & \multirow{2}{*}{`` '' + ``PY0EFS''} & EPS data                                   & 58                    & Public \\
                                       & TTC Data              & 01h &                                     & TTC data                                   & 18                    & Public \\
             \midrule
-            \multirow{8}{*}{Downlink} & General telemetry     & 20h & \multirow{8}{*}{`` '' + ``PY0EFS''} & OBDH/EPS data                              & 75                    & Public \\
+            \multirow{6}{*}{Downlink} & General telemetry     & 20h & \multirow{6}{*}{`` '' + ``PY0EFS''} & OBDH/EPS data                              & 75                    & Public \\
                                       & Ping answer           & 21h &                                     & Requester callsign                         & 15                    & Public \\
-                                      & Data request answer   & 22h &                                     & Req. callsign + data                       & 15 to 155             & Public \\
-                                      & Message broadcast     & 23h &                                     & Req. + dst. callsign + message             & 22 to 60              & Public \\
-                                      & Hibernation feedback  & 24h &                                     & Req. callsign + hibernation in hours       & 17                    & Public \\
-                                      & EDC info              & 25h &                                     & PTT decoder + HK info + system state       & 79                    & Public \\
-                                      & EDC samples           & 26h &                                     & Timestamp + pkt. counter + samples         & 219                   & Public \\
-                                      & TC feedback           & 27h &                                     & Req. callsign + TC packet ID + timestamp   & 13                    & Public \\
+                                      & Data request answer   & 22h &                                     & Requester callsign + data                  & 15 to 155             & Public \\
+                                      & Message broadcast     & 23h &                                     & Requester + dst. callsign + message        & 22 to 60              & Public \\
+                                      & Payload data          & 24h &                                     & Payload ID + payload data                  & 9 to 220              & Public \\
+                                      & TC feedback           & 25h &                                     & Req. callsign + TC packet ID + timestamp   & 13                    & Public \\
             \midrule
-            \multirow{11}{*}{Uplink}  & Ping Request          & 40h & \multirow{11}{*}{Any Callsign}      & None                                       & 8                     & Public \\
-                                      & Data Request          & 41h &                                     & Data flags + count + origin + offset       & 16                    & Public \\
+            \multirow{12}{*}{Uplink}  & Ping request          & 40h & \multirow{12}{*}{Any Callsign}      & None                                       & 8                     & Public \\
+                                      & Data request          & 41h &                                     & Data flags + count + origin + offset       & 16                    & Public \\
                                       & Broadcast Message     & 42h &                                     & Dst. callsign + message                    & 15 to 46              & Public \\
                                       & Enter hibernation     & 43h &                                     & Req. callsign + hibernation in hours + key & 29                    & Private \\
-                                      & Leave hibernation     & 44h &                                     & Command key                                & 16                    & Private \\
-                                      & Activate module       & 45h &                                     & Module ID + Command key                    & 17                    & Private \\
-                                      & Deactivate module     & 46h &                                     & Module ID + Command key                    & 17                    & Private \\
-                                      & Activate Payload      & 47h &                                     & Payload ID + Command key                   & 17                    & Private \\
-                                      & Deactivate Payload    & 48h &                                     & Payload ID + Command key                   & 17                    & Private \\
-                                      & Erase memory          & 49h &                                     & Command key                                & 16                    & Private \\
-                                      & Get EDC info          & 4Ah &                                     & Command key                                & 16                    & Private \\
+                                      & Leave hibernation     & 44h &                                     & TC key                                     & 16                    & Private \\
+                                      & Activate module       & 45h &                                     & Module ID + TC key                         & 17                    & Private \\
+                                      & Deactivate module     & 46h &                                     & Module ID + TC key                         & 17                    & Private \\
+                                      & Activate payload      & 47h &                                     & Payload ID + TC key                        & 17                    & Private \\
+                                      & Deactivate payload    & 48h &                                     & Payload ID + TC key                        & 17                    & Private \\
+                                      & Erase memory          & 49h &                                     & TC key                                     & 16                    & Private \\
+                                      & Force reset           & 4Ah &                                     & TC key                                     & 16                    & Private \\
+                                      & Get payload data      & 4Bh &                                     & Payload ID + TC key + payload args.        & 17 to 28              & Private \\
             \bottomrule[1.5pt]
         \end{tabular}
         \caption{Telecommunication packets and their content.}
@@ -671,46 +670,53 @@ The ID of the payloads, to be used in the activate/deactivate telecommands, are 
     \multirow{4}{*}{Enter hibernation}  & 0  & Packet ID (43h)                      & 1 \\
                                         & 1  & Ground station callsign              & 7 \\
                                         & 8  & Hibernation in hours                 & 2 \\
-                                        & 10 & Command key                          & 8 \\
+                                        & 10 & TC key                               & 8 \\
     \cmidrule{4-4}
                                         &    &                                      & 18 \\
     \multirow{3}{*}{Leave hibernation}  & 0  & Packet ID (44h)                      & 1 \\
                                         & 1  & Ground station callsign              & 7 \\
-                                        & 8  & Command key                          & 8 \\
+                                        & 8  & TC key                               & 8 \\
     \cmidrule{4-4}
                                         &    &                                      & 16 \\
     \multirow{4}{*}{Activate module}    & 0  & Packet ID (45h)                      & 1 \\
                                         & 1  & Ground station callsign              & 7 \\
                                         & 8  & Module ID                            & 1 \\
-                                        & 9  & Command key (one for each module)    & 8 \\
+                                        & 9  & TC key (one for each module)         & 8 \\
     \cmidrule{4-4}
                                         &    &                                      & 17 \\
     \multirow{4}{*}{Deactivate module}  & 0  & Packet ID (46h)                      & 1 \\
                                         & 1  & Ground station callsign              & 7 \\
                                         & 8  & Module ID                            & 1 \\
-                                        & 9  & Command key (one for each module)    & 8 \\
+                                        & 9  & TC key (one for each module)         & 8 \\
     \cmidrule{4-4}
                                         &    &                                      & 17 \\
-    \multirow{4}{*}{Activate Payload}   & 0  & Packet ID (47h)                      & 1 \\
+    \multirow{4}{*}{Activate payload}   & 0  & Packet ID (47h)                      & 1 \\
                                         & 1  & Ground station callsign              & 7 \\
                                         & 8  & Payload ID                           & 1 \\
-                                        & 9  & Command key (one for each payload)   & 8 \\
+                                        & 9  & TC key (one for each payload)        & 8 \\
     \cmidrule{4-4}
                                         &    &                                      & 17 \\
-    \multirow{4}{*}{Deactivate Payload} & 0  & Packet ID (48h)                      & 1 \\
+    \multirow{4}{*}{Deactivate payload} & 0  & Packet ID (48h)                      & 1 \\
                                         & 1  & Ground station callsign              & 7 \\
                                         & 8  & Payload ID                           & 1 \\
-                                        & 9  & Command key (one for each payload)   & 8 \\
+                                        & 9  & TC key (one for each payload)        & 8 \\
     \cmidrule{4-4}
                                         &    &                                      & 17 \\
     \multirow{3}{*}{Erase memory}       & 0  & Packet ID (49h)                      & 1 \\
                                         & 1  & Ground station callsign              & 7 \\
-                                        & 8  & Command key                          & 8 \\
+                                        & 8  & TC key                               & 8 \\
     \cmidrule{4-4}
                                         &    &                                      & 16 \\
-    \multirow{3}{*}{Get EDC info}       & 0  & Packet ID (4Ah)                      & 1 \\
+    \multirow{3}{*}{Force reset}        & 0  & Packet ID (4Ah)                      & 1 \\
                                         & 1  & Ground station callsign              & 7 \\
-                                        & 8  & Command key                          & 8 \\
+                                        & 8  & TC key                               & 8 \\
+    \cmidrule{4-4}
+                                        &    &                                      & 16 \\
+    \multirow{3}{*}{Get payload data}   & 0  & Packet ID (4Bh)                      & 1 \\
+                                        & 1  & Ground station callsign              & 7 \\
+                                        & 8  & Payload ID                           & 1 \\
+                                        & 9  & TC key (one for each payload)        & 8 \\
+                                        & 17 & Payload arguments                    & up to 11 \\
     \cmidrule{4-4}
                                         &    &                                      & 16 \\
     \bottomrule[1.5pt]
