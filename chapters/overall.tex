@@ -313,6 +313,8 @@ All equations and steps used to obtain the results of \autoref{tab:link-budget-r
 
 \section{PC-104 Bus}
 
+\subsection{Interface}
+
 To electrically connect all the satellite modules, a PC-104 bus standard is being used. This bus is composed by 104 lines disposed by four rows of 26 pins each (with a vertical and horizontal pitch of 2,54 mm).
 
 Using the \autoref{fig:pc104-ref-diagram} as reference, all used positions and signals of the PC-104 bus are presented in \autoref{tab:pc104-pinout}. The \autoref{tab:pc104-signals} describes each signal and which modules are connected to them.
@@ -404,6 +406,22 @@ Using the \autoref{fig:pc104-ref-diagram} as reference, all used positions and s
 The distribution pattern of pins adopted in this project is a mix of multiple different patterns from CubeSat modules manufacturers, like GomSpace, ISIS and Endurosat. Some pins are positioned to attend specific project requirements, and it is possible that the adopted pattern is not totally compatible to some commercial modules.
 
 Beyond the PC-104 bus, there are some signals connected directly by wires and cables, like the control and power pins of the antenna module, the battery charger and the programming ports.
+
+\subsection{Form Factor}
+
+The form factor follows a similar specification of the PC-104 standard\cite{pc104-specification}.
+The connector used for the interface differs given the module, the isolation heigth and presence of pin or receptable are definied from the overall stack up of the subystems inside the CubeSat 2U structure.
+% TBD: include reference to mechanical design here
+The core modules have smoothed edges and some linear mounting hole distances different from the standard, these are according to fit in a CubeSat form factor.
+The PC-104 form factor used can be seen in \autoref{fig:pc104-form-factor}.
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[width=0.75\textwidth]{figures/pc104-form-factor.pdf}
+        \caption{PC-104 Form Factor.}
+        \label{fig:pc104-form-factor}
+    \end{center}
+\end{figure}
 
 \section{Telecommunication}
 
