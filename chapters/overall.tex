@@ -40,6 +40,13 @@ The CubeSat's subsystems are positioned in the 2U physical structure as exemplif
 
 \subsection{Power Diagram}
 
+In \autoref{fig:power-diagram} is presented a block diagram showing the satellite's power buses.
+The EPS module distributes these buses and have the hability to turn on and off some subsystems, while other modules also have direct control over some dc regulators\cite{eps2}.
+The bus used for the antenna module is only active during its deployment. 
+The current values showed are the maximum capability and not the nominal operating values, these are determined by the variable power generation of the solar panels as well the loads present in a given time of the satellite's operation.
+% TBD
+% In \autoref{power-budget} the power consumption of the satellite in showed in detail.
+
 \begin{figure}[!ht]
     \begin{center}
         \includegraphics[width=\textwidth]{figures/power_diagram.pdf}
@@ -227,7 +234,7 @@ As can be seen from \autoref{tab:grs-contacts-analysis}, during the first 60 day
 
 These values can be even bigger if a smaller minimum elevation is considered, or with more ground stations in other locations.
 
-\section{Power Budget}
+\section{Power Budget} \label{power-budget}
 
 According to section 10.3 of \cite{larson2005}, the power budget of satellite can be determined through three steps:
 
