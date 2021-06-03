@@ -621,47 +621,50 @@ The ID of the payloads, to be used in the activate/deactivate telecommands, are 
                                             & 22 & Message                              & up to 38 \\
     \cmidrule{4-4}
                                             &    &                                      & 22 to 60 \\
-    \multirow{4}{*}{Hibernation feedback}   & 0  & Packet ID (24h)                      & 1 \\
+                                            & 0  & Packet ID (24h)                      & 1 \\
+                                            & 1  & Source callsign (`` PY0EFS'')        & 7 \\
+                                            & 8  & Payload ID (01h or 02h)              & 1 \\
+                                            & 9  & PTT signal receiving time            & 4 \\
+                                            & 13 & Error code                           & 1 \\
+                                            & 14 & Carrier frequency                    & 2 \\
+                                            & 16 & Carrier amplitude at ADC interface output & 2 \\
+                                            & 18 & User message length in bytes         & 1 \\
+                                            & 19 & ARGOS-2 PTT-A2 user message          & 35 \\
+                                            & 54 & Current time since J2000 epoch       & 4 \\
+                                            & 58 & Elapsed time since last reset        & 4 \\
+   Payload data                             & 62 & System current supply in mA          & 2 \\
+   (EDC info)                               & 64 & System voltage supply in mV          & 2 \\
+                                            & 65 & EDC board temperature                & 1 \\
+                                            & 66 & RF front end LO                      & 1 \\
+                                            & 67 & RMS level at front-end output        & 2 \\
+                                            & 69 & Generated PTT packages since last initialization & 1 \\
+                                            & 70 & Max                                  & 1 \\
+                                            & 71 & Memory error count                   & 1 \\
+                                            & 72 & Current time                         & 4 \\
+                                            & 76 & Number of PTT package available for reading & 1 \\
+                                            & 77 & PTT decoder task status              & 1 \\
+                                            & 78 & ADC sampler state                    & 1 \\
+    \cmidrule{4-4}
+                                            &    &                                      & 79 \\
+                                            & 0  & Packet ID (24h)                      & 1 \\
+                                            & 1  & Source callsign (`` PY0EFS'')        & 7 \\
+                                            & 8  & Payload ID (01h or 02h)              & 1 \\
+                                            & 9  & Elapsed time since J2000 epoch       & 4 \\
+    Payload data                            & 13 & ADC sample packet number             & 1 \\
+    (EDC samples)                           & 14 & First ADC I-sample                   & 2 \\
+                                            & 16 & First ADC Q-sample                   & 2 \\
+                                            & ... & ...                                 & ... \\
+                                            & 214 & N ADC I-sample                      & 2 \\
+                                            & 216 & N ADC Q-sample                      & 2 \\
+    \cmidrule{4-4}
+                                            &    &                                      & 218 \\
+    \multirow{5}{*}{TC feedback}            & 0  & Packet ID (25h)                      & 1 \\
                                             & 1  & Source callsign (`` PY0EFS'')        & 7 \\
                                             & 8  & Requester callsign                   & 7 \\
-                                            & 15 & Hibernation in hours                 & 2 \\
+                                            & 15 & TC packet ID                         & 1 \\
+                                            & 16 & Timestamp                            & 4 \\
     \cmidrule{4-4}
-                                            &    &                                      & 17 \\
-    \multirow{22}{*}{EDC info}              & 0  & Packet ID (25h)                      & 1 \\
-                                            & 1  & Source callsign (`` PY0EFS'')        & 7 \\
-                                            & 8  & PTT signal receiving time            & 4 \\
-                                            & 12 & Error code                           & 1 \\
-                                            & 13 & Carrier frequency                    & 2 \\
-                                            & 15 & Carrier amplitude at ADC interface output & 2 \\
-                                            & 17 & User message length in bytes         & 1 \\
-                                            & 18 & ARGOS-2 PTT-A2 user message          & 35 \\
-                                            & 53 & Current time since J2000 epoch       & 4 \\
-                                            & 57 & Elapsed time since last reset        & 4 \\
-                                            & 61 & System current supply in mA          & 2 \\
-                                            & 63 & System voltage supply in mV          & 2 \\
-                                            & 64 & EDC board temperature                & 1 \\
-                                            & 65 & RF front end LO                      & 1 \\
-                                            & 66 & RMS level at front-end output        & 2 \\
-                                            & 68 & Generated PTT packages since last initialization & 1 \\
-                                            & 69 & Max                                  & 1 \\
-                                            & 70 & Memory error count                   & 1 \\
-                                            & 71 & Current time                         & 4 \\
-                                            & 75 & Number of PTT package available for reading & 1 \\
-                                            & 76 & PTT decoder task status              & 1 \\
-                                            & 77 & ADC sampler state                    & 1 \\
-    \cmidrule{4-4}
-                                            &    &                                      & 78 \\
-    \multirow{9}{*}{EDC samples}            & 0  & Packet ID (26h)                      & 1 \\
-                                            & 1  & Source callsign (`` PY0EFS'')        & 7 \\
-                                            & 8  & Elapsed time since J2000 epoch       & 4 \\
-                                            & 12 & ADC sample packet number             & 1 \\
-                                            & 13 & First ADC I-sample                   & 2 \\
-                                            & 15 & First ADC Q-sample                   & 2 \\
-                                            & ... & ...                                 & ... \\
-                                            & 213 & N ADC I-sample                      & 2 \\
-                                            & 215 & N ADC Q-sample                      & 2 \\
-    \cmidrule{4-4}
-                                            &    &                                      & 217 \\
+                                            &    &                                      & 20 \\
     \bottomrule[1.5pt]
     \caption{Downlink packets.}
     \label{tab:downlink-packets}
