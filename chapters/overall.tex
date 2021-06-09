@@ -277,7 +277,32 @@ Assumptions:
 
 \subsection{Battery Sizing}
 
-.
+\begin{table}[!h]
+    \centering
+    \begin{tabular}{lccccc}
+        \toprule[1.5pt]
+        \textbf{Module} & \textbf{Duty Cycle [\%]}    & \textbf{Power [mW]} \\
+        \midrule
+        OBDH                    & 100   & 115 \\
+        TTC (radio 1 RX)        & 95    & 65 \\
+        TTC (radio 1 TX)        & 5     & 3250 \\
+        TTC (radio 2 RX)        & 95    & 65 \\
+        TTC (radio 2 TX)        & 5     & 3250 \\
+        EPS                     & 100   & 200 \\
+        BAT (idle)              & 90    & 0 \\
+        BAT (heater full)       & 10    & 5000 \\
+        Antenna (deployment)    & 0     & 1800 \\
+        Antenna (deployed)      & 100   & 35 \\
+        Payload EDC             & 100   & 1250 \\
+        Payload Harsh           & 100   & 330 \\
+        Payload-X               & 30    & 1000 \\
+        \cmidrule{2-3}
+                                & \multicolumn{2}{c}{$\cong$ 3178,5} \\
+        \bottomrule[1.5pt]
+    \end{tabular}
+    \caption{Power consumption of the subsystems and payloads of the satellite.}
+    \label{tab:power-consumption}
+\end{table}
 
 \subsection{Power Degradation Over Mission Life}
 
