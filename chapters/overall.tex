@@ -234,6 +234,40 @@ As can be seen from \autoref{tab:grs-contacts-analysis}, during the first 60 day
 
 These values can be even bigger if a smaller minimum elevation is considered, or with more ground stations in other locations.
 
+\section{Mass Budget} \label{mass-budget}
+
+The mass budget of the satellite can be seen in \autoref{tab:mass-budget}.
+
+\begin{table}[!h]
+    \centering
+    \begin{tabular}{llc}
+        \toprule[1.5pt]
+        \textbf{Subsystem} & \textbf{Model} & \textbf{Mass [g]} \\
+        \midrule
+        OBDH            & SpaceLab OBDH 2.0             & TBD \\
+        TTC             & SpaceLab TTC 2.0              & TBD \\
+        EPS             & SpaceLab EPS 2.0              & TBD \\
+        Battery         & SpaceLab Battery Module 4C    & TBD \\
+        Antenna         & ISISpace AntS                 & 89 \\
+        ACS             & SpaceLab Passive ACS 2U       & TBD \\
+        Payload         & INPE-RN EDC                   & TBD \\
+        Payload         & SpaceLab Payload X            & TBD \\
+        Payload         & SpaceLab Payload Harsh        & TBD \\
+        Interface       & SpaceLab Interface Boards     & 40 \\
+        Solar Panel     & Orbital Custom Solar Panel    & 266 \\
+        Structure       & Usiped Custom 2U Structure    & 206 \\
+        Cables          & -                             & TBD \\
+        Others          & -                             & TBD \\
+        \midrule
+        Total           & -                             & \textbf{601} \\
+        \bottomrule[1.5pt]
+    \end{tabular}
+    \caption{Mass budget of the satellite.}
+    \label{tab:mass-budget}
+\end{table}
+
+According to the CubeSat standard \cite{cds}, the maximum mass of each unit must be 1,33 kg. As the FloripaSat-2 is a 2U CubeSat, the maximum allowed mass of the project is 2,66 kg. Considering the weight of each subsystem presented in \autoref{tab:mass-budget}, the current total mass of the object is below the maximum allowed.
+
 \section{Power Budget} \label{power-budget}
 
 According to section 10.3 of \cite{larson2005}, the power budget of satellite can be determined through three steps:
