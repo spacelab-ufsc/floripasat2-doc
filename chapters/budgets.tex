@@ -162,6 +162,27 @@ According to section 10.3 of \cite{larson2005}, the power budget of satellite ca
     \item Estimate power degradation over mission life
 \end{enumerate}
 
+\subsection{Input Power}
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[width=\textwidth]{curves/sp_sim_power}
+        \caption{Silumated input power of the solar panels.}
+        \label{fig:sp_sim_power}
+    \end{center}
+\end{figure}
+
+From \autoref{fig:sp_sim_power}:
+
+\begin{itemize}
+    \item Peak power $\cong$ 8759,5 mW
+    \item Average (orbit) $\cong$ 2744,9 mW
+    \item Average (sun light) $\cong$ 4315,6 mW
+    \item Orbit period $\cong$ 6018 sec
+    \item Sun light period $\cong$ 3712 sec
+    \item Eclipse period $\cong$ 2124 sec
+\end{itemize}
+
 \subsection{Operating Power Budget}
 
 \begin{table}[!h]
@@ -174,7 +195,7 @@ According to section 10.3 of \cite{larson2005}, the power budget of satellite ca
         OBDH                & 3,3   & TBD   & TBD   & TBD   & TBD \\
         TTC ($\mu$C)        & 3,3   & TBD   & TBD   & TBD   & TBD \\
         TTC (radio module)  & 5     & TBD   & 650   & TBD   & 3250 \\
-        EPS (digital part)  & 3,3   & TBD   & TBD   & TBD   & TBD \\
+        EPS (digital part)  & 7,4   & TBD   & 40    & TBD   & TBD \\
         EPS (heater)        & 3,3   & TBD   & TBD   & TBD   & TBD \\
         Antenna module      & 3,3   & TBD   & TBD   & TBD   & TBD \\
         Payload EDC         & 5     & 250   & 250   & 1250  & 1250 \\
@@ -206,16 +227,16 @@ Assumptions:
         TTC (radio 1 TX)        & 5     & 3250 \\
         TTC (radio 2 RX)        & 95    & 65 \\
         TTC (radio 2 TX)        & 5     & 3250 \\
-        EPS                     & 100   & 200 \\
+        EPS                     & 100   & 320 \\
         BAT (idle)              & 90    & 0 \\
         BAT (heater full)       & 10    & 5000 \\
         Antenna (deployment)    & 0     & 1800 \\
         Antenna (deployed)      & 100   & 35 \\
         Payload EDC             & 100   & 1250 \\
-        Payload Harsh           & 100   & 330 \\
-        Payload-X               & 30    & 1000 \\
+        Payload Harsh           & 0     & 330 \\
+        Payload-X               & 0     & 1000 \\
         \cmidrule{2-3}
-                                & \multicolumn{2}{c}{$\cong$ 3178,5} \\
+                                & \multicolumn{2}{c}{$\cong$ 2668} \\
         \bottomrule[1.5pt]
     \end{tabular}
     \caption{Power consumption of the subsystems and payloads of the satellite.}
