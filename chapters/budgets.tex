@@ -24,7 +24,9 @@
 
 \chapter{Technical Budgets and Mission Analysis} \label{ch:budgets}
 
-.
+This chapter presents a general analysis of the mission, such as a preliminary analysis of the satellite's estimated orbit, estimated lifetime, and the amount of data exchanged along its operation.
+
+Another type of analysis presented are the satellite budgets, such as the power budget and the link budget.
 
 \section{Orbit Parameters and Analysis}
 
@@ -164,15 +166,7 @@ According to section 10.3 of \cite{larson2005}, the power budget of satellite ca
 
 \subsection{Input Power}
 
-\begin{figure}[!ht]
-    \begin{center}
-        \includegraphics[width=\textwidth]{curves/sp_sim_power}
-        \caption{Silumated input power of the solar panels.}
-        \label{fig:sp_sim_power}
-    \end{center}
-\end{figure}
-
-From \autoref{fig:sp_sim_power}:
+A simulation of the energy input to the solar panels along some orbits can be seen in the \autoref{fig:sp_sim_power} graph. From this simulation, the following results were obtained:
 
 \begin{itemize}
     \item Peak power $\cong$ 8759,5 mW
@@ -183,7 +177,17 @@ From \autoref{fig:sp_sim_power}:
     \item Eclipse period $\cong$ 2124 sec
 \end{itemize}
 
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[width=\textwidth]{curves/sp_sim_power}
+        \caption{Silumated input power of the solar panels.}
+        \label{fig:sp_sim_power}
+    \end{center}
+\end{figure}
+
 \subsection{Operating Power Budget}
+
+Typical operating voltages, and current and power ranges consumed by each satellite subsystem are presented in \autoref{tab:power-requirements}.
 
 \begin{table}[!h]
     \centering
@@ -207,14 +211,7 @@ From \autoref{fig:sp_sim_power}:
     \label{tab:power-requirements}
 \end{table}
 
-Assumptions:
-
-\begin{itemize}
-    \item One of the EDC payload is always off (cold redundancy).
-    \item The Payload-X and the Harsh payload are turned on just during limited periods.
-\end{itemize}
-
-\subsection{Battery Sizing}
+Using the information presented in \autoref{tab:power-requirements}, and the activation periods defined for each module, we arrive at the average satellite consumption present in \autoref{tab:power-consumption}.
 
 \begin{table}[!h]
     \centering
@@ -242,6 +239,15 @@ Assumptions:
     \caption{Power consumption of the subsystems and payloads of the satellite.}
     \label{tab:power-consumption}
 \end{table}
+
+The duty cycles of \autoref{tab:power-consumption} were defined according to the following assumptions:
+
+\begin{itemize}
+    \item One of the EDC payload is always off (cold redundancy).
+    \item The Payload-X and the Harsh payload are turned on just during limited periods and only with telecommands.
+\end{itemize}
+
+\subsection{Battery Sizing}
 
 \subsection{Power Degradation Over Mission Life}
 
