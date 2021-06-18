@@ -266,20 +266,21 @@ The link budget of all radio links of the satellite is available in \autoref{tab
         \toprule[1.5pt]
         \textbf{Variable} & \textbf{Beacon} & \textbf{Downlink} & \textbf{Uplink} & \textbf{Uplink (Payload)} & \textbf{Unit}\\
         \midrule
-        Frequency                       & 145,97    & 436,9     & 436,9     & 401,635   & MHz \\
-        Modulation                      & GMSK      & GMSK      & GMSK      & BPSK      & - \\
-        Protocol                        & NGHam     & NGHam     & NGHam     & SBCD      & - \\
-        Transmit power                  & 30        & 30        & 47        & ??        & dBm \\
-        FSPL                            & 144,8     & 154,3     & 154,3     & ??        & dB \\
-        Other losses                    & 5         & 5         & 7         & 5         & dB \\
-        Receive antenna gain            & 12        & 15.5      & 0         & 0         & dBi \\
-        Receiver noise temp.            &           &           &           &           & K \\
-        Antenna noise temp.             &           &           &           &           & K \\
-        System noise temp.              &           &           &           &           & K \\
-        Data rate                       & 1200      & 4800      & 4800      & 400       & bps \\
-        Received SNR                    & 30,87     & 17,35     & 31,60     & ??        & dB \\
-        SNR required for $10^{-5}$ BER*  & 9,6       & 9,6       & 9,6       & 9,6       & dB \\
-        Link margin                     & $\leq$ 21,27 & $\leq$ 7,75 & $\leq$ 22 & $\leq$ ?? & dB \\
+        Frequency                       & 437           & 462,5         & 462,5         & 401,635       & MHz \\
+        Modulation                      & GMSK          & GMSK          & GMSK          & BPSK          & - \\
+        Protocol                        & NGHam         & NGHam         & NGHam         & SBCD          & - \\
+        Transmit power                  & 30            & 30            & 47            & 30            & dBm \\
+        FSPL                            & 153,9         & 154,4         & 154,4         & 153,2         & dB \\
+        Other losses                    & 5             & 5             & 7             & 5             & dB \\
+        Transmitter antenna gain        & 0             & 0             & 12            & 3             & dBi \\
+        Receiver antenna gain           & 12            & 12            & 0             & 0             & dBi \\
+        Receiver noise temp.            & 361,7         & 361,7         & 361,7         & 361,7         & K \\
+        Antenna noise temp.             & 300           & 300           & 300           & 300           & K \\
+        System noise temp.              & 661,7         & 661,7         & 661,7         & 661,7         & K \\
+        Data rate                       & 4800          & 9600          & 9600          & 400           & bps \\
+        Received SNR                    & 16,68         & 13,17         & 27,17         & 19,20         & dB \\
+        SNR required for $10^{-5}$ BER  & 9,6           & 9,6           & 9,6           & 9,6           & dB \\
+        Link margin                     & $\geq$ 7,077  & $\geq$ 3,574  & $\geq$ 17,57  & $\geq$ 9,601  & dB \\
         \bottomrule[1.5pt]
     \end{tabular}
     \caption{Link budget results.}
