@@ -130,29 +130,33 @@ The mass budget of the satellite can be seen in \autoref{tab:mass-budget}.
         \toprule[1.5pt]
         \textbf{Subsystem} & \textbf{Model} & \textbf{Mass [g]} \\
         \midrule
-        OBDH            & SpaceLab OBDH 2.0             & TBD \\
-        TTC             & SpaceLab TTC 2.0              & TBD \\
-        EPS             & SpaceLab EPS 2.0              & TBD \\
-        Battery         & SpaceLab Battery Module 4C    & TBD \\
+        OBDH            & SpaceLab OBDH 2.0             & 50 (TBC) \\
+        TTC             & SpaceLab TTC 2.0              & 52 (TBC) \\
+        EPS             & SpaceLab EPS 2.0              & 85 (TBC) \\
+        Battery         & SpaceLab Battery Module 4C    & 235 \\
         Antenna         & ISISpace AntS                 & 89 \\
-        ACS             & SpaceLab Passive ACS 2U       & TBD \\
-        Payload         & INPE-RN EDC                   & TBD \\
-        Payload         & SpaceLab Payload X            & TBD \\
-        Payload         & SpaceLab Payload Harsh        & TBD \\
+        ACS             & SpaceLab Passive ACS 2U       & 100 (TBC) \\
+        Payload         & INPE-RN EDC                   & 75 ($\times$2) \\
+        Payload         & SpaceLab Payload X            & 75 (TBC) \\
+        Payload         & SpaceLab Payload Harsh        & 30 (TBC) \\
         Interface       & SpaceLab Interface Boards     & 40 \\
+        PC-104 Adapter  & SpaceLab PC-104 Adapter       & 40 (TBC) \\
         Solar Panel     & Orbital Custom Solar Panel    & 266 \\
+        Shields         & 3 mm aluminum sheets          & 590 (TBC) \\
         Structure       & Usiped Custom 2U Structure    & 206 \\
-        Cables          & -                             & TBD \\
-        Others          & -                             & TBD \\
+        Cables          & -                             & 200 \\
+        Others          & -                             & 100 \\
         \midrule
-        Total           & -                             & \textbf{601} \\
+        Total           & -                             & \textbf{2308} \\
+        Max. CubeSat 2U & -                             & 2666 \\
+        Margin          & -                             & 358 \\
         \bottomrule[1.5pt]
     \end{tabular}
     \caption{Mass budget of the satellite.}
     \label{tab:mass-budget}
 \end{table}
 
-According to the CubeSat standard \cite{cds}, the maximum mass of each unit must be 1,33 kg. As the FloripaSat-2 is a 2U CubeSat, the maximum allowed mass of the project is 2,66 kg. Considering the weight of each subsystem presented in \autoref{tab:mass-budget}, the current total mass of the object is below the maximum allowed.
+According to the CubeSat standard \cite{cds}, the maximum mass of each unit must be 1,33 kg. As the FloripaSat-2 is a 2U CubeSat, the maximum allowed mass of the project is 2,66 kg. Considering the weight of each subsystem presented in \autoref{tab:mass-budget}, the current total mass of the object is below the maximum allowed, with a margin of 13 \%.
 
 \section{Power Budget} \label{power-budget}
 
