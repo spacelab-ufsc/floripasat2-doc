@@ -215,7 +215,7 @@ Typical operating voltages, and current and power ranges consumed by each satell
     \label{tab:power-requirements}
 \end{table}
 
-Using the information presented in \autoref{tab:power-requirements}, and the activation periods defined for each module, we arrive at the average satellite consumption present in \autoref{tab:power-consumption}.
+Using the information presented in \autoref{tab:power-requirements}, and the activation periods defined for each module (the duty cycle), we arrive at the average satellite consumption present in \autoref{tab:power-consumption}.
 
 \begin{table}[!h]
     \centering
@@ -237,7 +237,7 @@ Using the information presented in \autoref{tab:power-requirements}, and the act
         Payload Harsh           & 0     & 330 \\
         Payload-X               & 0     & 1000 \\
         \cmidrule{2-3}
-                                & \multicolumn{2}{c}{$\cong$ 2668} \\
+        Satellite               & \multicolumn{2}{c}{$\cong$ 2668} \\
         \bottomrule[1.5pt]
     \end{tabular}
     \caption{Power consumption of the subsystems and payloads of the satellite.}
@@ -251,14 +251,20 @@ The duty cycles of \autoref{tab:power-consumption} were defined according to the
     \item The Payload-X and the Harsh payload are turned on just during limited periods and only with telecommands.
 \end{itemize}
 
+As can be seen from \autoref{fig:sp_sim_power} and \autoref{tab:power-consumption}, there is a slight positive margin of \textbf{76,9 mW} in the power budget.
+
 \subsection{Battery Sizing}
 
 \subsection{Power Degradation Over Mission Life}
+
+Two major events along the satellite operation should be considered in the power degradation analysis:
 
 \begin{itemize}
     \item Solar panels degradation
     \item Battery degradation
 \end{itemize}
+
+From \cite{larson2005}, 5 \% per year is a usual number for the solar panels degradation, in others words, the general efficiency of the solar panels decays in a rate of 5 \% per year of operation.
 
 \section{Link Budget}
 
