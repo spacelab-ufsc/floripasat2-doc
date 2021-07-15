@@ -83,12 +83,11 @@ A picture of the antenna module (with all antennas released) can be seen in \aut
 The chosen configuration for this mission can be seen below (using \autoref{fig:isis-antenna-ref} as reference):
 
 \begin{itemize}
-    \item Configuration: 4 monopoles (4$\times$ UHF)
+    \item Configuration: 2 monopoles (UHF) + 1 dipole (VHF)
         \begin{itemize}
-            \item Antenna 1: UHF - 437 MHz (beacon)
-            \item Antenna 2: UHF - 401,635 MHz (EDC)
-            \item Antenna 3: UHF - 462,5 MHz (downlink/uplink)
-            \item Antenna 4: UHF - 401,635 MHz (redundant EDC)
+            \item Antenna 1: UHF - 450 MHz (downlink/uplink)
+            \item Antenna 2: UHF - 401,635 MHz (both EDCs)
+            \item Antenna 3 and 4: VHF - 145,97 MHz (beacon)
         \end{itemize}
     \item Tuning structure size: 2U
     \item Mounting position: Top
@@ -110,6 +109,18 @@ The chosen configuration for this mission can be seen below (using \autoref{fig:
 \end{figure}
 
 In the digital interface, a temperature sensor and the state of four deployment switches (1 per monopole) are also available. These switches indicate if a monopole is released or not, and can be used as feedback of the deployment process.
+
+\subsubsection{RF Splitter}
+
+As the satellite has two EDCs (in a cold redundancy scheme) and just one dedicated antenna (antenna 2, UHF monopole), a RF splitter is also being used. This way, the received signal from a single monopole can be processed by both EDCs. The used model is the Z99SC-62-S+ from Mini-Circuits \cite{z99sc-62-s}. A picture of this device is available in \autoref{fig:rf-splitter}.
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[width=0.4\textwidth]{figures/z99sc-62-s}
+        \caption{Mini-Circuits Z99SC-62-S+ RF splitter.}
+        \label{fig:rf-splitter}
+    \end{center}
+\end{figure}
 
 \section{Electrical Power System}
 
