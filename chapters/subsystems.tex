@@ -122,6 +122,16 @@ As the satellite has two EDCs (in a cold redundancy scheme) and just one dedicat
     \end{center}
 \end{figure}
 
+To mechanically install the Z99SC-62-S+ device in the satellite, a board in the PC-104 form factor is being used, as can be seen in \autoref{fig:rf-splitter-module}. More information about the RF splitter module is available in \cite{rf-splitter}.
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[width=0.7\textwidth]{figures/rf-splitter}
+        \caption{RF splitter module.}
+        \label{fig:rf-splitter-module}
+    \end{center}
+\end{figure}
+
 \section{Electrical Power System}
 
 The EPS\nomenclature{\textbf{EPS}}{\textit{Electrical Power System}.} is the module designed to harvest, store and distribute energy for the satellite. The energy harvesting system is based on solar energy conversion through te solar panels attached to the CubeSat structure. The EPS is designed to operate the solar panels at their maximum power point (MPPT\nomenclature{\textbf{MPPT}}{\textit{Maximum Power Point Tracking}.}). The board also measures the solar panels current, voltage and the temperature of the batteries. The harvested solar energy is stored in a battery module connected to the EPS. The energy distribution is done by several integrated buck DC-DC converters. The full EPS system is composed of the solar panels, the EPS PCB\nomenclature{\textbf{PCB}}{\textit{Printed Circuit Board.}} and the battery module. A general view of the EPS board can be seen in \autoref{fig:eps2}.
