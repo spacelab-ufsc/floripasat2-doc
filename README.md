@@ -53,7 +53,9 @@ Besides performing the EDC main functionalities, the mission will contribute to 
 
 It also acts as an experimenting platform for research in space technologies developed before, during, and after the operations phase of the mission, providing empirical data for experiments of many kinds. FloripaSat-2 is expected to be launched by the end of 2020. Details of all systems developed for the mission are described in the documents listed in this repository in a top-level fashion and the detailed technical module documents in their respective repositories. This documentation structure is described in the <a href="#repository-organization">repository organization</a> section.
 
-
+<p align="center">
+    <img width="65%" src="https://github.com/spacelab-ufsc/floripasat2-doc/blob/master/figures/floripasat-2.jpg" />
+</p>
 
 ## Mission Statement
 
