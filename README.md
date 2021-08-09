@@ -27,7 +27,7 @@
 		<img src="https://img.shields.io/badge/sourced%20by-AEB-red?style=for-the-badge">
 	</a>
     <a href="https://github.com/spacelab-ufsc/floripasat2-doc/actions">
-        <img src="https://img.shields.io/github/workflow/status/spacelab-ufsc/floripasat2-doc/Test%20Workflow?style=for-the-badge">
+        <img src="https://img.shields.io/github/workflow/status/spacelab-ufsc/floripasat2-doc/Build%20LaTeX%20document?style=for-the-badge">
     </a>
 </p>
 
