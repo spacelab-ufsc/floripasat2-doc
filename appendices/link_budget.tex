@@ -80,15 +80,15 @@ The minimum distance between the satellite and a ground station is the satellite
 Considering the frequency of the beacon as 437 MHz, the minimum and maximum FSBL is:
 
 \begin{equation}
-    FSPL^{dB}_{min} = 32,45 + 20\log\left(\frac{550}{1\ km}\right) + 20\log\left(\frac{437}{1\ MHz}\right) = \mathbf{140,1\ dB}
+    FSPL^{dB}_{min} = 32,45 + 20\log\left(\frac{550}{1\ km}\right) + 20\log\left(\frac{146}{1\ MHz}\right) = \mathbf{130,5\ dB}
 \end{equation}
 
 \begin{equation}
-    FSPL^{dB}_{max} = 32,45 + 20\log\left(\frac{2705}{1\ km}\right) + 20\log\left(\frac{437}{1\ MHz}\right) = \mathbf{153,9\ dB}
+    FSPL^{dB}_{max} = 32,45 + 20\log\left(\frac{2705}{1\ km}\right) + 20\log\left(\frac{146}{1\ MHz}\right) = \mathbf{144,4\ dB}
 \end{equation}
 
 \begin{equation}
-    \mathbf{140,1 \leq FSPL^{dB} \leq 153,9\ dB}
+    \mathbf{130,5 \leq FSPL^{dB} \leq 144,4\ dB}
 \end{equation}
 
 \subsection{Downlink/Uplink}
@@ -96,15 +96,15 @@ Considering the frequency of the beacon as 437 MHz, the minimum and maximum FSBL
 Considering the frequency of the downlink/uplink as 462,5 MHz, the minimum and maximum FSBL is:
 
 \begin{equation}
-    FSPL^{dB}_{min} = 32,45 + 20\log\left(\frac{550}{1\ km}\right) + 20\log\left(\frac{462,5}{1\ MHz}\right) = \mathbf{140,6\ dB}
+    FSPL^{dB}_{min} = 32,45 + 20\log\left(\frac{550}{1\ km}\right) + 20\log\left(\frac{450}{1\ MHz}\right) = \mathbf{140,3\ dB}
 \end{equation}
 
 \begin{equation}
-    FSPL^{dB}_{max} = 32,45 + 20\log\left(\frac{2705}{1\ km}\right) + 20\log\left(\frac{462,5}{1\ MHz}\right) = \mathbf{154,4\ dB}
+    FSPL^{dB}_{max} = 32,45 + 20\log\left(\frac{2705}{1\ km}\right) + 20\log\left(\frac{450}{1\ MHz}\right) = \mathbf{154,2\ dB}
 \end{equation}
 
 \begin{equation}
-    \mathbf{140,6 \leq FSPL^{dB} \leq 154,4\ dB}
+    \mathbf{140,3 \leq FSPL^{dB} \leq 154,2\ dB}
 \end{equation}
 
 \subsection{Uplink (Payload)}
@@ -147,31 +147,31 @@ Considering the worst scenario with the maximum possible distance between the sa
 \subsection{Beacon}
 
 \begin{equation}
-    P_{r} = 30 + 0 + 12 - 153,9 - 5 = -116,9\ dBm
+    P_{r} = 30 + 0 + 12 - 144,4 - 5 = -107,4\ dBm
 \end{equation}
 
 \begin{equation}
-    \mathbf{P_{r} \geq -116,9\ dBm}
+    \mathbf{P_{r} \geq -107,4\ dBm}
 \end{equation}
 
 \subsection{Downlink (UHF)}
 
 \begin{equation}
-    P_{r} = 30 + 0 + 12 - 154,4 - 5 = -117,4\ dBm
+    P_{r} = 30 + 0 + 12 - 154,2 - 5 = -117,2\ dBm
 \end{equation}
 
 \begin{equation}
-    \mathbf{P_{r} \geq -117,4\ dBm}
+    \mathbf{P_{r} \geq -117,2\ dBm}
 \end{equation}
 
 \subsection{Uplink (UHF)}
 
 \begin{equation}
-    P_{r} = 44 + 12 + 0 - 154,4 - 5 = -103,4\ dBm
+    P_{r} = 44 + 12 + 0 - 154,2 - 5 = -103,2\ dBm
 \end{equation}
 
 \begin{equation}
-    \mathbf{P_{r} \geq -103,4\ dBm}
+    \mathbf{P_{r} \geq -103,2\ dBm}
 \end{equation}
 
 \subsection{Uplink (Payload)}
@@ -261,9 +261,9 @@ Using Equations \ref{eq:snr-db-with-losses} and \ref{eq:system-noise-temperature
     \item $P_{t} = 30\ dBm$
     \item $G_{t} = 0\ dBi$
     \item $G_{r} = 12\ dBi$
-    \item $L_{p} = 153,9\ dB$
+    \item $L_{p} = 144,4\ dB$
     \item $L_{s} = 5\ dB$
-    \item $R = 4800\ bps$
+    \item $R = 1200\ bps$
     \item $T_{0} = 290\ K$
     \item $T_{r} = 290\ K$
     \item $T_{ant} = 300\ K$
@@ -276,11 +276,11 @@ Using Equations \ref{eq:snr-db-with-losses} and \ref{eq:system-noise-temperature
 \end{equation}
 
 \begin{equation}
-    SNR^{dB} = 30 - 30 + 0 + 12 - 153,9 - 5 + 228,6 - 28,21 - 36,81 = 16,68\ dB
+    SNR^{dB} = 30 - 30 + 0 + 12 - 144,4 - 5 + 228,6 - 28,21 - 30,79 = 32,22\ dB
 \end{equation}
 
 \begin{equation}
-\mathbf{SNR^{dB} \geq 16,68\ dB}
+\mathbf{SNR^{dB} \geq 32,22\ dB}
 \end{equation}
 
 \subsection{Downlink}
@@ -291,7 +291,7 @@ Using Equations \ref{eq:snr-db-with-losses} and \ref{eq:system-noise-temperature
     \item $P_{t} = 30\ dBm$
     \item $G_{t} = 0\ dBi$
     \item $G_{r} = 12\ dBi$
-    \item $L_{p} = 154,4\ dB$
+    \item $L_{p} = 154,2\ dB$
     \item $L_{s} = 5\ dB$
     \item $R = 9600\ bps$
     \item $T_{0} = 290\ K$
@@ -302,11 +302,11 @@ Using Equations \ref{eq:snr-db-with-losses} and \ref{eq:system-noise-temperature
 \end{itemize}
 
 \begin{equation}
-    SNR^{dB} = 30 - 30 + 0 + 12 - 154,4 - 5 + 228,6 - 28,21 - 39,82 = 13,17\ dB
+    SNR^{dB} = 30 - 30 + 0 + 12 - 154,2 - 5 + 228,6 - 28,21 - 39,82 = 13,41\ dB
 \end{equation}
 
 \begin{equation}
-\mathbf{SNR^{dB} \geq 13,17\ dB}
+\mathbf{SNR^{dB} \geq 13,41\ dB}
 \end{equation}
 
 \subsection{Uplink}
@@ -317,7 +317,7 @@ Using Equations \ref{eq:snr-db-with-losses} and \ref{eq:system-noise-temperature
     \item $P_{t} = 44\ dBm$
     \item $G_{t} = 12\ dBi$
     \item $G_{r} = 0\ dBi$
-    \item $L_{p} = 154,4\ dB$
+    \item $L_{p} = 154,2\ dB$
     \item $L_{s} = 5\ dB$
     \item $R = 9600\ bps$
     \item $T_{0} = 290\ K$
@@ -328,11 +328,11 @@ Using Equations \ref{eq:snr-db-with-losses} and \ref{eq:system-noise-temperature
 \end{itemize}
 
 \begin{equation}
-    SNR^{dB} = 44 - 30 + 12 + 0 - 154,4 - 5 + 228,6 - 28,21 - 39,82 = 27,17\ dB
+    SNR^{dB} = 44 - 30 + 12 + 0 - 154,2 - 5 + 228,6 - 28,21 - 39,82 = 27,41\ dB
 \end{equation}
 
 \begin{equation}
-    \mathbf{SNR^{dB} \geq 27,17\ dB}
+    \mathbf{SNR^{dB} \geq 27,41\ dB}
 \end{equation}
 
 \subsection{Uplink (Payload)}
@@ -374,8 +374,8 @@ From \cite{larson2005}, the minimum SNR value at the received considering a $10^
 And considering the link margin as the SNR of the link minus the SNR threshold for a given bit error, the link margin of the radio links of the satellite are:
 
 \begin{itemize}
-    \item Beacon: $16,68 - 9,6 = \mathbf{7,077\ dB}$
-    \item Downlink: $13,17 - 9,6 = \mathbf{3,574\ dB}$
-    \item Uplink: $27,17 - 9,6 = \mathbf{17,57\ dB}$
+    \item Beacon: $32,22 - 9,6 = \mathbf{22,62\ dB}$
+    \item Downlink: $13,41 - 9,6 = \mathbf{3,812\ dB}$
+    \item Uplink: $27,41 - 9,6 = \mathbf{17,81\ dB}$
     \item Uplink (payload): $19,17 - 9,6 = \mathbf{9,57\ dB}$
 \end{itemize}
