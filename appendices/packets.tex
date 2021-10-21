@@ -1,5 +1,5 @@
 %
-% link_budget.tex
+% packets.tex
 %
 % Copyright (C) 2021 by SpaceLab.
 %
@@ -214,55 +214,55 @@ The \autoref{tab:uplink-packets} presents the content of the uplink packets.
     \multirow{4}{*}{Enter hibernation}  & 0  & Packet ID (43h)                      & 1 \\
                                         & 1  & Ground station callsign              & 7 \\
                                         & 8  & Hibernation in hours                 & 2 \\
-                                        & 10 & TC key                               & 8 \\
+                                        & 10 & HMAC hash                            & 20 \\
     \cmidrule{4-4}
-                                        &    &                                      & 18 \\
+                                        &    &                                      & 30 \\
     \multirow{3}{*}{Leave hibernation}  & 0  & Packet ID (44h)                      & 1 \\
                                         & 1  & Ground station callsign              & 7 \\
-                                        & 8  & TC key                               & 8 \\
+                                        & 8  & HMAC hash                            & 20 \\
     \cmidrule{4-4}
-                                        &    &                                      & 16 \\
+                                        &    &                                      & 28 \\
     \multirow{4}{*}{Activate module}    & 0  & Packet ID (45h)                      & 1 \\
                                         & 1  & Ground station callsign              & 7 \\
                                         & 8  & Module ID                            & 1 \\
-                                        & 9  & TC key (one for each module)         & 8 \\
+                                        & 9  & HMAC hash                            & 20 \\
     \cmidrule{4-4}
-                                        &    &                                      & 17 \\
+                                        &    &                                      & 29 \\
     \multirow{4}{*}{Deactivate module}  & 0  & Packet ID (46h)                      & 1 \\
                                         & 1  & Ground station callsign              & 7 \\
                                         & 8  & Module ID                            & 1 \\
-                                        & 9  & TC key (one for each module)         & 8 \\
+                                        & 9  & HMAC hash                            & 20 \\
     \cmidrule{4-4}
-                                        &    &                                      & 17 \\
+                                        &    &                                      & 29 \\
     \multirow{4}{*}{Activate payload}   & 0  & Packet ID (47h)                      & 1 \\
                                         & 1  & Ground station callsign              & 7 \\
                                         & 8  & Payload ID                           & 1 \\
-                                        & 9  & TC key (one for each payload)        & 8 \\
+                                        & 9  & HMAC hash                            & 20 \\
     \cmidrule{4-4}
-                                        &    &                                      & 17 \\
+                                        &    &                                      & 29 \\
     \multirow{4}{*}{Deactivate payload} & 0  & Packet ID (48h)                      & 1 \\
                                         & 1  & Ground station callsign              & 7 \\
                                         & 8  & Payload ID                           & 1 \\
-                                        & 9  & TC key (one for each payload)        & 8 \\
+                                        & 9  & HMAC hash                            & 20 \\
     \cmidrule{4-4}
-                                        &    &                                      & 17 \\
+                                        &    &                                      & 29 \\
     \multirow{3}{*}{Erase memory}       & 0  & Packet ID (49h)                      & 1 \\
                                         & 1  & Ground station callsign              & 7 \\
-                                        & 8  & TC key                               & 8 \\
+                                        & 8  & HMAC hash                            & 20 \\
     \cmidrule{4-4}
-                                        &    &                                      & 16 \\
+                                        &    &                                      & 28 \\
     \multirow{3}{*}{Force reset}        & 0  & Packet ID (4Ah)                      & 1 \\
                                         & 1  & Ground station callsign              & 7 \\
-                                        & 8  & TC key                               & 8 \\
+                                        & 8  & HMAC hash                            & 20 \\
     \cmidrule{4-4}
-                                        &    &                                      & 16 \\
+                                        &    &                                      & 28 \\
     \multirow{3}{*}{Get payload data}   & 0  & Packet ID (4Bh)                      & 1 \\
                                         & 1  & Ground station callsign              & 7 \\
                                         & 8  & Payload ID                           & 1 \\
-                                        & 9  & TC key (one for each payload)        & 8 \\
-                                        & 17 & Payload arguments                    & up to 11 \\
+                                        & 9  & Payload arguments                    & 12 \\
+                                        & 21 & HMAC hash                            & 20 \\
     \cmidrule{4-4}
-                                        &    &                                      & 16 \\
+                                        &    &                                      & 41 \\
     \bottomrule[1.5pt]
     \caption{Uplink packets.}
     \label{tab:uplink-packets}

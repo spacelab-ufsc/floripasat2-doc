@@ -343,6 +343,18 @@ The ID of the payloads, to be used in the activate/deactivate telecommands, are 
     \label{tab:payload-id}
 \end{table}
 
+\subsection{Authentication}
+
+All the telecommands classified as private use an HMAC\nomenclature{\textbf{HMAC}}{\textit{Hash-based Message Authenticaion Code.}} authentication scheme. Every type of private telecommand has a unique 16-digit ASCII character key that with the telecommand sequence (or message) generates an 160-bits (20-bytes) hash sequence to be transmitted together with the packet payload. The used hash algorithm is the SHA-1\nomenclature{\textbf{SHA-1}}{\textit{Secure Hash Algorithm 1.}}. The \autoref{fig:hmac-diagram} illustrates this authentication method.
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[width=\textwidth]{figures/hmac-diagram.pdf}
+        \caption{Diagram of the used HMAC scheme.}
+        \label{fig:hmac-diagram}
+    \end{center}
+\end{figure}
+
 \subsection{Operation Licenses}
 
 .
