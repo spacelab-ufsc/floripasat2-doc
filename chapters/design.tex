@@ -17,7 +17,7 @@
 %
 % \institution Universidade Federal de Santa Catarina (UFSC)
 %
-% \version 0.2.0
+% \version 0.9.0
 %
 % \date 2021/07/15
 %
@@ -279,28 +279,28 @@ The \autoref{tab:packets-struct} summarizes all types of packets transmitted or 
             \cmidrule{3-6}
                                       &                       & \textbf{ID}  & \textbf{Source Callsign}   & \textbf{Data (up to 220 bytes)}            & \textbf{Size (bytes)} & \\
             \midrule
-            \multirow{2}{*}{Beacon}   & EPS data              & 00h & \multirow{2}{*}{`` '' + ``PY0EFS''} & EPS data                                   & 58                    & Public \\
-                                      & TTC Data              & 01h &                                     & TTC data                                   & 18                    & Public \\
+            \multirow{2}{*}{Beacon}   & EPS data              & 00h & \multirow{2}{*}{`` '' + ``PY0EFS''} & EPS data                                   & 46                    & Public \\
+                                      & TTC Data              & 01h &                                     & TTC data                                   & 19                    & Public \\
             \midrule
-            \multirow{6}{*}{Downlink} & General telemetry     & 20h & \multirow{6}{*}{`` '' + ``PY0EFS''} & OBDH/EPS data                              & 75                    & Public \\
+            \multirow{6}{*}{Downlink} & General telemetry     & 20h & \multirow{6}{*}{`` '' + ``PY0EFS''} & OBDH/EPS data                              & 78                    & Public \\
                                       & Ping answer           & 21h &                                     & Requester callsign                         & 15                    & Public \\
-                                      & Data request answer   & 22h &                                     & Requester callsign + data                  & 15 to 155             & Public \\
+                                      & Data request answer   & 22h &                                     & Requester callsign + data ID + ts. + data  & 20 to 220             & Public \\
                                       & Message broadcast     & 23h &                                     & Requester + dst. callsign + message        & 22 to 60              & Public \\
                                       & Payload data          & 24h &                                     & Payload ID + payload data                  & 9 to 220              & Public \\
-                                      & TC feedback           & 25h &                                     & Req. callsign + TC packet ID + timestamp   & 13                    & Public \\
+                                      & TC feedback           & 25h &                                     & Req. callsign + TC packet ID + timestamp   & 20                    & Public \\
             \midrule
             \multirow{12}{*}{Uplink}  & Ping request          & 40h & \multirow{12}{*}{Any Callsign}      & None                                       & 8                     & Public \\
-                                      & Data request          & 41h &                                     & Data flags + count + origin + offset       & 16                    & Public \\
-                                      & Broadcast Message     & 42h &                                     & Dst. callsign + message                    & 15 to 46              & Public \\
-                                      & Enter hibernation     & 43h &                                     & Req. callsign + hibernation in hours + key & 29                    & Private \\
-                                      & Leave hibernation     & 44h &                                     & TC key                                     & 16                    & Private \\
-                                      & Activate module       & 45h &                                     & Module ID + TC key                         & 17                    & Private \\
-                                      & Deactivate module     & 46h &                                     & Module ID + TC key                         & 17                    & Private \\
-                                      & Activate payload      & 47h &                                     & Payload ID + TC key                        & 17                    & Private \\
-                                      & Deactivate payload    & 48h &                                     & Payload ID + TC key                        & 17                    & Private \\
-                                      & Erase memory          & 49h &                                     & TC key                                     & 16                    & Private \\
-                                      & Force reset           & 4Ah &                                     & TC key                                     & 16                    & Private \\
-                                      & Get payload data      & 4Bh &                                     & Payload ID + TC key + payload args.        & 17 to 28              & Private \\
+                                      & Data request          & 41h &                                     & Data ID + Start ts. + End ts. + Hash       & 37                    & Private \\
+                                      & Broadcast Message     & 42h &                                     & Dst. callsign + message                    & 15 to 53              & Public \\
+                                      & Enter hibernation     & 43h &                                     & Hibernation in hours + Hash                & 30                    & Private \\
+                                      & Leave hibernation     & 44h &                                     & Hash                                       & 28                    & Private \\
+                                      & Activate module       & 45h &                                     & Module ID + Hash                           & 29                    & Private \\
+                                      & Deactivate module     & 46h &                                     & Module ID + Hash                           & 29                    & Private \\
+                                      & Activate payload      & 47h &                                     & Payload ID + Hash                          & 29                    & Private \\
+                                      & Deactivate payload    & 48h &                                     & Payload ID + Hash                          & 29                    & Private \\
+                                      & Erase memory          & 49h &                                     & Hash                                       & 28                    & Private \\
+                                      & Force reset           & 4Ah &                                     & Hash                                       & 28                    & Private \\
+                                      & Get payload data      & 4Bh &                                     & Payload ID + Args. + Hash                  & 41                    & Private \\
             \bottomrule[1.5pt]
         \end{tabular}
         \caption{Telecommunication packets and their content.}

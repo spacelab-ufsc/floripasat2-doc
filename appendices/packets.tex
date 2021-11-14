@@ -17,7 +17,7 @@
 %
 % \institution Universidade Federal de Santa Catarina (UFSC)
 %
-% \version 0.2.0
+% \version 0.9.0
 %
 % \date 2021/06/03
 %
@@ -128,11 +128,14 @@ In \autoref{tab:downlink-packets} the content of the downlink packets is availab
                                             & 8  & Requester callsign                   & 7 \\
     \cmidrule{4-4}
                                             &    &                                      & 15 \\
-    \multirow{3}{*}{Data request answer}    & 0  & Packet ID (22h)                      & 1 \\
+    \multirow{6}{*}{Data request answer}    & 0  & Packet ID (22h)                      & 1 \\
                                             & 1  & Source callsign (`` PY0EFS'')        & 7 \\
                                             & 8  & Requester callsign                   & 7 \\
+                                            & 15 & Data type ID                         & 1 \\
+                                            & 16 & Timestamp                            & 4 \\
+                                            & 20 & Data                                 & Var. \\
     \cmidrule{4-4}
-                                            &    &                                      & 15 \\
+                                            &    &                                      & 20 (min.) \\
     \multirow{5}{*}{Message broadcast}      & 0  & Packet ID (23h)                      & 1 \\
                                             & 1  & Source callsign (`` PY0EFS'')        & 7 \\
                                             & 8  & Requester callsign                   & 7 \\
@@ -201,10 +204,14 @@ The \autoref{tab:uplink-packets} presents the content of the uplink packets.
                                         & 1  & Ground station callsign              & 7 \\
     \cmidrule{4-4}
                                         &    &                                      & 8 \\
-    \multirow{2}{*}{Data request}       & 0  & Packet ID (41h)                      & 1 \\
+    \multirow{6}{*}{Data request}       & 0  & Packet ID (41h)                      & 1 \\
                                         & 1  & Ground station callsign              & 7 \\
+                                        & 8  & Data type ID                         & 1 \\
+                                        & 9  & Start timestamp                      & 4 \\
+                                        & 13 & End timestamp                        & 4 \\
+                                        & 17 & HMAC hash                            & 20 \\
     \cmidrule{4-4}
-                                        &    &                                      & 8 \\
+                                        &    &                                      & 37 \\
     \multirow{4}{*}{Broadcast message}  & 0  & Packet ID (42h)                      & 1 \\
                                         & 1  & Ground station callsign              & 7 \\
                                         & 8  & Destination callsign                 & 7 \\
@@ -256,7 +263,7 @@ The \autoref{tab:uplink-packets} presents the content of the uplink packets.
                                         & 8  & HMAC hash                            & 20 \\
     \cmidrule{4-4}
                                         &    &                                      & 28 \\
-    \multirow{3}{*}{Get payload data}   & 0  & Packet ID (4Bh)                      & 1 \\
+    \multirow{5}{*}{Get payload data}   & 0  & Packet ID (4Bh)                      & 1 \\
                                         & 1  & Ground station callsign              & 7 \\
                                         & 8  & Payload ID                           & 1 \\
                                         & 9  & Payload arguments                    & 12 \\
