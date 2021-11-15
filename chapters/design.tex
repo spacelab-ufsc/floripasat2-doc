@@ -311,39 +311,31 @@ The \autoref{tab:packets-struct} summarizes all types of packets transmitted or 
     \end{table}
 \end{landscape}
 
-The ID of the modules that can be activated or deactivated are available in \autoref{tab:module-id}.
+The ID of the subsystems, modules and payloads are available in \autoref{tab:system-ids}.
 
 \begin{table}[ht]
     \centering
-    \begin{tabular}{lcL{0.53\textwidth}c}
+    \begin{tabular}{lcl}
         \toprule[1.5pt]
-        \textbf{Module} & \textbf{ID Number} \\
+        \textbf{Type} & \textbf{ID Number} & \textbf{Description} \\
         \midrule
-        Battery heater      & 1 \\
-        Beacon              & 2 \\
-        Periodic telemetry  & 3 \\
+        \multirow{4}{*}{Subsystem} & 0 & OBDH \\
+                                   & 1 & TTC 1 \\
+                                   & 2 & TTC 2 \\
+                                   & 3 & EPS \\
+        \midrule
+        \multirow{3}{*}{Module}    & 1 & Battery heater \\
+                                   & 2 & Beacon \\
+                                   & 3 & Periodic telemetry \\
+        \midrule
+        \multirow{4}{*}{Payload}   & 1 & EDC 1 \\
+                                   & 2 & EDC 2 \\
+                                   & 3 & Payload-X \\
+                                   & 4 & Radiation monitor \\
         \bottomrule[1.5pt]
     \end{tabular}
-    \caption{IDs of the modules that can be activated or deactivated.}
-    \label{tab:module-id}
-\end{table}
-
-The ID of the payloads, to be used in the activate/deactivate telecommands, are available in \autoref{tab:payload-id}.
-
-\begin{table}[ht]
-    \centering
-    \begin{tabular}{lc}
-        \toprule[1.5pt]
-        \textbf{Payload} & \textbf{ID Number} \\
-        \midrule
-        EDC 1               & 1 \\
-        EDC 2               & 2 \\
-        Payload-X           & 3 \\
-        Radiation monitor   & 4 \\
-        \bottomrule[1.5pt]
-    \end{tabular}
-    \caption{IDs of the payloads.}
-    \label{tab:payload-id}
+    \caption{IDs of the satellite.}
+    \label{tab:system-ids}
 \end{table}
 
 \subsection{Authentication}
