@@ -187,6 +187,14 @@ In \autoref{tab:downlink-packets} the content of the downlink packets is availab
                                             & 16 & Timestamp                            & 4 \\
     \cmidrule{4-4}
                                             &    &                                      & 20 \\
+    \multirow{6}{*}{Parameter value}        & 0  & Packet ID (26h)                      & 1 \\
+                                            & 1  & Source callsign (`` PY0EFS'')        & 7 \\
+                                            & 8  & Requester callsign                   & 7 \\
+                                            & 15 & Subsystem ID                         & 1 \\
+                                            & 16 & Parameter ID                         & 1 \\
+                                            & 17 & Parameter value                      & 4 \\
+    \cmidrule{4-4}
+                                            &    &                                      & 21 \\
     \bottomrule[1.5pt]
     \caption{Downlink packets.}
     \label{tab:downlink-packets}
@@ -270,6 +278,21 @@ The \autoref{tab:uplink-packets} presents the content of the uplink packets.
                                         & 21 & HMAC hash                            & 20 \\
     \cmidrule{4-4}
                                         &    &                                      & 41 \\
+    \multirow{6}{*}{Set parameter}      & 0  & Packet ID (4Ch)                      & 1 \\
+                                        & 1  & Ground station callsign              & 7 \\
+                                        & 8  & Subsystem ID                         & 1 \\
+                                        & 9  & Parameter ID                         & 1 \\
+                                        & 10 & Parameter value                      & 4 \\
+                                        & 14 & HMAC hash                            & 20 \\
+    \cmidrule{4-4}
+                                        &    &                                      & 34 \\
+    \multirow{5}{*}{Get parameter}      & 0  & Packet ID (4Dh)                      & 1 \\
+                                        & 1  & Ground station callsign              & 7 \\
+                                        & 8  & Subsystem ID                         & 1 \\
+                                        & 9  & Parameter ID                         & 1 \\
+                                        & 10 & HMAC hash                            & 20 \\
+    \cmidrule{4-4}
+                                        &    &                                      & 30 \\
     \bottomrule[1.5pt]
     \caption{Uplink packets.}
     \label{tab:uplink-packets}
