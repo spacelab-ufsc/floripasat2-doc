@@ -1,7 +1,7 @@
 %
 % ground_segment.tex
 %
-% Copyright (C) 2021 by SpaceLab.
+% Copyright The FloripaSat-2 Contributors.
 %
 % FloripaSat-2 Documentation
 %
@@ -15,9 +15,7 @@
 %
 % \author Gabriel Mariano Marcelino <gabriel.mm8@gmail.com>
 %
-% \institution Universidade Federal de Santa Catarina (UFSC)
-%
-% \version 0.1.0
+% \version 0.2.0
 %
 % \date 2020/06/06
 %
@@ -228,10 +226,62 @@ To track the satellite and for orbit prediction, the GPredict software \cite{gpr
     \end{center}
 \end{figure}
 
-\section{INPE-RN Ground Station}
+\section{EMMN Ground Station}
 
-.
+The EMMN\nomenclature{\textbf{EMMN}}{\textit{Estação Mutlimissão de Natal.}} (\textit{Estação Multimissão de Natal} in portuguese) ground station \cite{emmn} was designed to operate in VHF, UHF and S-Band frequency bands, receiving payload and telemetry data and transmitting telecommands from and to satellites operating in low orbits.
 
-\section{Data Collection Platforms (PCDs)}
+The station's radio frequency systems make use of Software Defined Radios (SDRs), which offers the flexibility to quickly reconfigure parameters such as modulation type, encoding, datarate, and so on. Most commonly used modulation schemes and encoding methods are already implemented and any customization requests can be requested.
 
-.
+The station performs autonomous tracking of several satellites according to a previous schedule and according to a scale of priorities. A Client-Server network design allows station users to remotely send and receive data.
+
+A general block diagram of the EMMN hardware is available in \autoref{fig:emmn-bd}.
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[width=\textwidth]{figures/emmn-bd}
+        \caption{General block diagram of the EMMN.}
+        \label{fig:emmn-bd}
+    \end{center}
+\end{figure}
+
+\begin{table}[!h]
+    \centering
+    \begin{tabular}{lC{6cm}}
+        \toprule[1.5pt]
+        \textbf{Parameter} & \textbf{Value} \\
+        \midrule
+        Grid locator    & HI24JD59CI \\
+        Coordinates     & -5.835238, -35.209285 \\
+        Altitude        & 51 m \\
+        Antennas        & Yagi and parabolic \\
+        Bands           & VHF, UHF and S-Band\\
+        Frequencies     & 144-146 MHz (VHF), 395-405 and 432-440 MHz (UHF) 2200-3300 MHz (S-Band)\\
+        \bottomrule[1.5pt]
+    \end{tabular}
+    \caption{EMMN specs.}
+    \label{tab:emmn-info}
+\end{table}
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[width=\textwidth]{figures/inpe-emmn}
+        \caption{Multimission station of Natal-RN.}
+        \label{fig:emmn}
+    \end{center}
+\end{figure}
+
+\section{Data Collection Platforms}
+
+SINDA\nomenclature{\textbf{SINDA}}{\textit{Sistema Integrado de Dados Ambientais.}} \cite{sinda}
+
+\begin{figure}[!htb]
+    \begin{center}
+        \subfigure[\label{fig:dcp-ex-1}]{\includegraphics[width=0.48\textwidth]{figures/pcd-1}}
+        ~
+        \subfigure[\label{fig:dcp-ex-2}]{\includegraphics[width=0.48\textwidth]{figures/pcd-2}}
+
+        \subfigure[\label{fig:dcp-ex-2}]{\includegraphics[width=0.48\textwidth]{figures/pcd-3}}
+        \caption{Examples of data collection platforms (DCPs).}
+        \label{fig:dcp-ex}
+    \end{center}
+\end{figure}
