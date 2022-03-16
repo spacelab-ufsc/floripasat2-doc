@@ -22,12 +22,14 @@
 
 \chapter{EDC Test Report} \label{anx:edc-report}
 
-This appendix is a test report of the EDC board.
+This appendix is a test report of the EDC board. The purpose of this test is to characterize the main functionalities of the EDC module. The main information about the test are available below:
 
 \begin{itemize}
-    \item \textbf{Date}: From 2022/03/03 to 2022/03/XX
+    \item \textbf{Date}: From 2022/03/03 to 2022/03/14
     \item \textbf{Testers}: Bruno Benedetti, Gabriel M. Marcelino, Laio O. Seman
 \end{itemize}
+
+A picture of the boards used during the tests can be seen in \autoref{fig:edc-boards-test}.
 
 \begin{figure}[!htb]
     \begin{center}
@@ -39,13 +41,19 @@ This appendix is a test report of the EDC board.
     \end{center}
 \end{figure}
 
+This test is divided in two parts: command interface test, and RF chain test. Both are described below.
+
 \section{Command interface test}
+
+The command interface test has the purpose of testing the UART command interface available in the PC-104 bus of the module. All available commands were tested in this test.
 
 \subsection{Used material}
 
+The used material is listed below:
+
 \begin{itemize}
     \item EDC boards
-    \item USB-UART coverter
+    \item USB-UART converter
     \item Saleae Logic Analyzer
     \item Protoboard
     \item Desktop computer
@@ -53,7 +61,10 @@ This appendix is a test report of the EDC board.
     \item Cutecom software
     \item USB cables
     \item Pin header wires
+    \item EDC documentation
 \end{itemize}
+
+The setup of the test can be seen in \autoref{fig:edc-test-setup}. As can be seen in the picture, the USB-UART converter connects the UART interface of the EDC directly to a computer. The EDC board is powered directly by its USB debug interface.
 
 \begin{figure}[!ht]
     \begin{center}
@@ -63,7 +74,11 @@ This appendix is a test report of the EDC board.
     \end{center}
 \end{figure}
 
+To confirm and visualize the transmitted and received data, a logic analyzer is connected to the pins of the UART interface (TX and RX).
+
 \subsection{Results}
+
+During the first attempts to perform this test, no response were received from both boards, during all available commands. After further investigation with the developers of the module (INPE-CRN), the issue was found. As can be seen in autoref{fig:edc-cmd-issue}, the voltage of the RX pin when in low state is higher than expected, making all bits be interpreted as ones.
 
 \begin{figure}[!ht]
     \begin{center}
@@ -73,6 +88,8 @@ This appendix is a test report of the EDC board.
     \end{center}
 \end{figure}
 
+The hypothesis for the cause of this problem is the RS-485 transceiver. As can be seen in \autoref{fig:edc-bd-uart-if}, the RS-485 transceiver and the UART interfaces shares the same UART port of the microcontroller. This way, the RS-485 transceiver can cause an interference on the RX pin of the UART interface, forcing its state to high all the time.
+
 \begin{figure}[!ht]
     \begin{center}
         \includegraphics[width=0.6\textwidth]{figures/edc_report/edc-bd-uart-if}
@@ -80,6 +97,8 @@ This appendix is a test report of the EDC board.
         \label{fig:edc-bd-uart-if}
     \end{center}
 \end{figure}
+
+A solution to this problem, is to disable the RS-485 transceiver, by removing it from the board, or putting the enable pin on disabled state. As it would be difficult to safety remove this component from the boards, the second option was chosen. With a modification in the firmware, the RS-485 transceiver was disabled, and after this modification, the UART command interface started to work as expected, as can be seen in \autoref{fig:edc-echo-cmd} (``echo'' command).
 
 \begin{figure}[!ht]
     \begin{center}
@@ -104,6 +123,8 @@ This appendix is a test report of the EDC board.
     \item Pin header wires
     \item SMA coaxial cable
     \item 30 dB attenuator
+    \item RTL-SDR v3
+    \item EDC documentation
 \end{itemize}
 
 \begin{figure}[!ht]
@@ -136,4 +157,4 @@ This appendix is a test report of the EDC board.
 
 \section{Conclusion}
 
-.
+As presented on this report, a issue with the UART interface was found. A temporary solution was achieved by modifying the current version of the firmware, disabling the RS-485 transceiver by software. But, for the flight version of the boards, a better solution should be considered, per example, the RS-485 CI can be unconsidered from the board assembly or disabled by hardware (with a jumper).
