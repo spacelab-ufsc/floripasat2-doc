@@ -175,7 +175,7 @@ A simulation of the energy input to the solar panels along some orbits can be se
 \begin{itemize}
     \item Peak power $\cong$ 8759,5 mW
     \item Average (orbit) $\cong$ 2744,9 mW
-    \item Average (sun light) $\cong$ 4315,6 mW
+    \item Average (sunlight) $\cong$ 4315,6 mW
     \item Orbit period $\cong$ 6018 sec
     \item Sun light period $\cong$ 3712 sec
     \item Eclipse period $\cong$ 2124 sec
@@ -255,16 +255,83 @@ As can be seen from \autoref{fig:sp_sim_power} and \autoref{tab:power-consumptio
 
 \subsection{Battery Sizing}
 
+As described in \cite{larson2005}, the battery sizing of a satellite can be made by following the steps below:
+
+\begin{enumerate}
+    \item Estimate power level that the battery must supply
+    \item Compute discharge cycle duration, charge cycle duration, and numbers of charge-discharge cycles
+    \item Select depth of discharge
+    \item Select charge rate
+    \item Compute battery recharge power
+\end{enumerate}
+
+The power level that the battery must supply is the total power consumption of the satellite and is available in \autoref{tab:power-consumption}.
+
+The discharge and charge cycle duration can be obtained from \autoref{fig:sp_sim_power}. The discharge duration is approximately 35,3 min (or 0,5889 h), and the charge cycle duration is 61,83 min (or 1,031 h). This, considering a single full orbit.
+
+The depth of discharge (DoD\nomenclature{\textbf{DoD}}{\textit{Depth of Discharge.}}) can be obtained using the \autoref{eq:dod-equation}.
+
+\begin{equation} \label{eq:dod-equation}
+    DoD = \frac{D_{i} \cdot D_{t}}{C} \cdot 100\ \%
+\end{equation}
+
+Where:
+
+\begin{itemize}
+    \item $D_{i}$: Discharge rate
+    \item $D_{t}$: Discharge period
+    \item $C$: Battery capacity
+\end{itemize}
+
+As the battery cells are already selected (5000 mAh in total, as described in \autoref{ssec:battery-module}), the current DoD is computed in \autoref{eq:dod-value}.
+
+\begin{equation} \label{eq:dod-value}
+    DoD = \frac{2668\ mW \cdot 0,5889\ h}{18500\ mWh} \cdot 100 \cong \mathbf{8,5\ \%}
+\end{equation}
+
+The charge rate can be estimated from the power input of the solar panels when the satellite is on sunlight. As presented before, from the simulation results, the power input is estimated as 4315,6 mW. Considering the charge time as 61,83 min (or 1,031 h), the input energy is 4450 mWh. From \autoref{tab:power-consumption}, the power consumption of the satellite at sunlight is 2169 mW (or 2236 mWh considering the sunlight period). This way, energy input at sunlight is obtained in \autoref{eq:energy-input-sun-light}.
+
+\begin{equation} \label{eq:energy-input-sun-light}
+    4450 - 2236 = 2214\ mWh
+\end{equation}
+
+From the DoD calculation, the energy consumption during eclipse is 1571 mWh. This way, the energy margin of the battery becomes positive ($2214 - 1571 = 643 mWh$), as expected from the power budget results.
+
+All results from the battery sizing are available in \autoref{tab:battery-sizing-results}.
+
+\begin{table}[!h]
+    \centering
+    \begin{tabular}{lcc}
+        \toprule[1.5pt]
+        \textbf{Parameter} & \textbf{Value}    & \textbf{Unit} \\
+        \midrule
+        Battery capacity                & 18500  & mWh \\
+        Energy consumption on sunlight & 2169   & mWh \\
+        Energy consumption on eclipse   & 1571   & mWh \\
+        Sun light duration              & 1,031  & h \\
+        Eclipse duration                & 0,5889 & h \\
+        Depth of Discharge (DoD)        & 8,5    & \% \\
+        Total battery energy margin     & 643    & mWh \\
+        \bottomrule[1.5pt]
+    \end{tabular}
+    \caption{Battery sizing results.}
+    \label{tab:battery-sizing-results}
+\end{table}
+
+From the results, the battery sizing is well suited for the current satellite configuration and the planned behaviour.
+
 \subsection{Power Degradation Over Mission Life}
 
 Two major events along the satellite operation should be considered in the power degradation analysis:
 
-\begin{itemize}
+\begin{enumerate}
     \item Solar panels degradation
     \item Battery degradation
-\end{itemize}
+\end{enumerate}
 
-From \cite{larson2005}, 5 \% per year is a usual number for the solar panels degradation, in others words, the general efficiency of the solar panels decays in a rate of 5 \% per year of operation.
+From \cite{larson2005}, 5 \% per year is a usual number for the solar panels degradation, in others words, the general efficiency of the solar panels decays in a rate of 5 \% per year of operation.% Also, \cite{larson2005} defines the battery degradation (or aging )as XX \% per year.
+
+%A partial discharge reduces stress and prolongs battery life, so does a partial charge. Elevated temperature and high currents also affect cycle life
 
 \section{Link Budget}
 
