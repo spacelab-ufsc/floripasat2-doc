@@ -1,9 +1,9 @@
 %
 % management.tex
 %
-% Copyright The FloripaSat-2 Contributors.
+% Copyright The GOLDS-UFSC Contributors.
 %
-% FloripaSat-2 Documentation
+% GOLDS-UFSC Documentation
 %
 % This work is licensed under the Creative Commons Attribution-ShareAlike 4.0
 % International License. To view a copy of this license,
@@ -25,63 +25,64 @@
 \section{Requirements}
 
 \begin{enumerate}
-    \item The power system shall be able to harvest solar energy.
-    \item The power system shall be able to store energy for use when FloripaSat-2 is eclipsed.
-    \item The power system shall supply energy to all other modules.
-    \item The data handling system shall communicate with the other modules and store their data.
-    \item The communications system shall send a beacon signal periodically using VHF radio.
-    \item The communications system shall send the CubeSat telemetry using UHF radio.
-    \item The communications system shall be able to receive telecommands and respond to them accordingly.
-    \item The attitude system shall be able to perform a 1-axis stabilization of the CubeSat.
-    \item FloripaSat-2 shall have the capability to receive and execute a shutdown telecommand, therefore ceasing all transmissions.
-    \item The downlink transmissions shall be done once at a time, either telemetry or beacon.
-    \item The ground station shall operate under the proper radio frequency communication licenses.
-    \item FLoripaSat-2 shall comply with international and Brazilian radio license agreements and restrictions.
-    \item The team shall build and operate a ground station for full communication with FloripaSat-2.
+    \item The power system must be able to harvest solar energy.
+    \item The power system must be able to store energy for use when GOLDS-UFSC is eclipsed.
+    \item The power system must supply energy to all other modules.
+    \item The data handling system must communicate with the other modules and store their data.
+    \item The communications system must send a beacon signal periodically using VHF radio.
+    \item The communications system must send the CubeSat telemetry using UHF radio.
+    \item The communications system must be able to receive telecommands and respond to them accordingly.
+    \item The attitude system must be able to perform a 1-axis stabilization of the CubeSat.
+    \item GOLDS-UFSC must be able to receive and execute a shutdown telecommand, therefore ceasing all transmissions.
+    \item The downlink transmissions must be done once at a time, either telemetry or beacon.
+    \item The ground station must operate under the proper radio frequency communication licenses.
+    \item GOLDS-UFSC must comply with international and Brazilian radio license agreements and restrictions.
+    \item The team must build and operate a ground station for full communication with GOLDS-UFSC.
+    \item GOLDS-UFSC must be capable of sustaining the EDC operation.
+    \item The service module and payload must employ materials and components that do not compromise or damage LIT/INPE test facilities.
+    \item The satellite must reenter the Earth's atmosphere within 25 years.
+    \item It is recommended that the satellite be placed in an orbit up to 500 km.
 \end{enumerate}
 
 \section{Schedule}
 
 \begin{table}[!h]
     \centering
-    \begin{tabular}{cC{0.6cm}C{0.6cm}C{0.6cm}C{0.6cm}C{0.6cm}C{0.6cm}C{0.6cm}C{0.6cm}C{0.6cm}C{0.6cm}C{0.6cm}C{0.6cm}}
+    \begin{tabular}{cC{0.6cm}C{0.6cm}C{0.6cm}C{0.6cm}C{0.6cm}C{0.6cm}C{0.6cm}C{0.6cm}C{0.6cm}C{0.6cm}C{0.6cm}C{0.6cm}C{0.6cm}C{0.6cm}}
         \toprule[1.5pt]
-        \multirow{3}{*}{\textbf{Activity}} & \multicolumn{12}{c}{\textbf{Month (2021)}} \\
-                                           & Jan & Feb & Mar & Apr & May & Jun & Jul & Aug & Sep & Oct & Nov & Dez \\
+        \multirow{4}{*}{\textbf{Activity}} & \multicolumn{14}{c}{\textbf{Month}} \\
+                                           & Nov & Dez & Jan & Feb & Mar & Apr & May & Jun & Jul & Aug & Sep & Oct & Nov & Dez \\
+                                           & 22  & 22  & 23  & 23  & 23  & 23  & 23  & 23  & 23  & 23  & 23  & 23  & 23  & 23 \\
         \midrule
-        1                                  & \fc & \fc & \fc & \fc &     &     &     &     &     &     &     &     \\
-        2                                  & \fc & \fc & \fc & \fc &     &     &     &     &     &     &     &     \\
-        3                                  & \fc & \fc & \fc & \fc & \fc & \fc & \fc & \fc & \fc &     &     &     \\
-        4                                  & \fc & \fc & \fc & \fc & \fc & \fc &     &     &     &     &     &     \\
-        5                                  &     &     &     & \fc & \fc & \fc & \fc & \fc & \fc & \fc &     &     \\
-        6                                  &     &     &     &     & \fc & \fc & \fc & \fc & \fc & \fc & \fc &     \\
-        7                                  &     &     &     &     &     &     &     & \fc & \fc & \fc &     &     \\
-        8                                  &     &     &     &     &     &     &     & \fc & \fc & \fc & \fc &     \\
-        9                                  &     &     &     &     &     &     &     &     & \fc & \fc & \fc & \fc \\
-        10                                 &     &     &     &     &     &     &     &     &     & \fc & \fc &     \\
-        11                                 &     &     &     &     &     &     &     &     &     & \fc & \fc &     \\
-        12                                 &     &     &     &     &     &     &     &     &     &     & \fc &     \\
-        13                                 &     &     &     &     &     &     &     &     & \fc & \fc & \fc & \fc \\
-        14                                 &     &     &     &     &     &     &     &     &     &     & \fc & \fc \\
+        1                                  & \fc & \fc & \fc & \fc & \fc & \fc &     &     &     &     &     &     &     &     \\
+        2                                  & \fc & \fc & \fc & \fc & \fc & \fc &     &     &     &     &     &     &     &     \\
+        3                                  &     &     & \fc & \fc & \fc & \fc & \fc & \fc & \fc & \fc & \fc &     &     &     \\
+        4                                  &     &     & \fc & \fc & \fc & \fc & \fc & \fc &     &     &     &     &     &     \\
+        5                                  &     &     &     &     &     & \fc & \fc & \fc & \fc & \fc & \fc & \fc &     &     \\
+        6                                  &     &     &     &     &     &     & \fc & \fc & \fc & \fc & \fc & \fc & \fc &     \\
+        7                                  &     &     &     &     &     &     &     &     &     & \fc & \fc & \fc &     &     \\
+        8                                  &     &     &     &     &     &     &     &     &     & \fc & \fc & \fc & \fc &     \\
+        9                                  &     &     &     &     &     &     &     &     &     &     & \fc & \fc & \fc & \fc \\
+        10                                 &     &     &     &     &     &     &     &     &     &     &     & \fc & \fc &     \\
+        11                                 &     &     &     &     &     &     &     &     &     &     &     & \fc & \fc &     \\
+        12                                 &     &     &     &     &     &     &     &     &     &     &     &     & \fc &     \\
+        13                                 &     &     &     &     &     &     &     &     &     &     & \fc & \fc & \fc & \fc \\
+        14                                 &     &     &     &     &     &     &     &     &     &     &     &     & \fc & \fc \\
         \bottomrule[1.5pt]
     \end{tabular}
     \caption{Mission schedule.}
     \label{tab:mission-schedule}
 \end{table}
 
-Each activity of \autoref{tab:mission-schedule} is decribed below:
+Each activity of \autoref{tab:mission-schedule} is described below:
 
 \begin{enumerate}
-    \item Acquisition and manufacturing of critical elements and components for the solo platform.
-    \item Acquisition and manufacture of elements and components critical to the payload.
-    \item Acquisition and manufacturing of critical elements and components for the solo segment.
-    \item Compatibility tests between platform and payload in SpaceLab UFSC.
     \item Integration of the engineering model in SpaceLab UFSC.
     \item Preparation and suitability of the ground segment.
-    \item Verification and validation of the engineering model at SpaceLab UFSC.
-    \item Verification and validation of the flight model at SpaceLab UFSC.
-    \item Data collection platforms installation.
+    \item Verification and validation of the engineering model.
+    \item Integration and verification with data collection platforms.
     \item Verification and validation tests of Engineering Model compatibility with EMMN in the INPE / CRN in Natal.
+    \item Verification and validation of the flight model.
     \item Environmental tests at the Integration and Testing Laboratory (LIT/INPE).
     \item Flight model acceptance and ground segment review.
     \item Ground segment delivery.
@@ -89,6 +90,7 @@ Each activity of \autoref{tab:mission-schedule} is decribed below:
 \end{enumerate}
 
 \section{Product Tree}
+
 
 \begin{figure}[!ht]
     \begin{center}
@@ -100,7 +102,7 @@ Each activity of \autoref{tab:mission-schedule} is decribed below:
 
 \subsection{Working Breakdown Structure}
 
-The Working Breaking Structure (WBS\nomenclature{\textbf{WBS}}{\textit{Working Breakdown Structure.}}) is presented as a diagram in \autoref{fig:wbs}. The WBS is divided in work-packages (WP\nomenclature{\textbf{WP}}{\textit{Work Package.}}) as can be seen in the diagram. The description of each WP is detailed below.
+The Working Breaking Structure (WBS\nomenclature{\textbf{WBS}}{\textit{Working Breakdown Structure.}}) is presented as a diagram in \autoref{fig:wbs}. The WBS is divided into work packages (WP\nomenclature{\textbf{WP}}{\textit{Work Package.}}) as can be seen in the diagram. The description of each WP is detailed below.
 
 \begin{figure}[!ht]
     \begin{center}

@@ -1,9 +1,9 @@
 %
 % ground_segment.tex
 %
-% Copyright The FloripaSat-2 Contributors.
+% Copyright The GOLDS-UFSC Contributors.
 %
-% FloripaSat-2 Documentation
+% GOLDS-UFSC Documentation
 %
 % This work is licensed under the Creative Commons Attribution-ShareAlike 4.0
 % International License. To view a copy of this license,
@@ -22,9 +22,9 @@
 
 \chapter{Ground Segment} \label{ch:ground-segment}
 
-This chapter describes the ground segment of the mission. It is composed by two ground stations (one at the INPE-RN installations and other at the SpaceLab installations) and many data collection platforms (PCD\nomenclature{\textbf{PCD}}{\textit{``Plataforma de Coleta de Dados'', or Data Collection Platform}}, or \textit{``Plataforma de Coleta de Dados''}), installed at a variety of locations on the brazilian territory.
+This chapter describes the ground segment of the mission. It is composed of two ground stations (one at the INPE-RN installations and the other at the SpaceLab installations) and many data collection platforms (PCD\nomenclature{\textbf{PCD}}{\textit{``Plataforma de Coleta de Dados'', or Data Collection Platform}}, or \textit{``Plataforma de Coleta de Dados''}), installed at a variety of locations on the Brazilian territory.
 
-The control of the mission and the reception of the collected data will be performed mainly at these two ground stations, but if necessary, other stations can execute this task. The amateur radio link can be used by any station in the world since having the required equipment to it.
+The control of the mission and the reception of the collected data will be performed mainly at these two ground stations, but if necessary, other stations can execute this task. Any station in the world can use the amateur radio link since having the required equipment to it.
 
 \section{UFSC Ground Station}
 
@@ -38,7 +38,7 @@ The UFSC ground station is currently being developed and prepared for this missi
     \end{center}
 \end{figure}
 
-In the next sections, a description of the main components of the station will be presented.
+In the following sections, a description of the main components of the station will be presented.
 
 \subsection{Hardware}
 
@@ -59,11 +59,11 @@ There are two antennas in the ground station: One for VHF and one for the UHF ba
         Type                    & Yagi                  & Yagi                  & - \\
         Number of elements      & 14                    & 19                    & - \\
         Frequency range         & 143-148               & 430-450               & MHz \\
-        Gain                    & 12,34                 & 15,5                  & dBi \\
+        Gain                    & 12.34                 & 15.5                  & dBi \\
         Power rating            & 1500                  & 2000                  & W \\
-        Boom length             & 3,2                   & 4,1                   & m \\
-        Longest element         & 1,02                  & 0,34                  & m \\
-        Weight                  & 2,72                  & 2,55                  & kg \\
+        Boom length             & 3.2                   & 4.1                   & m \\
+        Longest element         & 1.02                  & 0.34                  & m \\
+        Weight                  & 2.72                  & 2.55                  & kg \\
         \bottomrule[1.5pt]
     \end{tabular}
     \caption{Main characteristics of the ground segment antennas.}
@@ -74,9 +74,9 @@ More information about the VHF and UHF antennas can be found in \cite{2mcp14} an
 
 \paragraph{Surge Protector}
 
-To protect the ground station electronics of possible atmospheric discharges in the outside components, two surge protectors will be used (one for each antenna). The gas surge protectors safely discharge/deflect up to 5000 A of peak current to earth without causing damage to an independent ground. This kind of device is installed near the antennas, in cascade with the RF cables.
+Two surge protectors will be used to protect the ground station electronics of possible atmospheric discharges in the outside components (one for each antenna). The gas surge protectors safely discharge/deflect up to 5000 A of peak current to earth without causing damage to an independent ground. This device is installed near the antennas, in cascade with the RF cables.
 
-For this project the model MFJ-270N will be used, and a picture of it can be seen in \autoref{fig:mfj-270n}.
+For this project, the model MFJ-270N will be used, and a picture of it can be seen in \autoref{fig:mfj-270n}.
 
 \begin{figure}[!ht]
     \begin{center}
@@ -90,7 +90,7 @@ For this project the model MFJ-270N will be used, and a picture of it can be see
 
 Both antennas (VHF and UHF) track the satellite through a two axis rotator (azimuth and elevation). The used model is the Yaesu G-5500, which provides 450$^{\circ}$ azimuth and 180$^{\circ}$ elevation control of medium and large size unidirectional satellite antenna arrays under remote control from station operation position.
 
-A picture of the G-5500 rotator (and controller) can be seen in \autoref{fig:g5500}, the main characteristics can be found in \autoref{tab:grs-rotor}.
+A picture of the G-5500 rotator (and controller) can be seen in \autoref{fig:g5500}; the main characteristics can be found in \autoref{tab:grs-rotor}.
 
 \begin{figure}[!ht]
     \begin{center}
@@ -133,7 +133,7 @@ More information about the ground station rotator can be found in \cite{g5500}.
 
 \paragraph{Power Amplifier}
 
-PA\nomenclature{\textbf{PA}}{\textit{Power Amplifier}}...
+
 
 A picture of the power amplifier can be seen in \autoref{fig:zhl-50w}, the main characteristics are available in \autoref{tab:zhl-50w-specs}.
 
@@ -155,9 +155,9 @@ A picture of the power amplifier can be seen in \autoref{fig:zhl-50w}, the main 
         Model                   & ZHL-50W-52-S+     & - \\
         Frequency range         & 50-500            & MHz \\
         Gain                    & 47-52             & dB \\
-        Noise figure            & 4,5-7,0           & dB \\
+        Noise figure            & 4.5-7.0           & dB \\
         DC supply voltage       & 24-25             & V \\
-        Max. supply current     & 9,3               & A \\
+        Max. supply current     & 9.3               & A \\
         \bottomrule[1.5pt]
     \end{tabular}
     \caption{Main characteristics of the ZHL-50W-52-S+ power amplifier.}
@@ -166,13 +166,39 @@ A picture of the power amplifier can be seen in \autoref{fig:zhl-50w}, the main 
 
 \paragraph{Low Noise Amplifiers}
 
-LNA\nomenclature{\textbf{LNA}}{\textit{Low Noise Amplifier.}}...
+A picture of the low noise amplifier can be seen in \autoref{fig:lna}, the main characteristics are available in \autoref{tab:lna-specs}.
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[width=150pt]{figures/lna.png}
+        \caption{Mini-Circuits ZFL-500LN+ low noise amplifier.}
+        \label{fig:lna}
+    \end{center}
+\end{figure}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{lcc}
+        \toprule[1.5pt]
+        \textbf{Characteristic} & \textbf{Value}    & \textbf{Unit} \\
+        \midrule
+        Brand                   & Mini-Circuits     & - \\
+        Model                   & ZFL-500LN+        & - \\
+        Frequency range         & 0.1-500           & MHz \\
+        Gain                    & 24-28             & dB \\
+        DC supply voltage       & 15                & V \\
+        Max. supply current     & 60                & mA \\
+        \bottomrule[1.5pt]
+    \end{tabular}
+    \caption{Main characteristics of the ZFL-500LN+ low noise amplifier.}
+    \label{tab:lna-specs}
+\end{table}
 
 \subsubsection{Radios}
 
-The Icom IC-9700 \cite{ic9700} is an RF direct sampling receiver for 2 m and 70 cm. The IF receiver consists of a single, down conversion for 23 cm that is between 311 and 371 MHz. The PA provides 100 W on 2 m, 75 W on 70 cm, and 10 W on 23 cm.
+The Icom IC-9700 \cite{ic9700} is an RF direct sampling receiver for 2 m and 70 cm. The IF receiver consists of a single down conversion for 23 cm that is between 311 and 371 MHz. The PA provides 100 W on 2 m, 75 W on 70 cm, and 10 W on 23 cm.
 
-In addition to band specific memory channels, the IC-9700 allows band specific receiver and transmitter settings. For transmit, users can make adjustments to RF power, TX power Limit, Limit Power, and TX Delay by band. Basic receiver settings, like the Noise Blanker, Noise Reduction, and others can be tweaked by band with a dynamic Notch and Filter setup by band/mode.
+In addition to band-specific memory channels, the IC-9700 allows the band-specific receiver and transmitter settings. For transmission, users can adjust RF power, TX power Limit, Limit Power, and TX Delay by the band. Basic receiver settings, like the Noise Blanker, Noise Reduction, and others, can be tweaked by the band with a dynamic Notch and Filter setup by band/mode.
 
 A picture of the IC-9700 radio can be seen in \autoref{fig:ic9700}.
 
@@ -186,7 +212,7 @@ A picture of the IC-9700 radio can be seen in \autoref{fig:ic9700}.
 
 \paragraph{Software Defined Radio}
 
-As presented in \autoref{fig:grs-block-diagram}, the ground segment also has an SDR\nomenclature{\textbf{SDR}}{\textit{Software Defined Radio.}} (Software Defined Radio) as transceiver. The used model is the USRP B210, from Ettus Research \cite{b210}, which is a fully integrated, single-board SDR with continuous frequency coverage from 70 MHz to 6 GHz. It combines the AD9361 RFIC direct-conversion transceiver providing up to 56 MHz of real-time bandwidth, an open and reprogrammable Spartan6 FPGA, and USB 3.0 connectivity. Also, a full support for the USRP Hardware Driver (UHD) software allows the use with the GNURadio framework.
+As presented in \autoref{fig:grs-block-diagram}, the ground segment also has an SDR\nomenclature{\textbf{SDR}}{\textit{Software Defined Radio.}} (Software Defined Radio) as a transceiver. The used model is the USRP B210, from Ettus Research \cite{b210}, a fully integrated, single-board SDR with continuous frequency coverage from 70 MHz to 6 GHz. It combines the AD9361 RFIC direct-conversion transceiver providing up to 56 MHz of real-time bandwidth, an open and reprogrammable Spartan6 FPGA, and USB 3.0 connectivity. Also, full support for the USRP Hardware Driver (UHD) software allows the use of the GNURadio framework.
 
 A picture of the USRP B210 SDR (with enclosure) can be seen in \autoref{fig:usrp-b210}.
 
@@ -200,11 +226,40 @@ A picture of the USRP B210 SDR (with enclosure) can be seen in \autoref{fig:usrp
 
 \subsubsection{Processing and Control}
 
-.
+The ground station control room shall have two monitors and a dedicated computer alongside most of the previously presented hardware. It will work as a monitoring room with a nobreak to protect the equipment from power grid fluctuations. 
+
+The antennas and rotator will also be monitored with outside cameras and the room will count with a server so that the transmission and decoding can be done remotely and at any time.
+
+In the \autoref{fig:server} can be seen a picture of the server used and in \autoref{tab:server} are presented the main characteristics of the it.
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{lc}
+        \toprule[1.5pt]
+        \textbf{Characteristic} & \textbf{Value}    \\
+        \midrule
+        Brand                   & Dell     \\
+        Model                   & PowerEdge R240     \\
+        Processor               & Intel Xeon E-2244G 3.8 GHz 4C/8T            \\
+        RAM Memory              & 16GB DDR4 ECC             \\
+        Storage                 & 1 TB HD           \\
+        \bottomrule[1.5pt]
+    \end{tabular}
+    \caption{Main characteristics of the Dell PowerEdge R240 server.}
+    \label{tab:server}
+\end{table}
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[width=300pt]{figures/server.jpg}
+        \caption{Dell PowerEdge R240 server.}
+        \label{fig:server}
+    \end{center}
+\end{figure}
 
 \subsection{Satellite Tracking}
 
-To track the satellite and for orbit prediction, the GPredict software \cite{gpredict} will be used. Gpredict is a real-time satellite tracking and orbit prediction application. It can track a large number of satellites and display their position and other data in lists, tables, maps, and polar plots (radar view). Gpredict can also predict the time of future passes for a satellite, and provide you with detailed information about each pass. Gpredict is free software licensed under the GNU General Public License. A picture of the main window of GPredict can be seen in \autoref{fig:gpredict}.
+To track the satellite and for orbit prediction, the GPredict software \cite{gpredict} will be used. Gpredict is a real-time satellite tracking and orbit prediction application. It can track many satellites and display their position and other data in lists, tables, maps, and polar plots (radar view). Gpredict can also predict the time of future passes for a satellite and provide detailed information about each pass. Gpredict is free software licensed under the GNU General Public License. A picture of the main window of GPredict can be seen in \autoref{fig:gpredict}.
 
 \begin{figure}[!ht]
     \begin{center}
@@ -214,9 +269,40 @@ To track the satellite and for orbit prediction, the GPredict software \cite{gpr
     \end{center}
 \end{figure}
 
-\subsection{Packet Decoding}
+\subsection{Packet Transmission}
 
-\cite{spacelab-decoder}
+The packet generation and transmission to GOLDS-UFSC satellite can be done with the Spacelab Transmitter software, which was written in Python with the interface developed using the GTK framework. It has a USRP Handler made with Ettus libraries to work with Ettus USRP B210 as shown in \autoref{fig:usrp-b210}. The supported modulation is the Gaussian Minimum Shift Keying (GMSK). Furthermore, the software also has unit tests for the main modules and a logging system to record events such as an initialization or a successfully transmitted telecommand. \cite{spacelab-transmitter}
+
+In the \autoref{fig:transmitter-tree} is shown the product tree of the software, which contains its main elements of it, and in the \autoref{fig:spacelab-transmitter} is shown the main window of it.
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[width=270pt]{figures/transmitter_tree.pdf}
+        \caption{SpaceLab Transmitter product tree.}
+        \label{fig:transmitter-tree}
+    \end{center}
+\end{figure}
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[width=\textwidth]{figures/spacelab-transmitter-window.png}
+        \caption{Main window of the SpaceLab Transmitter application.}
+        \label{fig:spacelab-transmitter}
+    \end{center}
+\end{figure}
+
+\subsection{Packet Decoding}
+The packet decoding of GOLDS-UFSC satellites telemetry can be done using the Spacelab Packet Decoder software using a .wav file. The decoded telemetry will appear in a dialog within the main window. The software was written in Python, and the interface was developed using GTK framework. Furthermore, the software also has unit tests for the main modules and a logging system to record events. \cite{spacelab-decoder}
+
+The \autoref{fig:decoder-tree} is shown the product tree of the software, which contains its main elements, and in the \autoref{fig:spacelab-transmitter} is shown the main window of it.
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[width=270pt]{figures/decoder_tree.pdf}
+        \caption{SpaceLab Decoder product tree.}
+        \label{fig:decoder-tree}
+    \end{center}
+\end{figure}
 
 \begin{figure}[!ht]
     \begin{center}
@@ -230,9 +316,9 @@ To track the satellite and for orbit prediction, the GPredict software \cite{gpr
 
 The EMMN\nomenclature{\textbf{EMMN}}{\textit{Estação Mutlimissão de Natal.}} (\textit{Estação Multimissão de Natal} in portuguese) ground station \cite{emmn} was designed to operate in VHF, UHF and S-Band frequency bands, receiving payload and telemetry data and transmitting telecommands from and to satellites operating in low orbits.
 
-The station's radio frequency systems make use of Software Defined Radios (SDRs), which offers the flexibility to quickly reconfigure parameters such as modulation type, encoding, datarate, and so on. Most commonly used modulation schemes and encoding methods are already implemented and any customization requests can be requested.
+The station's radio frequency systems use Software Defined Radios (SDRs), which offer the flexibility to quickly reconfigure parameters such as modulation type, encoding, datarate, etc. Most commonly used modulation schemes and encoding methods are already implemented, and any customization requests can be requested.
 
-The station performs autonomous tracking of several satellites according to a previous schedule and according to a scale of priorities. A Client-Server network design allows station users to remotely send and receive data.
+The station performs autonomous tracking of several satellites according to a previous schedule and a scale of priorities. A Client-Server network design allows station users to send and receive data remotely.
 
 A general block diagram of the EMMN hardware is available in \autoref{fig:emmn-bd}.
 
@@ -272,7 +358,8 @@ A general block diagram of the EMMN hardware is available in \autoref{fig:emmn-b
 
 \section{Data Collection Platforms}
 
-SINDA\nomenclature{\textbf{SINDA}}{\textit{Sistema Integrado de Dados Ambientais.}} \cite{sinda}
+Data Collection Platforms are part of the Integrated System of Environmental Data (\textit{Sistema Integrado de Dados Ambientais [SINDA]} in Portuguese), which collects the data and by satellites, it is retransmitted to be received in the ground station so that it can be sent to SINDA to be processed. The data is shown online sometime after the receiving. 
+\cite{sinda}
 
 \begin{figure}[!htb]
     \begin{center}

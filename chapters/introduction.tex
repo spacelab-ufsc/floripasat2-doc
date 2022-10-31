@@ -1,9 +1,9 @@
 %
 % introduction.tex
 %
-% Copyright The FloripaSat-2 Contributors.
+% Copyright The GOLDS-UFSC Contributors.
 %
-% FloripaSat-2 Documentation
+% GOLDS-UFSC Documentation
 %
 % This work is licensed under the Creative Commons Attribution-ShareAlike 4.0
 % International License. To view a copy of this license,
@@ -24,40 +24,40 @@
 
 \chapter{Introduction} \label{ch:introduction}
 
-The FloripaSat-2 is a satellite project of a 2U CubeSat (10$\times$10$\times$22,70 cm). This nanosatellite is the sequence project of the FloripaSat-1 CubeSat \cite{floripasat}, both developed by SpaceLab \cite{spacelab}. This second project is being developed in partneship with INPE\nomenclature{\textbf{INPE}}{\textit{Instituto Nacional de Pesquisas Espaciais.}} (\textit{Instituto Nacional de Pesquisas Espaciais}), who is supplying the main payload of the mission: The EDC board (\textit{Environmental Data Collection}) \cite{edc}. This project is part of the ``GOLDS\nomenclature{\textbf{GOLDS}}{\textit{Global Open Collecting Data System.}}'' constellation (``Global Open Collecting Data System''), a collaborative CubeSat constellation for environmental data collection planned as part of the Brazilian space program \cite{golds}.
+The GOLDS-UFSC is a satellite project of a 2U CubeSat (10$\times$10$\times$22,70 cm). This nanosatellite is the sequencing project of the FloripaSat-1 CubeSat \cite{floripasat}, both developed by SpaceLab \cite{spacelab}. This second project is being developed in partneship with INPE\nomenclature{\textbf{INPE}}{\textit{Instituto Nacional de Pesquisas Espaciais.}} (\textit{Instituto Nacional de Pesquisas Espaciais}), who is supplying the main payload of the mission: The EDC board (\textit{Environmental Data Collection}) \cite{edc}. This project is part of the ``GOLDS\nomenclature{\textbf{GOLDS}}{\textit{Global Open Collecting Data System.}}'' constellation (``Global Open Collecting Data System''), a collaborative CubeSat constellation for environmental data collection planned as part of the Brazilian space program \cite{golds}.
 
-This project started just after the launch of FloripaSat-I (first half of 2020) and is planned to be launched in 2022. Most of the embedded electronics is partially or totally based on the FloripaSat-I satellite, with the same and/or improved versions of the modules. In other words, this project has at some level a flight heritage.
+This project started just after the launch of FloripaSat-1 (first half of 2020) and is planned to be launched in 2022. Most of the embedded electronics is partially or totally based on the FloripaSat-1 satellite, with the same and/or improved versions of the modules. In other words, this project has, at some level, a flight heritage.
 
-A conceptual image of the FloripaSat-2 satellite is available in \autoref{fig:floripasat-2-render}.
+A conceptual image of the GOLDS-UFSC satellite is available in \autoref{fig:GOLDS-UFSC-render}.
 
 \begin{figure}[!ht]
     \begin{center}
         \includegraphics[width=0.7\textwidth]{figures/floripasat-2.jpg}
-        \caption{FloripaSat-2 3D renderization.}
-        \label{fig:floripasat-2-render}
+        \caption{GOLDS-UFSC 3D renderization.}
+        \label{fig:GOLDS-UFSC-render}
     \end{center}
 \end{figure}
 
 \section{Mission Description}
+The mission's main objective is the In-Orbit Validation (IoV) of INPE's EDC payload, using a service module based on FloripaSat-1 bus. The EDC payload is a module developed for CubeSats and capable of receiving data from data collection stations (Plataformas de Coleta de Dados, PCDs) of the Brazilian Data Collection System (\textit{Sistema Brasileiro de Coleta de Dados}, SBCD) installed along the Brazilian territory. The received data is forwarded to the ground segment through the main communication link offered by the satellite service module. A scientific contribution of the mission is the evaluation of radiation effects on electronic devices, as both EDC and the service platform are based on COTS. The radiation effects evaluation will be performed by Payload-X, which has also been developed for the FloripaSat 1 mission. The mission provides also a relay service to the amateur radio community.
+% The mission consists of testing the EDC payload developed by INPE in a real space mission, using for this, part of the flight heritage obtained during the FloripaSat-1 mission.
 
-The mission consists of testing the EDC payload developed by INPE in a real space mission, using for this, part of the flight heritage obtained during the FloripaSat-1 mission.
+% The EDC payload is a module developed for CubeSats and capable of capturing data from data collection stations (PCDs) of the Brazilian Data Collection System (SBCD, or \textit{Sistema Brasileiro de Coleta de Dados}) installed along the Brazilian territory. The collected data can be retrieved through the main communication link offered by the satellite service modules. This mission will first use the EDC module in a space environment.
 
-The EDC payload is a module developed for CubeSats and capable of capturing data from data collection stations (PCDs) of the Brazilian Data Collection System (SBCD, or \textit{Sistema Brasileiro de Coleta de Dados}) installed along the brazilian territory. The collected data can be retrieved through the main communication link offered by the satellite service modules. This mission will be the first use of the EDC module in an space environment.
-
-As secondary mission, we also intend to test other payloads, such as Payload-X, which is composed of a radiation-tolerant FPGA, and Payload Harsh, which is composed of a radiation sensor using SRAM memories. These payloads, being secondary, will only be used for limited periods of time and upon request by telecommand.
+% As a secondary mission, we also intend to test other payloads, such as Payload-X, which is composed of a radiation-tolerant FPGA and a radiation sensor using SRAM memories. These payloads, being secondary, will only be used for limited periods and upon request by telecommand.
 
 \section{Mission Objectives}
 
 The main objectives of this mission are enumerated below:
 
 \begin{enumerate}
-    \item To serve as a host platform for the EDC payload.
-    \item Validate the EDC payload in orbit.
-    \item Validate EDC functionality in orbit.
+    \item In-Orbit Validation (IoV) of INPE's EDC payload.
+    \item Provide a flight model for the satellite's service platform, based on FloripaSat-1 bus.
+    \item Set up the ground segment for the mission operation.
+    \item Receive environmental data from ground (from EDC stations), and forward the collected data to the ground station.
     \item Validate core-satellite functions in orbit.
-    \item Evaluate the behavior of the core modules in a 2U mission.
-    \item Perform experiments on radiation effects in electronic components in orbit.
-    \item Serve as relay for amateur radio communications, as a contribution to the amateur radio community.
+    \item Perform experiments on radiation effects in electronic components in orbit, evaluating the radiation levels affecting EDC and the service platform modules.
+    \item Serve as a relay for amateur radio communications, contributing to the amateur radio community.
 \end{enumerate}
 
 \section{Project Members}
@@ -66,58 +66,58 @@ All people involved in the project are students, professors and researchers from
 
 A list with the current members directly related to the project (2021/02/08) can be seen in \autoref{tab:team-members}.
 
-\begin{table}[ht]
+\begin{table}[!htb]
     \centering
     \begin{tabular}{lllc}
         \toprule[1.5pt]
         \textbf{Name} & \textbf{Title} & \textbf{Position} & \textbf{Institution} \\
         \midrule
-        Anderson Wedderhoff Spengler        & Ph.D.     & Professor             & UFSC \\
-        Edemar Morsch Filho                 & Ph.D.     & Professor             & UFMA \\
+        Anderson Wedderhoff Spengler        & Dr.       & Professor             & UFSC \\
+        Edemar Morsch Filho                 & Dr.       & Professor             & UNESP \\
         Eduardo Augusto Bezerra             & Ph.D.     & Professor             & UFSC \\
-        Richard Demo Souza                  & Ph.D.     & Professor             & UFSC \\
-        Laio Oriel Seman                    & Ph.D      & Researcher            & UFSC \\
-        Manoel Jozeane Mafra de Carvalho    & Ph.D.     & Researcher            & INPE \\
-        José Marcelo Duarte                 & Ph.D.     & Researcher            & INPE \\
-        Rodrigo Leonardi                    & Ph.D.     & Researcher            & AEB \\
-        Cezar Antônio Rigo                  & M.Sc.     & Ph.D. Student         & UFSC \\
-        Gabriel Mariano Marcelino           & M.Sc.     & Ph.D. Student         & UFSC \\
-        Thiago Martins                      & M.Sc.     & Ph.D. Student         & UFSC \\
+        Richard Demo Souza                  & Dr.       & Professor             & UFSC \\
+        Laio Oriel Seman                    & Dr.       & Researcher            & UFSC \\
+        Rodrigo Leonardi                    & Dr.       & Researcher            & AEB \\
+        José Marcelo Duarte                 & Dr.       & Researcher            & INPE \\
+        Manoel Jozeane Mafra de Carvalho    & M.Sc.     & Researcher            & INPE \\
+        % Cezar Antônio Rigo                  & Dr.       & Researcher            & UFSC \\
+        Gabriel Mariano Marcelino           & M.Sc.     & Doctoral Student      & UFSC \\
+        Brenda Fernandes Ribeiro            & M.Sc.     & Doctoral Student      & UFSC \\
+        André Martins Pio de Mattos         & B.Eng.    & Doctoral Student      & UFSC \\
         Edilberto Costa Neto                & B.Eng.    & Master's Student      & UFSC \\
         Vinicius Pimenta Bernardo           & B.Eng.    & Master's Student      & UFSC \\
-        Amanda Medeiros                     & -         & Undergraduate Student & UFSC \\
-        André Martins Pio de Mattos         & -         & Undergraduate Student & UFSC \\
-        Augusto Cezar Boldori Vassoler      & -         & Undergraduate Student & UFSC \\
+        Augusto Cezar Boldori Vassoler      & B.Eng.    & Master's Student      & UFSC \\
+        % Amanda Medeiros                   & -         & Undergraduate Student & UFSC \\
         Bruno Benedetti                     & -         & Undergraduate Student & UFSC \\
         Caique Sales Miranda Gomes          & -         & Undergraduate Student & UFSC \\
-        Daniel Baron                        & -         & Undergraduate Student & UFSC \\
+        % Daniel Baron                      & -         & Undergraduate Student & UFSC \\
         João Cláudio Elsen Barcellos        & -         & Undergraduate Student & UFSC \\
-        Lorenzo Maturano                    & -         & Undergraduate Student & UFSC \\
+        %Lorenzo Maturano                   & -         & Undergraduate Student & UFSC \\
         Lucas Zacchi                        & -         & Undergraduate Student & UFSC \\
         Matheus Wagner                      & -         & Undergraduate Student & UFSC \\
-        Maurício Sinigaglia                 & -         & Undergraduate Student & UFSC \\
+        %Maurício Sinigaglia                & -         & Undergraduate Student & UFSC \\
         Miguel Böing                        & -         & Undergraduate Student & UFSC \\
         Ramon de Araújo Borba               & -         & Undergraduate Student & UFSC \\
-        Tatiane dal Ross                    & -         & Undergraduate Student & UFSC \\
-        Vitória Beatriz Bianchin            & -         & Undergratuate Student & UFSC \\
-        Yan Castro de Azeredo               & -         & Undergraduate Student & UFSC \\
-        Yuri Gazzoni Rezende                & -         & Undergraduate Student & UFSC \\
+        % Tatiane dal Ross                  & -         & Undergraduate Student & UFSC \\
+        Rebecca Quintino do O               & -         & Undergraduate Student & UFSC \\
+        Vitória Beatriz Bianchin            & -         & Undergraduate Student & UFSC \\
+        % Yan Castro de Azeredo             & -         & Undergraduate Student & UFSC \\
         \bottomrule[1.5pt]
     \end{tabular}
-    \caption{Project members (2022/03/10).}
+    \caption{Project members (2022/24/10).}
     \label{tab:team-members}
 \end{table}
 
-All the used modules and methods used in this project are based in a lot of past works, most of it being the FloripaSat-I and the EDC projects. The list with the indirectly involved people is much bigger.
+All the modules and methods used in this project are based in past works, mainly the FloripaSat-1 and the EDC projects. The list with the indirectly involved people is much bigger.
 
 \section{Mission Patch}
 
-The mission patch of the FloripaSat-2 can be seen in \autoref{fig:mission-patch}, it is inspired by the FloripaSat-I patch \cite{floripasat} because it uses the flight heritage from its core modules (EPS, OBDH, TTC) from the past mission, these were improved in hardware and/or in software to achive the new requirements. The patch shows Brazil, the country of the mission's origin, and grey orbits representing a constellation of CubeSats. The yellow was originally thought of a "gold" like color because of the mission participation on the GOLDS constellation.
+The mission patch of the GOLDS-UFSC can be seen in \autoref{fig:mission-patch}; it is inspired by the FloripaSat-1 patch \cite{floripasat} because it uses the flight heritage from its core modules (EPS, OBDH, TTC) from the last mission, these were improved in hardware and/or in software to achieve the new requirements. The patch shows Brazil, the country of the mission's origin, and grey orbits representing a constellation of CubeSats. Yellow was initially thought of as a "gold" like color because of the mission participation in the GOLDS constellation.
 
-\begin{figure}[!ht]
+\begin{figure}[!htb]
     \begin{center}
-        \includegraphics[width=0.5\textwidth]{figures/floripasat2-patch.png}
-        \caption{FloripaSat-2 mission patch.}
+        \includegraphics[width=0.45\textwidth]{figures/golds-ufsc-patch.png}
+        \caption{GOLDS-UFSC mission patch.}
         \label{fig:mission-patch}
     \end{center}
 \end{figure}

@@ -22,7 +22,7 @@
 
 \chapter{EDC Test Report} \label{anx:edc-report}
 
-This appendix is a test report of the EDC board. The purpose of this test is to characterize the main functionalities of the EDC module. The main information about the test are available below:
+This appendix is a test report of the EDC board. The purpose of this test is to characterize the main functionalities of the EDC module. The main information about the test is available below:
 
 \begin{itemize}
     \item \textbf{Date}: From 2022/03/03 to 2022/03/14
@@ -41,11 +41,11 @@ A picture of the boards used during the tests can be seen in \autoref{fig:edc-bo
     \end{center}
 \end{figure}
 
-This test is divided in two parts: command interface test, and RF chain test. Both are described below.
+This test is divided into two parts: the command interface test and RF chain test. Both are described below.
 
 \section{Command interface test}
 
-The command interface test has the purpose of testing the UART command interface available in the PC-104 bus of the module. All available commands were tested in this test.
+The command interface test aims to test the UART command interface available in the PC-104 bus of the module. All available commands were tested in this test.
 
 \subsection{Used material}
 
@@ -66,7 +66,7 @@ The used material is listed below:
 
 \subsection{Setup}
 
-The setup of the test can be seen in \autoref{fig:edc-test-setup}. As can be seen in the picture, the USB-UART converter connects the UART interface of the EDC directly to a computer. The EDC board is powered directly by its USB debug interface.
+The test setup can be seen in \autoref{fig:edc-test-setup}. As seen in the picture, the USB-UART converter connects the UART interface of the EDC directly to a computer. The EDC board is powered directly by its USB debug interface.
 
 \begin{figure}[!ht]
     \begin{center}
@@ -80,7 +80,7 @@ To confirm and visualize the transmitted and received data, a logic analyzer is 
 
 \subsection{Results}
 
-During the first attempts to perform this test, no response were received from both boards, during all available commands. After further investigation with the developers of the module (INPE-CRN), the issue was found. As can be seen in autoref{fig:edc-cmd-issue}, the voltage of the RX pin when in low state is higher than expected, making all bits be interpreted as ones.
+During the first attempts to perform this test, no responses were received from both boards, considering all the available commands. After further investigation with the module developers (INPE-CRN), the issue was found. As can be seen in autoref{fig:edc-cmd-issue}, the voltage of the RX pin when in a low state is higher than expected, making all bits be interpreted as ones.
 
 \begin{figure}[!ht]
     \begin{center}
@@ -90,7 +90,7 @@ During the first attempts to perform this test, no response were received from b
     \end{center}
 \end{figure}
 
-The hypothesis for the cause of this problem is the RS-485 transceiver. As can be seen in \autoref{fig:edc-bd-uart-if}, the RS-485 transceiver and the UART interfaces shares the same UART port of the microcontroller. This way, the RS-485 transceiver can cause an interference on the RX pin of the UART interface, forcing its state to high all the time.
+The hypothesis for the cause of this problem is the RS-485 transceiver. As seen in \autoref{fig:edc-bd-uart-if}, the RS-485 transceiver and the UART interfaces share the same UART port of the microcontroller. This way, the RS-485 transceiver can cause interference on the RX pin of the UART interface, forcing its state to be high all the time.
 
 \begin{figure}[!ht]
     \begin{center}
@@ -100,7 +100,7 @@ The hypothesis for the cause of this problem is the RS-485 transceiver. As can b
     \end{center}
 \end{figure}
 
-A solution to this problem, is to disable the RS-485 transceiver, by removing it from the board, or putting the enable pin on disabled state. As it would be difficult to safety remove this component from the boards, the second option was chosen. With a modification in the firmware, the RS-485 transceiver was disabled, and after this modification, the UART command interface started to work as expected, as can be seen in \autoref{fig:edc-echo-cmd} (``echo'' command).
+A solution to this problem is to disable the RS-485 transceiver by removing it from the board or putting the enable pin on a disabled state. As it would be difficult to remove this component from the boards safely, the second option was chosen. With a modification in the firmware, the RS-485 transceiver was disabled. After this modification, the UART command interface started to work as expected, as can be seen in \autoref{fig:edc-echo-cmd} (``echo'' command).
 
 \begin{figure}[!ht]
     \begin{center}
@@ -112,7 +112,7 @@ A solution to this problem, is to disable the RS-485 transceiver, by removing it
 
 \section{RF chain test}
 
-This test simulates a signal transmitted by a DCP directly to the RF input of the EDC module. To emulate the DCP signal, a GNURadio flow generates the packets and an SDR transmitted transmits the packet to the EDC. This test is divided in two steps: in the first step, we check the transmitted signal by the USRP, and in the second step the EDC reception and decoding is verified.
+This test simulates a signal transmitted by a DCP directly to the RF input of the EDC module. To emulate the DCP signal, a GNURadio flow generates the packets, and an SDR transmitter transmits the packet to the EDC. This test is divided into two steps: in the first step, we check the transmitted signal by the USRP, and in the second step, the EDC reception and decoding are verified.
 
 \subsection{Used material}
 
@@ -173,7 +173,7 @@ The transmitted signal by the USRP SDR can be seen in \autoref{fig:edc-rf-signal
     \end{center}
 \end{figure}
 
-The received and decoded packets by the EDC during the tests, are available in \autoref{fig:edc-pkts}. Each color line is a different decoded packet. The last byte sequence indicates the number of available packets in the queue (zero in this case, after reading all packets).
+The received and decoded packets by the EDC during the tests are available in \autoref{fig:edc-pkts}. Each color line is a different decoded packet. The last byte sequence indicates the number of available packets in the queue (zero in this case, after reading all packets).
 
 \begin{figure}[!ht]
     \begin{center}
@@ -185,6 +185,6 @@ The received and decoded packets by the EDC during the tests, are available in \
 
 \section{Conclusion}
 
-As presented on this report, a issue with the UART interface was found. A temporary solution was achieved by modifying the current version of the firmware, disabling the RS-485 transceiver by software. But, for the flight version of the boards, a better solution should be considered, per example, the RS-485 CI can be unconsidered from the board assembly or disabled by hardware (with a jumper).
+As presented in this report, an issue with the UART interface was found. A temporary solution was achieved by modifying the current version of the firmware and disabling the RS-485 transceiver by software. However, a better solution should be considered for the flight version of the boards; for example, the RS-485 CI can be unconsidered from the board assembly or disabled by hardware (with a jumper).
 
 As for the RF chain test, no issues were identified so far, using the available stimulus signal, all packages are received and decoded as expected. The commands regarding the package reception also work as planned.

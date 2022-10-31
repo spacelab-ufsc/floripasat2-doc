@@ -3,7 +3,7 @@
 %
 % Copyright (C) 2021 by SpaceLab.
 %
-% FloripaSat-2 Documentation
+% GOLDS-UFSC Documentation
 %
 % This work is licensed under the Creative Commons Attribution-ShareAlike 4.0
 % International License. To view a copy of this license,
@@ -22,17 +22,18 @@
 % \date 2021/07/15
 %
 
-\chapter{Design Description} \label{ch:design}
+% \chapter{Design Description} \label{ch:design}
+\chapter{Service Module Overview} \label{ch:design}
 
-.
+This section presents the design description of GOLDS-UFSC.
 
 \section{General Diagrams}
 
-The CubeSat's subsystems are positioned in the 2U physical structure as exemplified in \autoref{fig:subsystems-positioning}. An exploded 3D view of the satellite is showed in \autoref{fig:exploded-view}.
+The CubeSat's subsystems are positioned in the 2U physical structure as exemplified in \autoref{fig:subsystems-positioning}. An exploded 3D satellite view is shown in \autoref{fig:exploded-view}.
 
-\begin{figure}[!ht]
+\begin{figure}[!htb]
     \begin{center}
-        \includegraphics[width=0.7\textwidth]{figures/subsystems-positioning.pdf}
+        \includegraphics[width=0.7\textwidth]{figures/subsystems-positioning2.pdf}
         \caption{Subsystems positioning.}
         \label{fig:subsystems-positioning}
     \end{center}
@@ -41,13 +42,13 @@ The CubeSat's subsystems are positioned in the 2U physical structure as exemplif
 \subsection{Power Diagram}
 
 In \autoref{fig:power-diagram} is presented a block diagram showing the satellite's power buses.
-The EPS module distributes these buses and have the hability to turn on and off some subsystems, while other modules also have direct control over some dc regulators\cite{eps2}.
+The EPS module distributes these buses and has the ability to turn on and off some subsystems, while other modules also have direct control over some dc regulators\cite{eps2}.
 The bus used for the antenna module is only active during its deployment. 
-The current values showed are the maximum capability and not the nominal operating values, these are determined by the variable power generation of the solar panels as well the loads present in a given time of the satellite's operation.
+The current values shown are the maximum capability and not the nominal operating values; these are determined by the variable power generation of the solar panels as well as the loads present at a given time of the satellite's operation.
 % TBD
-% In \autoref{power-budget} the power consumption of the satellite in showed in detail.
+% In \autoref{power-budget} the satellite's power consumption is shown in detail.
 
-\begin{figure}[!ht]
+\begin{figure}[!htb]
     \begin{center}
         \includegraphics[width=\textwidth]{figures/power_diagram.pdf}
         \caption{Power diagram.}
@@ -60,7 +61,9 @@ The current values showed are the maximum capability and not the nominal operati
 
 \subsection{Data Path Diagram}
 
-\begin{figure}[!ht]
+The data path diagram is shown in \autoref{fig:data-path}.
+
+\begin{figure}[!htb]
     \begin{center}
         \includegraphics[width=\textwidth]{figures/data_path_diagram.pdf}
         \caption{Data path diagram.}
@@ -70,15 +73,15 @@ The current values showed are the maximum capability and not the nominal operati
 
 \subsection{Deployment Sequence}
 
-The deployment sequence of the satellite is the routine to be executed just after the launch. The main objective of this operation is to the deploy the antennas and prepare the satellite to start its normal operation.
+The deployment sequence of the satellite is the routine to be executed just after the launch. The main objective of this operation is to deploy the antennas and prepare the satellite to start its normal operation.
 
-Just after the satellite is ejected from the deployer, the kill-switches enables the electric power and the three core modules execute the boot sequence (EPS, OBDH and TTC). The EPS module is ready to operate when the boot finishes. The OBDH and the TTC modules waits for a determined period before starting the normal execution.
+After the satellite is ejected from the deployer, the kill switches enable the electric power and the three core modules to execute the boot sequence (EPS, OBDH and TTC). The EPS module is ready to operate when the boot finishes. The OBDH and the TTC modules waits for a determined period before starting the normal execution.
 
-As the OBDH and the TTC have access to the antenna module, both subsystem can control the deployment of the antennas. Following the CDS\nomenclature{\textbf{CDS}}{\textit{CubeSat Design Specification.}} specifications \cite{cds}, all CubeSats must wait 30 minutes to deploy the antennas and 45 minutes to transmit any RF signal. This way, the OBDH waits 45 minutes to send the deployment command to the antenna module. As redundancy, the TTC waits 55 minutes to execute the same operation.
+As the OBDH and the TTC have access to the antenna module, both subsystems can control the deployment of the antennas. Following the CDS\nomenclature{\textbf{CDS}}{\textit{CubeSat Design Specification.}} specifications \cite{cds}, all CubeSats must wait 30 minutes to deploy the antennas and 45 minutes to transmit any RF signal. This way, the OBDH waits 45 minutes to send the deployment command to the antenna module. As redundancy, the TTC waits 55 minutes to execute the same operation.
 
 The \autoref{fig:deployment-flowchart} has a flowchart that illustrates the deployment sequence of the service modules.
 
-\begin{figure}[!ht]
+\begin{figure}[!htb]
     \begin{center}
         \includegraphics[width=0.5\textwidth]{figures/deployment-flowchart.pdf}
         \caption{Flowchart of the deployment sequence.}
@@ -88,9 +91,9 @@ The \autoref{fig:deployment-flowchart} has a flowchart that illustrates the depl
 
 \subsection{Beacon Operation}
 
-After the boot sequence of the beacon microcontroller, the operation of the beacon starts. The normal operation consist on reading the data from the EPS and the TTC modules, transmit the valid data (EPS or TTC package, in this order of priority), wait 60 seconds and repeat this sequence. The \autoref{fig:beacon-flowchart} has a flowchart of this behaviour.
+After the beacon microcontroller's boot sequence, the beacon's operation starts. The normal operation consists of reading the data from the EPS and the TTC modules, transmitting the valid data (EPS or TTC package, in this order of priority), waiting 60 seconds, and repeating this sequence. The \autoref{fig:beacon-flowchart} has a flowchart of this behavior.
 
-\begin{figure}[!ht]
+\begin{figure}[!htb]
     \begin{center}
         \includegraphics[width=0.55\textwidth]{figures/beacon-flowchart.pdf}
         \caption{Flowchart of the normal beacon operation.}
@@ -100,9 +103,9 @@ After the boot sequence of the beacon microcontroller, the operation of the beac
 
 \subsection{OBDH Operation}
 
-After the boot sequence of the OBDH microcontroller, the operation of the OBDH starts. The normal operation consist on reading the housekeeping data from the EPS, TTC, payloads, antenna module and the OBDH (its own housekeeping data), save the read data on the non-volatile memory and transmit the housekeeping data of the satellite as a beacon. After that, it waits 60 seconds and check if a new telecommand was received, if true process the telecommand, if not, does nothing. After this sequence, these steps start again. The \autoref{fig:obdh-flowchart} has a flowchart of this behaviour.
+After the boot sequence of the OBDH microcontroller, the operation of the OBDH starts. The regular operation consists of reading the housekeeping data from the EPS, TTC, payloads, antenna module, and the OBDH (its own housekeeping data), saving the read data on the non-volatile memory, and transmitting the housekeeping data of the satellite as a beacon. After that, it waits 60 seconds and checks if a new telecommand was received; if true, it processes the telecommand; if not, it does nothing. After this sequence, these steps start again. The \autoref{fig:obdh-flowchart} has a flowchart of this behavior.
 
-\begin{figure}[!ht]
+\begin{figure}[!htb]
     \begin{center}
         \includegraphics[width=0.63\textwidth]{figures/obdh-flowchart.pdf}
         \caption{Flowchart of the normal OBDH operation.}
@@ -112,9 +115,9 @@ After the boot sequence of the OBDH microcontroller, the operation of the OBDH s
 
 \subsubsection{Telecommand Processing}
 
-.
+Figure \autoref{fig:tc-flowchart} shows the telecommand processing flow.
 
-\begin{figure}[!ht]
+\begin{figure}[!htb]
     \begin{center}
         \includegraphics[width=0.8\textwidth]{figures/tc-flowchart.pdf}
         \caption{Flowchart of telecommand processing.}
@@ -125,12 +128,12 @@ After the boot sequence of the OBDH microcontroller, the operation of the OBDH s
 \subsection{EPS Operation}
 
 The operation of the EPS microcontroller starts shortly after the release of the CubeSat in its orbit by the deployer.
-In the first 60 minutes the module operation consist of reading the housekeeping data from its sensors and managing the duty cycles of the MPPT and heaters.
-When operational, the TTC and OBDH modules send separete periodic requests to the EPS for fowarding the housekeeping data acquired.
-The TTC receives a simplifed version while the OBDH receives a complete version of the data.
-The \autoref{fig:eps-flowchart} has a flowchart of this behaviour.
+In the first 60 minutes, the module operation consists of reading the housekeeping data from its sensors and managing the duty cycles of the MPPT and heaters.
+When operational, the TTC and OBDH modules send separate periodic requests to the EPS for forwarding, the housekeeping data acquired.
+The TTC receives a simplified version, while the OBDH receives a complete version of the data.
+The \autoref{fig:eps-flowchart} has a flowchart of this behavior.
 
-\begin{figure}[!ht]
+\begin{figure}[!htb]
     \begin{center}
         \includegraphics[width=0.45\textwidth]{figures/eps_flowchart.pdf}
         \caption{Flowchart of the normal EPS operation.}
@@ -138,9 +141,9 @@ The \autoref{fig:eps-flowchart} has a flowchart of this behaviour.
     \end{center}
 \end{figure}
 
-\section{General Behaviour}
+%\section{General Behaviour}
 
-.
+%.
 
 \section{PC-104 Bus}
 
@@ -150,7 +153,7 @@ To electrically connect all the satellite modules, a PC-104 bus standard is bein
 
 Using the \autoref{fig:pc104-ref-diagram} as reference, all used positions and signals of the PC-104 bus are presented in \autoref{tab:pc104-pinout}. The \autoref{tab:pc104-signals} describes each signal and which modules are connected to them.
 
-\begin{figure}[!ht]
+\begin{figure}[!htb]
     \begin{center}
         \includegraphics[width=0.5\textwidth]{figures/pc104-diagram}
         \caption{Reference diagram of the PC-104 bus (top view of a generic module).}
@@ -234,19 +237,19 @@ Using the \autoref{fig:pc104-ref-diagram} as reference, all used positions and s
     \label{tab:pc104-signals}
 \end{table}
 
-The distribution pattern of pins adopted in this project is a mix of multiple different patterns from CubeSat modules manufacturers, like GomSpace, ISIS and Endurosat. Some pins are positioned to attend specific project requirements, and it is possible that the adopted pattern is not totally compatible to some commercial modules.
+This project's distribution pattern of pins is a mix of multiple patterns from CubeSat module manufacturers, like GomSpace, ISIS, and Endurosat. Some pins are positioned to meet specific project requirements, and the adopted pattern may only be partially compatible with some commercial modules.
 
-Beyond the PC-104 bus, there are some signals connected directly by wires and cables, like the control and power pins of the antenna module, the battery charger and the programming ports.
+Beyond the PC-104 bus, some signals are connected directly by wires and cables, like the control and power pins of the antenna module, the battery charger, and the programming ports.
 
 \subsection{Form Factor}
 
 The form factor follows a similar specification of the PC-104 standard\cite{pc104-specification}.
-The connector used for the interface differs given the module, the isolation heigth and presence of pin or receptable are definied from the overall stack up of the subystems inside the CubeSat 2U structure.
+The connector used for the interface differs given the module; the isolation height and presence of a pin or receptacle are defined from the overall stack up of the subsystems inside the CubeSat 2U structure.
 % TBD: include reference to mechanical design here
-The core modules have smoothed edges and some linear mounting hole distances different from the standard, these are according to fit in a CubeSat form factor.
+The core modules have smoothed edges, and some linear mounting hole distances are different from the standard; these are according to fit in a CubeSat form factor.
 The PC-104 form factor used can be seen in \autoref{fig:pc104-form-factor}.
 
-\begin{figure}[!ht]
+\begin{figure}[!htb]
     \begin{center}
         \includegraphics[width=0.75\textwidth]{figures/pc104-form-factor.pdf}
         \caption{PC-104 Form Factor.}
@@ -256,19 +259,19 @@ The PC-104 form factor used can be seen in \autoref{fig:pc104-form-factor}.
 
 \section{Telecommunication}
 
-This section describes the configuration and behaviour of the telecommunication subsystems of the satellite. There are three types links available in the CubeSat: beacon, downlink and uplink. The beacon link is a periodic transmission of packets with a basic telemetry data of the satellite (containing data from the EPS or TTC subsystems). The downlink is the link used to receive all data from the satellite, including the results of all experiments, telemetry data and telecommands feedback. And the uplink is used for send telecommands from a ground station to the satellite.
+This section describes the configuration and behavior of the telecommunication subsystems of the satellite. There are three types of links available in the CubeSat: beacon, downlink, and uplink. The beacon link is a periodic transmission of packets with basic telemetry data of the satellite (containing data from the EPS or TTC subsystems). The downlink is the link used to receive all data from the satellite, including the results of all experiments, telemetry data, and telecommands feedback. Moreover, the uplink sends telecommands from a ground station to the satellite.
 
-The payload of all packets follows the same structure, with an ID number, the source address (callsign) and the content of the packet (variable according to each type of packet). Following the NGHam protocol characteristics, the maximum length of a packet, including the ID and the source address, is 220 bytes. The \autoref{fig:fsat-pkt-structure} illustrates this packet structure.
+The payload of all packets follows the same structure, with an ID number, the source address (callsign), and the packet's content (variable according to each type of packet). Following the NGHam protocol characteristics, the maximum packet length, including the ID and the source address, is 220 bytes. The \autoref{fig:fsat-pkt-structure} illustrates this packet structure.
 
-\begin{figure}[!ht]
+\begin{figure}[!htb]
     \begin{center}
         \includegraphics[width=0.5\textwidth]{figures/floripasat-packet-structure.pdf}
-        \caption{Payload structure of the FloripaSat-2 packets.}
+        \caption{Payload structure of the GOLDS-UFSC packets.}
         \label{fig:fsat-pkt-structure}
     \end{center}
 \end{figure}
 
-The \autoref{tab:packets-struct} summarizes all types of packets transmitted or received by the satellite, with the ID number, the structure and length of and the access type of each packet.
+The \autoref{tab:packets-struct} summarizes all types of packets transmitted or received by satellite, with the ID number, structure and length, and access type of each packet.
 
 \begin{landscape}
     \begin{table}[ht]
@@ -311,7 +314,7 @@ The \autoref{tab:packets-struct} summarizes all types of packets transmitted or 
     \end{table}
 \end{landscape}
 
-The ID of the subsystems, modules and payloads are available in \autoref{tab:system-ids}.
+The ID of the subsystems, modules, and payloads are available in \autoref{tab:system-ids}.
 
 \begin{table}[ht]
     \centering
@@ -342,7 +345,7 @@ The ID of the subsystems, modules and payloads are available in \autoref{tab:sys
 
 All the telecommands classified as private use an HMAC\nomenclature{\textbf{HMAC}}{\textit{Hash-based Message Authenticaion Code.}} authentication scheme. Every type of private telecommand has a unique 16-digit ASCII character key that with the telecommand sequence (or message) generates an 160-bits (20-bytes) hash sequence to be transmitted together with the packet payload. The used hash algorithm is the SHA-1\nomenclature{\textbf{SHA-1}}{\textit{Secure Hash Algorithm 1.}}. The \autoref{fig:hmac-diagram} illustrates this authentication method.
 
-\begin{figure}[!ht]
+\begin{figure}[!htb]
     \begin{center}
         \includegraphics[width=\textwidth]{figures/hmac-diagram.pdf}
         \caption{Diagram of the used HMAC scheme.}
@@ -352,4 +355,4 @@ All the telecommands classified as private use an HMAC\nomenclature{\textbf{HMAC
 
 \subsection{Operation Licenses}
 
-.
+\textcolor{red}{COMMENT: tiramos essa parte?}
