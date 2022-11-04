@@ -1,5 +1,5 @@
 SRC=main
-DOC_VERSION=v0.2
+DOC_VERSION=v0.3
 TARGET=slb-fsat2-doc-$(DOC_VERSION)
 
 ifndef BUILD_DIR
