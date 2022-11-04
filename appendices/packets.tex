@@ -119,7 +119,7 @@ In \autoref{tab:downlink-packets} the content of the downlink packets is availab
                                             & 73 & Battery heater 1 duty cycle in \%            & 1 \\
                                             & 74 & Battery heater 2 duty cycle in \%            & 1 \\
                                             & 75 & Payload EDC status (00h=none, 01h=EDC\_1, 02h=EDC\_2, 03h=Both) & 1 \\
-                                            & 76 & Payload-X status (00h=OFF,01h=ON)            & 1 \\
+                                            & 76 & Radiation instrument status (00h=OFF,01h=ON)            & 1 \\
                                             & 77 & Radiation monitor status (00h=OFF,01h=ON)    & 1 \\
     \cmidrule{4-4}
                                             &    &                                              & 78 \\
@@ -202,38 +202,24 @@ In \autoref{tab:downlink-packets} the content of the downlink packets is availab
 
 \section{Uplink}
 
-\subsection{Description}
+As shown in \autoref{tab:packets-struct}, there are 14 supported telecommands. Below there is a description of each one.
 
-\par As shown in \autoref{tab:packets-struct}, there are 14 supported telecommands; below is the description of each one.
+\begin{itemize}
+    \item \textbf{Ping Request:} It is a simple command to test the communication with the satellite. When the satellite receives a ping packet, it will respond with another ping packet (with another packet ID, as defined in the downlink packets list). There are no additional parameters in the ping packet, just the packet ID and the source callsign (or address). It is also a public telecommand, anyone can send a ping request telecommand to a satellite.
+    \item \textbf{Data Request:} It is a command to download data from the satellite. This command allows a ground station to get specific parameters from a given period (stored in the non-volatile memory of the onboard computer of the satellite). The list of possible parameters varies according to the satellite. The required fields of this telecommand are the parameter ID (1 byte), the start period in milliseconds (epoch, 4 bytes), and the end period in milliseconds (epoch, 4 bytes). This is a private telecommand, and a key is required to send it.
+    \item \textbf{Bloadcast Message: } The "broadcast message" is another public telecommand, no authentication or key is required to send this telecommand to a satellite. This command has the purpose of making a satellite transmit a custom message back to Earth. This can be useful for communication tasks, like a station sending data to another. There are two parameters in this telecommand: the destination callsign (or address), and the content of the message, which can be any sequence of ASCII characters or any byte value. There is a limit of 38 characters in the message field.
+    \item \textbf{Enter Hibernation:} This telecommand activates the hibernation mode in a satellite. During the hibernation mode, no transmissions are made by the satellite; it keeps just listening for new incoming packets (reception). The satellite will stay in hibernation mode for a custom period (1 to 65536 minutes), or until a "Leave Hibernation" mode is received. This is a private telecommand, a key is required to send it. Beyond the packet ID and the source callsign (or address), the number o minutes (2 bytes long) is also transmitted.
+    \item \textbf{Leave Hibernation:} This telecommand complements the "enter hibernation" telecommand by deactivating the hibernation mode in the satellite. When a satellite receives this telecommand, it enables the transmission again immediately. This is also a private telecommand; a specific key is required to send it. There is no additional content to this telecommand packet, just the packet ID and the source callsign (or address).
+    \item \textbf{Activate Module: }It activates an internal module of the satellite. Each module has a unique ID that is passed as an argument of this telecommand's packet. The module Battery heater's ID is 1, Beacon's ID is 2 and Periodic telemetry has ID number 3. 
+    \item \textbf{Activate Payload:} This one is similar to the telecommand "Activate Module", but in this case is used for activating payloads of the satellite. Each satellite will have a list of IDs of the set of payloads. This is also a private telecommand, and a key is required to transmit it.
+    \item \textbf{Deactivate Payload:} It is the same as the "Deactivate Module" telecommand, but for payloads.
+    \item \textbf{Erase Memory:} It erases all the content presented in the non-volatile memories of the onboard computer of a satellite. This is a private command, and a key is required to send it. No additional content is required in a erase memory telecommand packet, just the packet ID and the source callsign (or address).
+    \item \textbf{Force Reset:} It performs a general reset of the satellite. When received, the satellite reset all subsystems. This is a private telecommand, and a key is required to send this command to a satellite. There is no additional content in this packet, just the packet ID and the source callsign (or address).
+    \item \textbf{Get Payload Data:} It allows a ground station to download data from a specific payload of the satellite. The required fields are the payload ID, and optionally, arguments to be passed to the payload. The IDs and arguments vary according to the satellite. This is a private telecommand, and a key is required to send it.
+    \item \textbf{Set Parameter:} It allows the configuration of specific parameters of a given subsystem of the satellite. The required fields are the ID of the subsystem to set (1 byte), the ID of the parameter to set (1 byte), and the new value of the parameter (4 bytes long). The possible IDs (subsystem and parameter) vary according to the satellite. This is a private telecommand, and a key is required to send it.
+    \item \textbf{Get Parameter:} This telecommand complements the "Set Parameter" telecommand. It has the purpose of reading specific parameters of a given subsystem. The required fields are the subsystem's ID (1 byte) and the parameter ID (1 byte). The possible IDs (subsystem and parameter) vary according to the satellite. This is a private telecommand, and a key is required to send it.
+\end{itemize}
 
-\textbf{Ping Request:} It is a simple command to test the communication with the satellite. When the satellite receives a ping packet, it will respond with another ping packet (with another packet ID, as defined in the downlink packets list). There are no additional parameters in the ping packet, just the packet ID and the source callsign (or address). It is also a public telecommand, anyone can send a ping request telecommand to a satellite.
-
-\textbf{Data Request:} It is a command to download data from the satellite. This command allows a ground station to get specific parameters from a given period (stored in the non-volatile memory of the onboard computer of the satellite). The list of possible parameters varies according to the satellite. The required fields of this telecommand are the parameter ID (1 byte), the start period in milliseconds (epoch, 4 bytes), and the end period in milliseconds (epoch, 4 bytes). This is a private telecommand, and a key is required to send it.
-
-\textbf{Bloadcast Message: } The "broadcast message" is another public telecommand, no authentication or key is required to send this telecommand to a satellite. This command has the purpose of making a satellite transmit a custom message back to Earth. This can be useful for communication tasks, like a station sending data to another. There are two parameters in this telecommand: the destination callsign (or address), and the content of the message, which can be any sequence of ASCII characters or any byte value. There is a limit of 38 characters in the message field.
-
-\textbf{Enter Hibernation:} This telecommand activates the hibernation mode in a satellite. During the hibernation mode, no transmissions are made by the satellite; it keeps just listening for new incoming packets (reception). The satellite will stay in hibernation mode for a custom period (1 to 65536 minutes), or until a "Leave Hibernation" mode is received. This is a private telecommand, a key is required to send it. Beyond the packet ID and the source callsign (or address), the number o minutes (2 bytes long) is also transmitted.
-
-\textbf{Leave Hibernation:} This telecommand complements the "enter hibernation" telecommand by deactivating the hibernation mode in the satellite. When a satellite receives this telecommand, it enables the transmission again immediately. This is also a private telecommand; a specific key is required to send it. There is no additional content to this telecommand packet, just the packet ID and the source callsign (or address).
-
-\textbf{Activate Module: }It activates an internal module of the satellite. Each module has a unique ID that is passed as an argument of this telecommand's packet. The module Battery heater's ID is 1, Beacon's ID is 2 and Periodic telemetry has ID number 3. 
-
-\textbf{Activate Payload:} This one is similar to the telecommand "Activate Module", but in this case is used for activating payloads of the satellite. Each satellite will have a list of IDs of the set of payloads. This is also a private telecommand, and a key is required to transmit it.
-
-\textbf{Deactivate Payload:} It is the same as the "Deactivate Module" telecommand, but for payloads.
-
-\textbf{Erase Memory:} It erases all the content presented in the non-volatile memories of the onboard computer of a satellite. This is a private command, and a key is required to send it. No additional content is required in a erase memory telecommand packet, just the packet ID and the source callsign (or address).
-
-\textbf{Force Reset:} It performs a general reset of the satellite. When received, the satellite reset all subsystems. This is a private telecommand, and a key is required to send this command to a satellite. There is no additional content in this packet, just the packet ID and the source callsign (or address).
-
-\textbf{Get Payload Data:} It allows a ground station to download data from a specific payload of the satellite. The required fields are the payload ID, and optionally, arguments to be passed to the payload. The IDs and arguments vary according to the satellite. This is a private telecommand, and a key is required to send it.
-
-\textbf{Set Parameter:} It allows the configuration of specific parameters of a given subsystem of the satellite. The required fields are the ID of the subsystem to set (1 byte), the ID of the parameter to set (1 byte), and the new value of the parameter (4 bytes long). The possible IDs (subsystem and parameter) vary according to the satellite. This is a private telecommand, and a key is required to send it.
-
-\textbf{Get Parameter:} This telecommand complements the "Set Parameter" telecommand. It has the purpose of reading specific parameters of a given subsystem. The required fields are the subsystem's ID (1 byte) and the parameter ID (1 byte). The possible IDs (subsystem and parameter) vary according to the satellite. This is a private telecommand, and a key is required to send it.
-
-
-\subsection{Structure}
 The \autoref{tab:uplink-packets} presents the content of the uplink packets.
 
 \begin{longtable}[c]{lcL{0.4\textwidth}c}

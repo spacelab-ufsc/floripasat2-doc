@@ -24,17 +24,17 @@
 
 \chapter{Subsystems} \label{ch:subsystems}
 
-This chapter describes all subsystems of the space segment of the mission, which can be seen in the exploded view of the satellite, available in \autoref{fig:exploded-view}.
+%, which can be seen in the exploded view of the satellite, available in \autoref{fig:exploded-view}.
 
-\begin{figure}[!htb]
-    \begin{center}
-        \includegraphics[width=0.35\textwidth]{figures/floripasat.png}
-        \caption{Exploded view of the GOLDS-UFSC satellite.}
-        \label{fig:exploded-view}
-    \end{center}
-\end{figure}
+%\begin{figure}[!htb]
+%    \begin{center}
+%        \includegraphics[width=0.35\textwidth]{figures/floripasat.png}
+%        \caption{Exploded view of the GOLDS-UFSC satellite.}
+%        \label{fig:exploded-view}
+%    \end{center}
+%\end{figure}
 
-Most subsystems presented here have their own technical documentation with a more profound description. When available, there is a reference to the respective document. This chapter is intended to show an overview of each subsystem in a macro context of the mission.
+This chapter describes all subsystems of the space segment of the mission. Most subsystems presented here have their own technical documentation with a more profound description. When available, there is a reference to the respective document. This chapter is intended to show an overview of each subsystem in a macro context of the mission.
 
 \section{On-Board Data Handling}
 
@@ -331,7 +331,7 @@ More information about these boards can be found in \cite{iip}.
 
 \section{Payloads}
 
-The GOLDS-UFSC satellite is planned to carry two different payloads on-board: the ``\textit{EDC}'' and ``\textit{Payload-X}''. Each one of these payloads are presented next.
+The GOLDS-UFSC satellite is planned to carry the ``\textit{EDC}'' as the primary and main payload. Moreover, in order to asses the radiation levels present in the satellite, an additional scientific experiment is planned in the form of a Radiation instrument. Each one of these payloads are presented next.
 
 \subsection{Environmental Data Collection}
 
@@ -359,16 +359,17 @@ The main features of this payload are listed below, a 3D model of the EDC board 
     \end{center}
 \end{figure}
 
-As seen in \autoref{fig:exploded-view}, two identical EDC boards will be used in a cold redundancy configuration for this mission. More information about this payload can be found in \cite{edc}.
+% As seen in \autoref{fig:exploded-view}, 
+Two identical EDC boards will be used in a cold redundancy configuration for this mission. More information about this payload can be found in \cite{edc}.
 
-\subsection{Redundant OBDH (Payload-X)}
+\section{Radiation instrument}
 
-The Payload-X is a radiation-hardened reconfigurable hardware platform designed for a radioactive environment, having as the main feature the possibility to change the hardware configuration of the FPGA\nomenclature{\textbf{FPGA}}{\textit{Field-Programmable Gate Array.}} through remote uplink of its bitstream.
+The Radiation instrument is a radiation-hardened reconfigurable hardware platform designed for a radioactive environment, having as the main feature the possibility to change the hardware configuration of the FPGA\nomenclature{\textbf{FPGA}}{\textit{Field-Programmable Gate Array.}} through remote uplink of its bitstream.
 
 \begin{figure}[!ht]
     \begin{center}
         \includegraphics[width=0.6\textwidth]{figures/payload-x-board}
-        \caption{Payload-X board.}
+        \caption{Radiation instrument board.}
         \label{fig:payload-x-board}
     \end{center}
 \end{figure}

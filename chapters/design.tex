@@ -29,11 +29,12 @@ This section presents the design description of GOLDS-UFSC.
 
 \section{General Diagrams}
 
-The CubeSat's subsystems are positioned in the 2U physical structure as exemplified in \autoref{fig:subsystems-positioning}. An exploded 3D satellite view is shown in \autoref{fig:exploded-view}.
+The CubeSat's subsystems are positioned in the 2U physical structure as exemplified in \autoref{fig:subsystems-positioning}. 
+% An exploded 3D satellite view is shown in \autoref{fig:exploded-view}.
 
 \begin{figure}[!htb]
     \begin{center}
-        \includegraphics[width=0.7\textwidth]{figures/subsystems-positioning2.pdf}
+        \includegraphics[width=0.7\textwidth]{figures/subsystems-positioning.pdf}
         \caption{Subsystems positioning.}
         \label{fig:subsystems-positioning}
     \end{center}
@@ -145,7 +146,7 @@ The \autoref{fig:eps-flowchart} has a flowchart of this behavior.
 
 %.
 
-\section{PC-104 Bus}
+\section{Interface Data Sheet (IDS)}
 
 \subsection{Interface}
 
@@ -201,7 +202,7 @@ Using the \autoref{fig:pc104-ref-diagram} as reference, all used positions and s
 
 \begin{table}[!h]
     \centering
-    \begin{tabular}{lL{0.18\textwidth}L{0.17\textwidth}L{0.33\textwidth}}
+    \begin{tabular}{lL{0.18\textwidth}L{0.19\textwidth}L{0.33\textwidth}}
         \toprule[1.5pt]
         \textbf{Signal}  & \textbf{Pin(s)} & \textbf{Used By}     & \textbf{Description} \\
         \midrule
@@ -210,7 +211,7 @@ Using the \autoref{fig:pc104-ref-diagram} as reference, all used positions and s
         ANT\_VCC         & H2-35, H2-36    & EPS, ANT             & Antenna power supply (3.3 V) \\
         OBDH\_VCC        & H1-45, H1-46    & EPS, OBDH            & OBDH power supply (3.3 V) \\
         TTC\_VCC         & H2-27, H2-28    & EPS, TTC             & TTC power supply (3.3 V) \\
-        PL\_VCC          & H1-47/48, H2-25/26 & EPS, EDC 1/2, Payload X & Payloads power supply (5 V) \\
+        PL\_VCC          & H1-47/48, H2-25/26 & EPS, EDC 1/2, Radiation instrument & Payloads power supply (5 V) \\
         RA\_VCC          & H1-49, H1-50    & EPS, TTC             & Main radio power supply (5 V) \\
         BE\_VCC          & H1-51, H1-52    & EPS, TTC             & Beacon power supply (6 V) \\
         RA\_SPI\_CLK     & H1-35           & OBDH, TTC            & CLK signal of the main radio SPI bus \\
@@ -227,9 +228,9 @@ Using the \autoref{fig:pc104-ref-diagram} as reference, all used positions and s
         RA\_EN           & H1-12           & EPS, OBDH            & Main radio power enable \\
         EDC\_1\_EN       & H2-3            & OBDH, EDC 1          & EDC 1 enable signal \\
         EDC\_2\_EN       & H2-4            & OBDH, EDC 2          & EDC 2 enable signal \\
-        PLX\_EN          & H1-18           & OBDH, Payload X      & Payload X enable (GPIO) \\
-        PL\_I2C\_SDA     & H1-41           & OBDH, Payload X      & SDA signal of the payload I2C bus \\
-        PL\_I2C\_SCL     & H1-43           & OBDH, Payload X      & SCL signal of the payload I2C bus \\
+        PLX\_EN          & H1-18           & OBDH, Radiation instrument      & Radiation instrument enable (GPIO) \\
+        PL\_I2C\_SDA     & H1-41           & OBDH, Radiation instrument      & SDA signal of the payload I2C bus \\
+        PL\_I2C\_SCL     & H1-43           & OBDH, Radiation instrument      & SCL signal of the payload I2C bus \\
         GPIO\_N          & H1-20, H2-8/18/20/22/42  & OBDH        & GPIO pin (not used) \\
         \bottomrule[1.5pt]
     \end{tabular}
@@ -333,8 +334,7 @@ The ID of the subsystems, modules, and payloads are available in \autoref{tab:sy
         \midrule
         \multirow{4}{*}{Payload}   & 1 & EDC 1 \\
                                    & 2 & EDC 2 \\
-                                   & 3 & Payload-X \\
-                                   & 4 & Radiation monitor \\
+                                   & 3 & Radiation instrument \\
         \bottomrule[1.5pt]
     \end{tabular}
     \caption{IDs of the satellite.}
@@ -355,4 +355,19 @@ All the telecommands classified as private use an HMAC\nomenclature{\textbf{HMAC
 
 \subsection{Operation Licenses}
 
-\textcolor{red}{COMMENT: tiramos essa parte?}
+%\textcolor{red}{COMMENT: tiramos essa parte?}
+
+Regarding the non-amateur radios frequencies, Resolution 685, of October 9, 2017 from ANATEL establishes that:
+
+Art. 9. Assign to the Private Limited Service (SLP), for use by systems for capturing and transmitting scientific data related to space operation, on a secondary basis, the following sub-ranges (related to this project):
+
+\begin{itemize}
+\item 400.15 MHz to 401 MHz;
+\item 449.75 MHz to 450.25 MHz.
+\end{itemize}
+
+Art. 17. The allocation of all radio frequency bands dealt with in this Resolution follows the restrictions imposed by the respective allocation.
+
+Single paragraph. Those interested in the use of the radio frequency bands object of this Resolution must provide in their projects, until specific regulations are issued on the conditions of use of these bands, criteria for harmonious coexistence with the existing systems in these bands, maintaining specific coordination, when necessary, of such so that incoming systems do not cause harmful interference to existing systems.
+
+Thus, a process must be carried out for radio 1 (146 MHz) in the amateur radio band, and another process for the radios with 401 MHz and 450 MHz. Since the last two radios must be a secondary service SLP where a preliminary study is necessary on the harmonic coexistence with the existing systems in these bands.

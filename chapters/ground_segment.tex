@@ -33,7 +33,7 @@ The UFSC ground station is currently being developed and prepared for this missi
 \begin{figure}[!ht]
     \begin{center}
         \includegraphics[width=\textwidth]{figures/grs-block-diagram.pdf}
-        \caption{Block diagram of the ground segment.}
+        \caption{Block diagram of the ground segment (UFSC ground station).}
         \label{fig:grs-block-diagram}
     \end{center}
 \end{figure}
@@ -131,11 +131,11 @@ More information about the ground station rotator can be found in \cite{g5500}.
 
 \subsubsection{Amplifiers}
 
+There are two dedicated amplifiers in the UFSC ground station: one power amplifier (PA) for transmitting telecommands with a high power signal, and a low noise amplifier (LNA), for amplify the received signals from the satellite. Both are presented next.
+
 \paragraph{Power Amplifier}
 
-
-
-A picture of the power amplifier can be seen in \autoref{fig:zhl-50w}, the main characteristics are available in \autoref{tab:zhl-50w-specs}.
+The power amplifier is used to add a gain to the generated signals of the transmitter. The used model is the Mini-Circuits ZHL-50W-52-S+ \cite{zhl50w}. A picture of this power amplifier can be seen in \autoref{fig:zhl-50w}, the main characteristics are available in \autoref{tab:zhl-50w-specs}.
 
 \begin{figure}[!ht]
     \begin{center}
@@ -166,7 +166,7 @@ A picture of the power amplifier can be seen in \autoref{fig:zhl-50w}, the main 
 
 \paragraph{Low Noise Amplifiers}
 
-A picture of the low noise amplifier can be seen in \autoref{fig:lna}, the main characteristics are available in \autoref{tab:lna-specs}.
+As LNA, the model ZFL-500LN+ from Mini-Circuits \cite{zfl500ln} is being used. This amplifier will be used just after the antennas to add a gain to the incoming telemetry signals transmitted by the satellite. A picture of the low noise amplifier can be seen in \autoref{fig:lna}, the main characteristics are available in \autoref{tab:lna-specs}.
 
 \begin{figure}[!ht]
     \begin{center}
@@ -196,11 +196,9 @@ A picture of the low noise amplifier can be seen in \autoref{fig:lna}, the main 
 
 \subsubsection{Radios}
 
-The Icom IC-9700 \cite{ic9700} is an RF direct sampling receiver for 2 m and 70 cm. The IF receiver consists of a single down conversion for 23 cm that is between 311 and 371 MHz. The PA provides 100 W on 2 m, 75 W on 70 cm, and 10 W on 23 cm.
+Besides the SDR solution presented in the block diagram of the \autoref{fig:grs-block-diagram}, there is also a amateur radio transceiver with a standalone solution for the amateur radio link with the satellite. The used model is the Icom IC-9700 \cite{ic9700}, that is an RF direct sampling receiver for 2 m and 70 cm. The IF receiver consists of a single down conversion for 23 cm that is between 311 and 371 MHz. The PA provides 100 W on 2 m, 75 W on 70 cm, and 10 W on 23 cm.
 
-In addition to band-specific memory channels, the IC-9700 allows the band-specific receiver and transmitter settings. For transmission, users can adjust RF power, TX power Limit, Limit Power, and TX Delay by the band. Basic receiver settings, like the Noise Blanker, Noise Reduction, and others, can be tweaked by the band with a dynamic Notch and Filter setup by band/mode.
-
-A picture of the IC-9700 radio can be seen in \autoref{fig:ic9700}.
+In addition to band-specific memory channels, the IC-9700 allows the band-specific receiver and transmitter settings. For transmission, users can adjust RF power, TX power Limit, Limit Power, and TX Delay by the band. Basic receiver settings, like the Noise Blanker, Noise Reduction, and others, can be tweaked by the band with a dynamic Notch and Filter setup by band/mode. A picture of the IC-9700 radio can be seen in \autoref{fig:ic9700}.
 
 \begin{figure}[!ht]
     \begin{center}
@@ -212,9 +210,7 @@ A picture of the IC-9700 radio can be seen in \autoref{fig:ic9700}.
 
 \paragraph{Software Defined Radio}
 
-As presented in \autoref{fig:grs-block-diagram}, the ground segment also has an SDR\nomenclature{\textbf{SDR}}{\textit{Software Defined Radio.}} (Software Defined Radio) as a transceiver. The used model is the USRP B210, from Ettus Research \cite{b210}, a fully integrated, single-board SDR with continuous frequency coverage from 70 MHz to 6 GHz. It combines the AD9361 RFIC direct-conversion transceiver providing up to 56 MHz of real-time bandwidth, an open and reprogrammable Spartan6 FPGA, and USB 3.0 connectivity. Also, full support for the USRP Hardware Driver (UHD) software allows the use of the GNURadio framework.
-
-A picture of the USRP B210 SDR (with enclosure) can be seen in \autoref{fig:usrp-b210}.
+As presented in \autoref{fig:grs-block-diagram}, the ground segment also has an SDR\nomenclature{\textbf{SDR}}{\textit{Software Defined Radio.}} (Software Defined Radio) as a transceiver. The used model is the USRP B210, from Ettus Research \cite{b210}, a fully integrated, single-board SDR with continuous frequency coverage from 70 MHz to 6 GHz. It combines the AD9361 RFIC direct-conversion transceiver providing up to 56 MHz of real-time bandwidth, an open and reprogrammable Spartan6 FPGA, and USB 3.0 connectivity. Also, full support for the USRP Hardware Driver (UHD) software allows the use of the GNURadio framework. A picture of the USRP B210 SDR (with enclosure) can be seen in \autoref{fig:usrp-b210}.
 
 \begin{figure}[!ht]
     \begin{center}
@@ -228,21 +224,21 @@ A picture of the USRP B210 SDR (with enclosure) can be seen in \autoref{fig:usrp
 
 The ground station control room shall have two monitors and a dedicated computer alongside most of the previously presented hardware. It will work as a monitoring room with a nobreak to protect the equipment from power grid fluctuations. 
 
-The antennas and rotator will also be monitored with outside cameras and the room will count with a server so that the transmission and decoding can be done remotely and at any time.
+The antennas and rotator will also be monitored with outside cameras. And the room will count with a server so that the transmission and decoding can be done remotely and at any time.
 
-In the \autoref{fig:server} can be seen a picture of the server used and in \autoref{tab:server} are presented the main characteristics of the it.
+In the \autoref{fig:server} can be seen a picture of the used server, and in \autoref{tab:server} are presented the main characteristics of the it.
 
 \begin{table}[ht]
     \centering
     \begin{tabular}{lc}
         \toprule[1.5pt]
-        \textbf{Characteristic} & \textbf{Value}    \\
+        \textbf{Characteristic} & \textbf{Value} \\
         \midrule
-        Brand                   & Dell     \\
-        Model                   & PowerEdge R240     \\
-        Processor               & Intel Xeon E-2244G 3.8 GHz 4C/8T            \\
-        RAM Memory              & 16GB DDR4 ECC             \\
-        Storage                 & 1 TB HD           \\
+        Brand                   & Dell \\
+        Model                   & PowerEdge R240 \\
+        Processor               & Intel Xeon E-2244G 3.8 GHz 4C/8T \\
+        RAM Memory              & 16 GB DDR4 ECC \\
+        Storage                 & 1 TB HD \\
         \bottomrule[1.5pt]
     \end{tabular}
     \caption{Main characteristics of the Dell PowerEdge R240 server.}
@@ -271,14 +267,14 @@ To track the satellite and for orbit prediction, the GPredict software \cite{gpr
 
 \subsection{Packet Transmission}
 
-The packet generation and transmission to GOLDS-UFSC satellite can be done with the Spacelab Transmitter software, which was written in Python with the interface developed using the GTK framework. It has a USRP Handler made with Ettus libraries to work with Ettus USRP B210 as shown in \autoref{fig:usrp-b210}. The supported modulation is the Gaussian Minimum Shift Keying (GMSK). Furthermore, the software also has unit tests for the main modules and a logging system to record events such as an initialization or a successfully transmitted telecommand. \cite{spacelab-transmitter}
+The packet generation and transmission to GOLDS-UFSC satellite can be done with the SpaceLab-Transmitter software \cite{spacelab-transmitter}, which was written in Python with the interface developed using the GTK framework. It has a USRP Handler made with Ettus libraries to work with Ettus USRP B210 as shown in \autoref{fig:usrp-b210}. The supported modulation is the Gaussian Minimum Shift Keying (GMSK). Furthermore, the software also has unit tests for the main modules and a logging system to record events such as an initialization or a successfully transmitted telecommand.
 
 In the \autoref{fig:transmitter-tree} is shown the product tree of the software, which contains its main elements of it, and in the \autoref{fig:spacelab-transmitter} is shown the main window of it.
 
 \begin{figure}[!ht]
     \begin{center}
-        \includegraphics[width=270pt]{figures/transmitter_tree.pdf}
-        \caption{SpaceLab Transmitter product tree.}
+        \includegraphics[width=0.6\textwidth]{figures/transmitter_tree.pdf}
+        \caption{SpaceLab-Transmitter product tree.}
         \label{fig:transmitter-tree}
     \end{center}
 \end{figure}
@@ -286,20 +282,21 @@ In the \autoref{fig:transmitter-tree} is shown the product tree of the software,
 \begin{figure}[!ht]
     \begin{center}
         \includegraphics[width=\textwidth]{figures/spacelab-transmitter-window.png}
-        \caption{Main window of the SpaceLab Transmitter application.}
+        \caption{Main window of the SpaceLab-Transmitter application.}
         \label{fig:spacelab-transmitter}
     \end{center}
 \end{figure}
 
 \subsection{Packet Decoding}
-The packet decoding of GOLDS-UFSC satellites telemetry can be done using the Spacelab Packet Decoder software using a .wav file. The decoded telemetry will appear in a dialog within the main window. The software was written in Python, and the interface was developed using GTK framework. Furthermore, the software also has unit tests for the main modules and a logging system to record events. \cite{spacelab-decoder}
 
-The \autoref{fig:decoder-tree} is shown the product tree of the software, which contains its main elements, and in the \autoref{fig:spacelab-transmitter} is shown the main window of it.
+The packet decoding of GOLDS-UFSC satellites telemetry can be done using the SpaceLab-Decoder \cite{spacelab-decoder} software using a .wav file or through a real time reception. The decoded telemetry will appear in a dialog within the main window. The software was written in Python, and the interface was developed using GTK framework. Furthermore, the software also has unit tests for the main modules and a logging system to record events.
+
+The \autoref{fig:decoder-tree} is showing the product tree of the software, which contains its main elements, and in the \autoref{fig:spacelab-transmitter} is shown the main window of it.
 
 \begin{figure}[!ht]
     \begin{center}
-        \includegraphics[width=270pt]{figures/decoder_tree.pdf}
-        \caption{SpaceLab Decoder product tree.}
+        \includegraphics[width=0.6\textwidth]{figures/decoder_tree.pdf}
+        \caption{SpaceLab-Decoder product tree.}
         \label{fig:decoder-tree}
     \end{center}
 \end{figure}
@@ -307,7 +304,7 @@ The \autoref{fig:decoder-tree} is shown the product tree of the software, which 
 \begin{figure}[!ht]
     \begin{center}
         \includegraphics[width=\textwidth]{figures/spacelab-decoder.png}
-        \caption{Main window of the SpaceLab Decoder application.}
+        \caption{Main window of the SpaceLab-Decoder application.}
         \label{fig:spacelab-decoder}
     \end{center}
 \end{figure}
@@ -358,8 +355,7 @@ A general block diagram of the EMMN hardware is available in \autoref{fig:emmn-b
 
 \section{Data Collection Platforms}
 
-Data Collection Platforms are part of the Integrated System of Environmental Data (\textit{Sistema Integrado de Dados Ambientais [SINDA]} in Portuguese), which collects the data and by satellites, it is retransmitted to be received in the ground station so that it can be sent to SINDA to be processed. The data is shown online sometime after the receiving. 
-\cite{sinda}
+Data Collection Platforms (DCPs) are part of the Integrated System of Environmental Data (\textit{Sistema Integrado de Dados Ambientais, SINDA} \cite{sinda}, in Portuguese), which collects the data and by satellites, it is retransmitted to be received in the ground station so that it can be sent to SINDA to be processed. The data is shown online sometime after the receiving. Examples of DCPs can be seen in \autoref{fig:dcp-ex}.
 
 \begin{figure}[!htb]
     \begin{center}

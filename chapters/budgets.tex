@@ -28,6 +28,31 @@ This chapter presents a general analysis of the mission, such as a preliminary a
 
 Another type of analysis presented is the satellite budgets, such as the power and link budgets.
 
+\section{Requirements}
+
+The mission requirements are listed next:
+
+\begin{enumerate}
+    \item The power system must be able to harvest solar energy.
+    \item The power system must be able to store energy for use when GOLDS-UFSC is eclipsed.
+    \item The power system must supply energy to all other modules.
+    \item The data handling system must communicate with the other modules and store their data.
+    \item The communications system must send a beacon signal periodically using VHF radio.
+    \item The communications system must send the CubeSat telemetry using UHF radio.
+    \item The communications system must be able to receive telecommands and respond to them accordingly.
+    \item The attitude system must be able to perform a 1-axis stabilization of the CubeSat.
+    \item GOLDS-UFSC must be able to receive and execute a shutdown telecommand, therefore ceasing all transmissions.
+    \item The downlink transmissions must be done once at a time, either telemetry or beacon.
+    \item The ground station must operate under the proper radio frequency communication licenses.
+    \item GOLDS-UFSC must comply with international and Brazilian radio license agreements and restrictions.
+    \item The team must build and operate a ground station for full communication with GOLDS-UFSC.
+    \item GOLDS-UFSC must be capable of sustaining the primary payload (EDC) operation.
+    \item The service module and payload must employ materials and components that do not compromise or damage LIT/INPE test facilities.
+    \item The satellite must reenter the Earth's atmosphere within 25 years.
+    \item It is recommended that the satellite be placed in an orbit up to 500 km.
+\end{enumerate}
+
+
 \section{Orbit Parameters and Analysis}
 
 % To define the orbit parameters and 
@@ -134,25 +159,25 @@ The mass budget of the satellite can be seen in \autoref{tab:mass-budget}.
         \toprule[1.5pt]
         \textbf{Subsystem} & \textbf{Model} & \textbf{Mass [g]} \\
         \midrule
-        OBDH            & SpaceLab OBDH 2.0             & 53 \\
-        TTC             & SpaceLab TTC 2.0              & 52 \\
-        EPS             & SpaceLab EPS 2.0              & 80 \\
-        Battery         & SpaceLab Battery Module 4C    & 235 \\
-        Antenna         & ISISpace AntS                 & 89 \\
-        ACS             & SpaceLab Passive ACS 2U       & 100 (TBC) \\
-        Payload         & INPE-RN EDC                   & 75 ($\times$2) \\
-        Payload         & SpaceLab Payload X            & 75 (TBC) \\
-        Interface       & SpaceLab Interface Boards     & 40 \\
-        PC-104 Adapter  & SpaceLab PC-104 Adapter       & 50 (TBC) \\
-        Solar Panel     & Orbital Custom Solar Panel    & 266 \\
-        Shields         & 3 mm aluminum sheets          & 590 (TBC) \\
-        Structure       & Usiped Custom 2U Structure    & 206 \\
-        Cables          & -                             & 200 \\
-        Others          & -                             & 100 \\
+        OBDH                        & SpaceLab OBDH 2.0             & 53 \\
+        TTC                         & SpaceLab TTC 2.0              & 52 \\
+        EPS                         & SpaceLab EPS 2.0              & 80 \\
+        Battery                     & SpaceLab Battery Module 4C    & 235 \\
+        Antenna                     & ISISpace AntS                 & 89 \\
+        ACS                         & SpaceLab Passive ACS 2U       & 100 (TBC) \\
+        Payload                     & INPE-RN EDC                   & 75 ($\times$2) \\
+        Radiation instrument            & SpaceLab Payload X            & 75 (TBC) \\
+        Interface                   & SpaceLab Interface Boards     & 40 \\
+        PC-104 Adapter              & SpaceLab PC-104 Adapter       & 50 (TBC) \\
+        Solar Panel                 & Orbital Custom Solar Panel    & 266 \\
+        Shields                     & 3 mm aluminum sheets          & 590 (TBC) \\
+        Structure                   & Usiped Custom 2U Structure    & 206 \\
+        Cables                      & -                             & 200 \\
+        Others                      & -                             & 100 \\
         \midrule
-        Total           & -                             & \textbf{2211} \\
-        Max. CubeSat 2U & -                             & 2666 \\
-        Margin          & -                             & 455 \\
+        Total                       & -                             & \textbf{2211} \\
+        Max. CubeSat 2U             & -                             & 2666 \\
+        Margin                      & -                             & 455 \\
         \bottomrule[1.5pt]
     \end{tabular}
     \caption{Mass budget of the satellite.}
@@ -225,7 +250,7 @@ Typical operating voltages and current and power ranges consumed by each satelli
         EPS (heater)        & 7.4   & 675   & 675   & 5000  & 5000 \\
         Antenna module      & 3.3   & 60    & 550   & 200   & 1800 \\
         Payload EDC         & 5     & 250   & 250   & 1250  & 1250 \\
-        Payload-X           & 5     & TBD   & TBD   & TBD   & TBD \\
+        Radiation instrument           & 5     & TBD   & TBD   & TBD   & TBD \\
         \bottomrule[1.5pt]
     \end{tabular}
     \caption{Power requirements of the subsystems and payloads of the satellite.}
@@ -251,7 +276,7 @@ Using the information presented in \autoref{tab:power-requirements}, and the act
         Antenna (deployment)    & 0     & 1800 \\
         Antenna (deployed)      & 100   & 35 \\
         Payload EDC             & 100   & 1250 \\
-        Payload-X               & 0     & 1000 \\
+        Radiation instrument        & 0     & 1000 \\
         \cmidrule{2-3}
         Satellite               & \multicolumn{2}{c}{$\cong$ 2668} \\
         \bottomrule[1.5pt]
@@ -264,7 +289,7 @@ The duty cycles of \autoref{tab:power-consumption} were defined according to the
 
 \begin{itemize}
     \item One of the EDC payload is always off (cold redundancy).
-    \item The Payload-X is turned on just during limited periods and only with telecommands.
+    \item The Radiation instrument is turned on just during limited periods and only with telecommands.
 \end{itemize}
 
 As can be seen from \autoref{fig:sp_sim_power} and \autoref{tab:power-consumption}, there is a slight positive margin of \textbf{76.9 mW} in the power budget.
