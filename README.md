@@ -1,7 +1,7 @@
 <h1 align="center">
-    <a href="spacelab.ufsc.br"><img src="https://github.com/spacelab-ufsc/golds-ufsc-doc/blob/master/figures/floripasat2-patch.png" alt="FloripaSat-2" width="30%"></a>
+    <a href="spacelab.ufsc.br"><img src="https://github.com/spacelab-ufsc/golds-ufsc-doc/blob/master/figures/floripasat2-patch.png" alt="GOLDS-UFSC" width="30%"></a>
     <br>
-    FLORIPASAT-2 MISSION
+    GOLDS-UFSC MISSION
     <br>
 </h1>
 
@@ -31,7 +31,6 @@
     </a>
 </p>
 
-
 <p align="center">
   	<a href="#overview">Overview</a> •
   	<a href="#mission-statement">Statement</a> •
@@ -47,11 +46,11 @@
 
 ## Overview
 
-FloripaSat-2 is a space technology demonstration mission created by the Federal University of Santa Catarina. The main goal is to provide the service module for the Environmental Data Collector (EDC) payload from INPE-RN. The service module was developed at UFSC and it has three main components: the Electric Power System (EPS), the On-Board Data Handling (OBDH) and Telemetry, Tracking and Command (TT&C).
+GOLDS-UFSC is a space technology demonstration mission created by the Federal University of Santa Catarina. The main goal is to provide the service module for the Environmental Data Collector (EDC) payload from INPE-RN. The service module was developed at UFSC and it has three main components: the Electric Power System (EPS), the On-Board Data Handling (OBDH) and Telemetry, Tracking and Command (TT&C).
 
 Besides performing the EDC main functionalities, the mission will contribute to validating key technologies that will enable faster and cheaper development of future satellites reusing the same core structure. As an educational mission, it also serves to train engineering students in space mission conception, design, implementation and operation in all areas involved. 
 
-It also acts as an experimenting platform for research in space technologies developed before, during, and after the operations phase of the mission, providing empirical data for experiments of many kinds. FloripaSat-2 is expected to be launched by the end of 2020. Details of all systems developed for the mission are described in the documents listed in this repository in a top-level fashion and the detailed technical module documents in their respective repositories. This documentation structure is described in the <a href="#repository-organization">repository organization</a> section.
+It also acts as an experimenting platform for research in space technologies developed before, during, and after the operations phase of the mission, providing empirical data for experiments of many kinds. GOLDS-UFSC is expected to be launched by the end of 2020. Details of all systems developed for the mission are described in the documents listed in this repository in a top-level fashion and the detailed technical module documents in their respective repositories. This documentation structure is described in the <a href="#repository-organization">repository organization</a> section.
 
 <p align="center">
     <img width="65%" src="https://github.com/spacelab-ufsc/floripasat2-doc/blob/master/figures/floripasat-2.jpg" />
@@ -59,11 +58,7 @@ It also acts as an experimenting platform for research in space technologies dev
 
 ## Mission Statement
 
-FloripaSat-2 is a service module for INPE’s EDC payload, and also a platform for
-the test of core spacecraft technologies in a microgravity, high-radiation and low Earth orbit
-environment.
-
-
+GOLDS-UFSC is a service module for INPE’s EDC payload, and also a platform for the test of core spacecraft technologies in a microgravity, high-radiation and low Earth orbit environment.
 
 ## Mission Objectives
 
@@ -75,25 +70,21 @@ environment.
 6. Perform experiments on radiation effects in electronic components in orbit.
 7. Serve as relay for amateur radio communications.
 
-
-
 ## Mission Requeriments
 
 1. The power system shall be able to harvest solar energy.
-2. The power system shall be able to store energy for use when FloripaSat-2 is eclipsed.
+2. The power system shall be able to store energy for use when GOLDS-UFSC is eclipsed.
 3. The power system shall supply energy to all other modules.
 4. The data handling system shall communicate with the other modules and store their data.
 5. The communications system shall send a beacon signal periodically using VHF radio.
 6. The communications system shall send the CubeSat telemetry using UHF radio.
 7. The communications system shall be able to receive telecommands and respond to them accordingly.
 8. The attitude system shall be able to perform a 1-axis stabilization of the CubeSat.
-9. FloripaSat-2 shall have the capability to receive and execute a shutdown telecommand, therefore ceasing all transmissions.
+9. GOLDS-UFSC shall have the capability to receive and execute a shutdown telecommand, therefore ceasing all transmissions.
 10. The downlink transmissions shall be done once at a time, either telemetry or beacon.
 11. The ground station shall operate under the proper radio frequency communication licenses.
-12. FloripaSat-2 shall comply with international and Brazilian radio license agreements and restrictions.
-13. The team shall build and operate a ground station for full communication with FloripaSat-2.
-
-
+12. GOLDS-UFSC shall comply with international and Brazilian radio license agreements and restrictions.
+13. The team shall build and operate a ground station for full communication with GOLDS-UFSC.
 
 ## Mission Schedule
 
@@ -116,7 +107,6 @@ environment.
 
 > T0 = 23 December 2020
 
-
 ## Development 
 
 The following sections describe the mission subsystems, which placement, positioning and attachement can be seen in the next figure. Also, it is provided a quick review of the development status of each module throught the use of dynamic badges. The profile icons right above the module name is the GitHub contributors of this repository, which might not included all contributors to the project as a whole. Refer to the specific repositories or the website for a complete list.  
@@ -124,7 +114,6 @@ The following sections describe the mission subsystems, which placement, positio
 <p align="center">
   <img width="65%" src="https://github.com/spacelab-ufsc/golds-ufsc-doc/blob/master/figures/exploded-view.png" />
 </p>
-
 
 <br><br>
 
@@ -153,8 +142,7 @@ The following sections describe the mission subsystems, which placement, positio
 <img align="right" width="25%" src="https://github.com/spacelab-ufsc/obdh2/blob/master/doc/figures/obdh2-pcb-top.png">
 </a>
 
-The SpaceLab OBDH2 (On-Board Data Handling 2.0) is one of the service modules developed for FloripaSat-2 Cubesat Mission. The OBDH2 is responsible to synchronize actions and the data flow between other modules (ie. EPS, Payloads) and the Earth segment. It packs the generated data into data frames and transmit back to Earth through TTC module, or stores it on a non-volatile memory for later retrieval. Commands sent from Earth segment to the cubesat will be received by the radio transceivers located in the TTC module and redirected to the OBDH2, which takes the appropriate action or forward them to the responsible module. All the OBDH2 project, source and documentation files are available freely on a [GitHub repository](https://github.com/spacelab-ufsc/obdh2) under its respective licenses.
-
+The SpaceLab OBDH2 (On-Board Data Handling 2.0) is one of the service modules developed for GOLDS-UFSC Cubesat Mission. The OBDH2 is responsible to synchronize actions and the data flow between other modules (ie. EPS, Payloads) and the Earth segment. It packs the generated data into data frames and transmit back to Earth through TTC module, or stores it on a non-volatile memory for later retrieval. Commands sent from Earth segment to the cubesat will be received by the radio transceivers located in the TTC module and redirected to the OBDH2, which takes the appropriate action or forward them to the responsible module. All the OBDH2 project, source and documentation files are available freely on a [GitHub repository](https://github.com/spacelab-ufsc/obdh2) under its respective licenses.
 
 <br><br>
 
@@ -185,7 +173,6 @@ The SpaceLab OBDH2 (On-Board Data Handling 2.0) is one of the service modules de
 
 The TTC (or TT&C) is the communication module of the CubeSats from SpaceLab. It is responsible to make the communication between the earth (a ground station) and a satellite, and is divided in two sub-modules: Beacon and telemetry. The beacon is a independent sub-module who transmits a periodic signal containing an identification data (ID) of the satellite and some basic telemetry data. The telemetry sub-module is the main communication device. It has a bidirectional data link to receive telecommands from the earth and transmit all the requested data. The telemetry sub-module is controlled by an external device (as example, an OBDH module). All the TTC project, source and documentation files are available freely on a [GitHub repository](https://github.com/spacelab-ufsc/ttc) under its respective licenses.
 
-
 <br><br>
 
 <a href="https://github.com/spacelab-ufsc/eps2/graphs/contributors">
@@ -213,8 +200,7 @@ The TTC (or TT&C) is the communication module of the CubeSats from SpaceLab. It 
 <img align="right" width="25%" src="https://github.com/spacelab-ufsc/eps2/blob/master/doc/figures/eps2-pcb-top.png">
 </a>
 
-The EPS2 has been designed to harvest, store and distribute energy for the FloripaSat-2 CubeSat mission. The energy harvesting system is based on solar energy conversion through 10 solar panels attached to the structure. The EPS is designed to operate the solar panels at their maximum power point. The harvested solar energy is stored in 4 lithium-ion batteries connected in series/parallel. The energy distribution is done by several integrated DC-DC converters. The full EPS system is composed of the solar panels, the EPS PCB, and the Batteries PCB. All the EPS2 project, source and documentation files are available freely on a [GitHub repository](https://github.com/spacelab-ufsc/eps2) under its respective licenses.
-
+The EPS2 has been designed to harvest, store and distribute energy for the GOLDS-UFSC CubeSat mission. The energy harvesting system is based on solar energy conversion through 10 solar panels attached to the structure. The EPS is designed to operate the solar panels at their maximum power point. The harvested solar energy is stored in 4 lithium-ion batteries connected in series/parallel. The energy distribution is done by several integrated DC-DC converters. The full EPS system is composed of the solar panels, the EPS PCB, and the Batteries PCB. All the EPS2 project, source and documentation files are available freely on a [GitHub repository](https://github.com/spacelab-ufsc/eps2) under its respective licenses.
 
 <br><br>
 
@@ -245,7 +231,6 @@ The EPS2 has been designed to harvest, store and distribute energy for the Flori
 
 The battery module is a separeted board from the EPS in order to accommodate 4 lithium-ion cells. Besides the cells, the board has connectors for interfacing signals and power lines with the EPS module, 2 power resistors to operate as heaters to maintain the cells temperature during eclipse periods, and 4 temperature sensors. The batteries used are the ICR18650-30B lithium-ion cells, which are connected in series and parallel to supply the required voltage and current. Each cell is fixed with 18650 metal holders and between the pairs there is the power resistor attached with a thermal element in the middle. Also, a mechanical mount is placed over the batteries and screwed to the board, providing better stress resistance. All the BATC4 project, source and documentation files are available freely on a [GitHub repository](https://github.com/spacelab-ufsc/battery-module-4c) under its respective licenses.
 
-
 <br><br>
 
 ## Payload EDC - Environmental Data Collector Payload
@@ -262,7 +247,6 @@ The battery module is a separeted board from the EPS in order to accommodate 4 l
 <img align="right" width="25%" src="https://github.com/spacelab-ufsc/golds-ufsc-doc/blob/master/figures/edc-pcb-top.png">
 
 The Environmental Data Collector (EDC) is a CubeSat-compatible payload that decodes signals from Platform Transmitter Terminals (PTTs) belonging to the Brazilian Environmental Data Collection System and the Argos-2 system. The EDC is composed by an RF Front End and a Processing Unit. The processing unit is based on an SoC FPGA, which configures the external components at system initialization, processes the digital signal from the RF Front End and handles the communication with the On-Board Computer (OBC). 
-
 
 <br><br>
 
@@ -281,7 +265,6 @@ The Environmental Data Collector (EDC) is a CubeSat-compatible payload that deco
 
 The Payload X was developed to perform an in-orbit validation (IOV) of two new technologies: a novel radiationhardened FPGA and an IP Core for telemetry and telecommand following the ECSS/CCSDS standard. The hardware was designed following the European Space Agency (ESA) space product standards. It has a layered structure that mitigates the effects of radiation and electromagnetic interference on the components signals. The implementation stored in the FPGA includes not only the TC/TM IP core, but also an abstract execution graph, in the form of a state machine, emulating the basic functionalities of an on-board computer (OBC). The communications module handles TC and TM data and it is an interface between the radio transceiver and the emulated OBC. The emulated OBC is based on the ECSS Telemetry & Telecommand Packet Utilization Standard (PUS), and it performs the validation of the routed telecommand received, and the packeting of the telemetry data acquired by the available sensors.
 
-
 <br><br>
 
 ## DaughterBoard HARSH - Radiation Monitor
@@ -298,7 +281,6 @@ The Payload X was developed to perform an in-orbit validation (IOV) of two new t
 <img align="right" width="25%" src="https://github.com/spacelab-ufsc/golds-ufsc-doc/blob/master/figures/harsh-pcb-top.png">
 
 The Harsh Environment CubeSat DaughterBoard is the result of a partnership between the Space Technology Research Laboratory (UFSC-Brazil) and the Space Radiation Research Group (LIRMM-France). The module was designed to evaluate different manufacture node SDR SDRAM memories in harsh environments. Also, other experiments are performed to analyse the accumulated dose in the board, which might be used to estimate the dose received in the satellite. The board is compatible with the OBDH DaughterBoard standard.
-
 
 <br><br>
 
@@ -329,7 +311,6 @@ The Harsh Environment CubeSat DaughterBoard is the result of a partnership betwe
 
 Interstage Interface Panels (IIP) are vertical mounted PCBs designed to give external access to the modules inside of a 2U or 3U CubeSat during final assembly, integration and testing. IIP is composed by 3 different boards, the complete set allows for the nanosatellite to be charged, programed and debugged. All the IIP project, source and documentation files are available freely on a [GitHub repository](https://github.com/spacelab-ufsc/interface-board) under its respective licenses.
 
-
 <br><br>
 
 <a href="https://github.com/spacelab-ufsc/pc104-adapter/graphs/contributors">
@@ -359,7 +340,6 @@ Interstage Interface Panels (IIP) are vertical mounted PCBs designed to give ext
 
 The PC-104 Adapter is a set of two boards that allow the connection between two separated stacks of PC-104 boards using PicoBlade cables. All the 104 pins of the PC-104 connector are connected through the cables. The Top Board has eight PicoBlade connectors (13 pins version) on the bottom side and a PC-104 connector (female) on the top side. The Bottom Board has eight PicoBlade connectors (13 pins version) on the top side and a PC-104 connector (male) on the bottom side. All the PC104-ADPT project, source and documentation files are available freely on a [GitHub repository](https://github.com/spacelab-ufsc/interface-board) under its respective licenses.
 
-
 <br><br>
 
 ## ACS - Attitude Control System
@@ -373,7 +353,6 @@ The PC-104 Adapter is a set of two boards that allow the connection between two 
 <img align="right" width="25%" src="https://github.com/spacelab-ufsc/golds-ufsc-doc/blob/master/figures/adcs.png">
 
 Our Attitude Control System (ACS) is a passive attitude system, which uses Earth's magnetic field to rotate and stabilize the satellite. The system is composed of one magnet to create a force to align the magnet with the Earth's magnetic field and four hysteresis bars to damp the cube oscillations and stabilize. They are placed in positions to minimize the magnet effect on the bars. As a passive magnetic attitude control system is used, it is possible to stabilize only two axis, and so, the cubesat will still rotate around one of its axis, even after stabilized.
-
 
 <br><br>
 
@@ -392,7 +371,6 @@ Our Attitude Control System (ACS) is a passive attitude system, which uses Earth
 
 The USIPED 2-Unit CubeSat structure is developed as a generic, modular satellite structure based upon the CubeSat standard. The modular chassis allows for up to two 1-Unit stack of PCBs, or other modules, to be mounted inside the chassis, using the PC-104 standard and spacers attached to the structure. In addition, there are 4 slots in the middle section, providing space for the interface boards and the ACS. The solar panels and antennas are externally mounted, providing a complete mechanical solution.
 
-
 <br><br>
 
 ## ISIS - Antennas
@@ -410,7 +388,6 @@ The USIPED 2-Unit CubeSat structure is developed as a generic, modular satellite
 
 The ISISPACE CubeSat Antenna System 1U/3U contains up to four tape spring antennas of up to 55 cm length. The deployment system relies on a thermal knife composed of one wire and two redundant heating elements per tape. RF phasing / BalUn circuitry ties the antennas together in the user-defined configuration. Depending on the configuration, one or two radios in the CubeSat can connect to the antenna system by means of miniature RF connectors. The top face of the antenna system can accommodate a two solar cell solar panel and it can be customized for accommodating sensors or other systems to protrude to the exterior, e.g. camera apertures. The antenna is compatible with any UHF and/or VHF radio system. It can be mounted on all ISIS CubeSat structures and Pumpkin rev C and rev D CubeSat structures. For custom made structures, which adhere to the CubeSat standard mechanical envelope, mounting should also be possible.
 
-
 <br><br>
 
 ## ORBITAL - Solar Panels
@@ -427,7 +404,6 @@ The ISISPACE CubeSat Antenna System 1U/3U contains up to four tape spring antenn
 <img align="right" width="25%" src="https://github.com/spacelab-ufsc/golds-ufsc-doc/blob/master/figures/orbital-solar-panel.png">
 
 The solar panels are manufactures by ORBITAL, a Brazilian company. The panels features protection diodes and high-efficiency solar cells, which are the CESI's CTJ-30 with dimensions 6.9 cm x 3.9 cm (area 26.5 cm2). This cell is qualified for space use by ESA with an efficiency of 29.5% (AM0, BOL). The panels do not include magnetorquers, sensors and others devices.
-
 
 <br><br>
 
@@ -458,7 +434,6 @@ The solar panels are manufactures by ORBITAL, a Brazilian company. The panels fe
 
 The SpaceLab FlatSat Platform is a testbed for cubesat pcb modules. FlatSats enable easier, faster and secure method for testing subsystens indenpently or integrated in a flat design before going to assembly on a cubesat standard. The PCB can support up to 7 modules, all PC104 pins are interligated with each respective counterpart to flexibilize its use, only the particularity connection between modules need to be be taken into account. All the PC104-ADPT project, source and documentation files are available freely on a [GitHub repository](https://github.com/spacelab-ufsc/flatsat-platform) under its respective licenses.
 
-
 <br><br>
 
 <a href="https://github.com/spacelab-ufsc/spacelab-decoder/graphs/contributors">
@@ -487,8 +462,6 @@ The SpaceLab FlatSat Platform is a testbed for cubesat pcb modules. FlatSats ena
 </a>
 
 SpaceLab Packet Decoder is a software to decode audio records from the satellites of SpaceLab. For now, this software is still under development and are not functional yet.
-
-
 
 <br><br>
 
@@ -529,7 +502,6 @@ SpaceLab Packet Decoder is a software to decode audio records from the satellite
 ## Licenses
 
 The SpaceLab follows a strong open-source approach in order to encourage and promote knowledge. Then, refer to the LICENSE file in the GitHub page for each repository. This mission uses different open-source licenses accordingly to projects needs and restrictions. It is used GNU General Public License v3.0 for firmware sources, CERN Open Hardware License v2.0 for hardware files, and CC BY-SA 4.0 for the documentation. Some third-part files and libraries are subjected to their specific terms and licenses. Please, double check licenses and third-part components used with other licenses, since restrictions might apply.
-
 
 ## Notes
 
