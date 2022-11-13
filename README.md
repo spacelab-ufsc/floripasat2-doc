@@ -139,15 +139,15 @@ The following sections describe the mission subsystems, which placement, positio
 </p>
 
 <a href="https://github.com/spacelab-ufsc/obdh2">
-<img align="right" width="25%" src="https://github.com/spacelab-ufsc/obdh2/blob/master/doc/figures/obdh2-pcb-top.png">
+<img align="right" width="25%" src="https://github.com/spacelab-ufsc/obdh2/blob/master/doc/user_manual/figures/obdh2-pcb-top.png">
 </a>
 
 The SpaceLab OBDH2 (On-Board Data Handling 2.0) is one of the service modules developed for GOLDS-UFSC Cubesat Mission. The OBDH2 is responsible to synchronize actions and the data flow between other modules (ie. EPS, Payloads) and the Earth segment. It packs the generated data into data frames and transmit back to Earth through TTC module, or stores it on a non-volatile memory for later retrieval. Commands sent from Earth segment to the cubesat will be received by the radio transceivers located in the TTC module and redirected to the OBDH2, which takes the appropriate action or forward them to the responsible module. All the OBDH2 project, source and documentation files are available freely on a [GitHub repository](https://github.com/spacelab-ufsc/obdh2) under its respective licenses.
 
 <br><br>
 
-<a href="https://github.com/spacelab-ufsc/ttc/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=spacelab-ufsc/ttc" />
+<a href="https://github.com/spacelab-ufsc/ttc2/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=spacelab-ufsc/ttc2" />
 </a>
 
 ## TTC - Telemetry, Tracking and Telecommand
@@ -156,19 +156,19 @@ The SpaceLab OBDH2 (On-Board Data Handling 2.0) is one of the service modules de
 	<a href="https://github.com/spacelab-ufsc/spacelab#versioning">
 		<img src="https://img.shields.io/badge/status-in--orbit%20validated-blue?style=for-the-badge">
 	</a>
-	<a href="https://github.com/spacelab-ufsc/ttc/releases">
-		<img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/spacelab-ufsc/ttc?style=for-the-badge">
+	<a href="https://github.com/spacelab-ufsc/ttc2/releases">
+		<img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/spacelab-ufsc/ttc2?style=for-the-badge">
 	</a>
-	<a href="https://github.com/spacelab-ufsc/ttc/commits/master">
-		<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/spacelab-ufsc/ttc?style=for-the-badge">
+	<a href="https://github.com/spacelab-ufsc/ttc2/commits/master">
+		<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/spacelab-ufsc/ttc2?style=for-the-badge">
 	</a>
-	<a href="https://github.com/spacelab-ufsc/ttc/issues">
-		<img alt="GitHub issues" src="https://img.shields.io/github/issues/spacelab-ufsc/ttc?style=for-the-badge">
+	<a href="https://github.com/spacelab-ufsc/ttc2/issues">
+		<img alt="GitHub issues" src="https://img.shields.io/github/issues/spacelab-ufsc/ttc2?style=for-the-badge">
 	</a>
 </p>
 
-<a href="https://github.com/spacelab-ufsc/ttc">
-<img align="right" width="25%" src="https://github.com/spacelab-ufsc/golds-ufsc-doc/blob/master/figures/ttc-pcb-top.png">
+<a href="https://github.com/spacelab-ufsc/ttc2">
+<img align="right" width="25%" src="https://github.com/spacelab-ufsc/ttc2/blob/master/doc/user_manual/figures/ttc2_pcb_top.png">
 </a>
 
 The TTC (or TT&C) is the communication module of the CubeSats from SpaceLab. It is responsible to make the communication between the earth (a ground station) and a satellite, and is divided in two sub-modules: Beacon and telemetry. The beacon is a independent sub-module who transmits a periodic signal containing an identification data (ID) of the satellite and some basic telemetry data. The telemetry sub-module is the main communication device. It has a bidirectional data link to receive telecommands from the earth and transmit all the requested data. The telemetry sub-module is controlled by an external device (as example, an OBDH module). All the TTC project, source and documentation files are available freely on a [GitHub repository](https://github.com/spacelab-ufsc/ttc) under its respective licenses.
