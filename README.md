@@ -35,8 +35,6 @@
   	<a href="#overview">Overview</a> •
   	<a href="#mission-statement">Statement</a> •
   	<a href="#mission-objectives">Objectives</a> •
-  	<a href="#mission-requeriments">Requirements</a> •
-  	<a href="#mission-schedule">Schedule</a> •
   	<a href="#development">Development</a> •
   	<a href="#partners">Partners</a> •
   	<a href="#licenses">Licenses</a> •
@@ -69,43 +67,6 @@ GOLDS-UFSC is a service module for INPE’s EDC payload, and also a platform for
 5. Evaluate the behavior of the core modules.
 6. Perform experiments on radiation effects in electronic components in orbit.
 7. Serve as relay for amateur radio communications.
-
-## Mission Requeriments
-
-1. The power system shall be able to harvest solar energy.
-2. The power system shall be able to store energy for use when GOLDS-UFSC is eclipsed.
-3. The power system shall supply energy to all other modules.
-4. The data handling system shall communicate with the other modules and store their data.
-5. The communications system shall send a beacon signal periodically using VHF radio.
-6. The communications system shall send the CubeSat telemetry using UHF radio.
-7. The communications system shall be able to receive telecommands and respond to them accordingly.
-8. The attitude system shall be able to perform a 1-axis stabilization of the CubeSat.
-9. GOLDS-UFSC shall have the capability to receive and execute a shutdown telecommand, therefore ceasing all transmissions.
-10. The downlink transmissions shall be done once at a time, either telemetry or beacon.
-11. The ground station shall operate under the proper radio frequency communication licenses.
-12. GOLDS-UFSC shall comply with international and Brazilian radio license agreements and restrictions.
-13. The team shall build and operate a ground station for full communication with GOLDS-UFSC.
-
-## Mission Schedule
-
-| Start [+months]  | Finish [+months] | Activity / Phase                                                                                          |
-|------------------|------------------|-----------------------------------------------------------------------------------------------------------|
-| T0               | T0 + 4           | Acquisition and manufacturing of critical elements and components for the solo platform                   |
-| T0               | T0 + 4           | Acquisition and manufacture of elements and components critical to the payload                            |
-| T0               | T0 + 9           | Acquisition and manufacturing of critical elements and components for the solo segment                    |
-| T0               | T0 + 6           | Compatibility tests between platform and payload in SpaceLab UFSC                                         |
-| T0 + 4           | T0 + 10          | Integration of the engineering model in SpaceLab UFSC                                                     |
-| T0 + 4           | T0 + 11          | Preparation and suitability of the ground segment                                                         |
-| T0 + 8           | T0 + 10          | Verification and validation of the engineering model at SpaceLab UFSC                                     |
-| T0 + 8           | T0 + 11          | Verification and validation of the flight model at SpaceLab UFSC                                          |
-| T0 + 9           | T0 + 12          | Data collection platforms installation                                                                    |
-| T0 + 10          | T0 + 11          | Verification and validation tests of Engineering Model compatibility with EMMN in the INPE / CRN in Natal |
-| T0 + 10          | T0 + 11          | Environmental tests at the Integration and Testing Laboratory (LIT / INPE)                                |
-| T0 + 11          | T0 + 11          | Flight model acceptance and ground segment review                                                         |
-| T0 + 9           | T0 + 12          | Ground segment delivery                                                                                   |
-| T0 + 11          | T0 + 12          | Flight model delivery                                                                                     |
-
-> T0 = 23 December 2020
 
 ## Development 
 
@@ -250,7 +211,7 @@ The Environmental Data Collector (EDC) is a CubeSat-compatible payload that deco
 
 <br><br>
 
-## Payload X - Redundant OBDH
+## Payload-X - Redundant OBDH
 
 <p align="left">
 	<a href="https://github.com/spacelab-ufsc/spacelab#versioning">
@@ -263,24 +224,7 @@ The Environmental Data Collector (EDC) is a CubeSat-compatible payload that deco
 
 <img align="right" width="25%" src="https://github.com/spacelab-ufsc/golds-ufsc-doc/blob/master/figures/payload-x-pcb-top.png">
 
-The Payload X was developed to perform an in-orbit validation (IOV) of two new technologies: a novel radiationhardened FPGA and an IP Core for telemetry and telecommand following the ECSS/CCSDS standard. The hardware was designed following the European Space Agency (ESA) space product standards. It has a layered structure that mitigates the effects of radiation and electromagnetic interference on the components signals. The implementation stored in the FPGA includes not only the TC/TM IP core, but also an abstract execution graph, in the form of a state machine, emulating the basic functionalities of an on-board computer (OBC). The communications module handles TC and TM data and it is an interface between the radio transceiver and the emulated OBC. The emulated OBC is based on the ECSS Telemetry & Telecommand Packet Utilization Standard (PUS), and it performs the validation of the routed telecommand received, and the packeting of the telemetry data acquired by the available sensors.
-
-<br><br>
-
-## DaughterBoard HARSH - Radiation Monitor
-
-<p align="left">
-	<a href="https://github.com/spacelab-ufsc/spacelab#versioning">
-		<img src="https://img.shields.io/badge/status-under%20testing-yellow?style=for-the-badge">
-	</a>
-	<a href="">
-		<img src="https://img.shields.io/badge/release-v0.1-blue?style=for-the-badge">
-	</a>
-</p>
-
-<img align="right" width="25%" src="https://github.com/spacelab-ufsc/golds-ufsc-doc/blob/master/figures/harsh-pcb-top.png">
-
-The Harsh Environment CubeSat DaughterBoard is the result of a partnership between the Space Technology Research Laboratory (UFSC-Brazil) and the Space Radiation Research Group (LIRMM-France). The module was designed to evaluate different manufacture node SDR SDRAM memories in harsh environments. Also, other experiments are performed to analyse the accumulated dose in the board, which might be used to estimate the dose received in the satellite. The board is compatible with the OBDH DaughterBoard standard.
+The Payload-X was developed to perform an in-orbit validation (IOV) of two new technologies: a novel radiationhardened FPGA and an IP Core for telemetry and telecommand following the ECSS/CCSDS standard. The hardware was designed following the European Space Agency (ESA) space product standards. It has a layered structure that mitigates the effects of radiation and electromagnetic interference on the components signals. The implementation stored in the FPGA includes not only the TC/TM IP core, but also an abstract execution graph, in the form of a state machine, emulating the basic functionalities of an on-board computer (OBC). The communications module handles TC and TM data and it is an interface between the radio transceiver and the emulated OBC. The emulated OBC is based on the ECSS Telemetry & Telecommand Packet Utilization Standard (PUS), and it performs the validation of the routed telecommand received, and the packeting of the telemetry data acquired by the available sensors.
 
 <br><br>
 
@@ -440,7 +384,7 @@ The SpaceLab FlatSat Platform is a testbed for cubesat pcb modules. FlatSats ena
   <img src="https://contrib.rocks/image?repo=spacelab-ufsc/spacelab-decoder" />
 </a>
 
-## SpaceLab Packet Decoder
+## SpaceLab-Decoder
 
 <p align="left">
 	<a href="https://github.com/spacelab-ufsc/spacelab#versioning">
@@ -461,7 +405,7 @@ The SpaceLab FlatSat Platform is a testbed for cubesat pcb modules. FlatSats ena
 <img align="right" width="25%" src="https://github.com/spacelab-ufsc/golds-ufsc-doc/blob/master/figures/spacelab-decoder.png">
 </a>
 
-SpaceLab Packet Decoder is a software to decode audio records from the satellites of SpaceLab. For now, this software is still under development and are not functional yet.
+SpaceLab-Decoder is a software to decode audio records from the satellites of SpaceLab.
 
 <br><br>
 
